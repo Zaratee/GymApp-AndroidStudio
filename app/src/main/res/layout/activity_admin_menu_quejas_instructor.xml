@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminMenuQuejasInstructor"
+    android:background="@color/backgroundcolor">
+
+    <TextView
+        android:id="@+id/txtvNoActionAgregar_AdminMenuQuejasInstructor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quejas Instructor"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/view1_AdminMenuQuejasInstructor"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionAgregar_AdminMenuQuejasInstructor"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listvClientesEliminar_AdminMenuQuejasInstructor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view1_AdminMenuQuejasInstructor"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

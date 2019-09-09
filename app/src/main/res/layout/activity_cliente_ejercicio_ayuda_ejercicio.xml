@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentAyudaEjercicio">
+
+    <com.zolad.zoominimageview.ZoomInImageView
+        android:id="@+id/imgvEjercicio_FragmentAyudaEjercicio"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+    <TextView
+        android:id="@+id/txtvNombreEjercicio_ClienteEjercicioAyudaEjercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Nombre del Ejercicio"
+        android:textSize="28dp"
+        android:textColor="#000"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/imgvEjercicio_FragmentAyudaEjercicio"/>
+    <TextView
+        android:id="@+id/txtvNombreAparato_ClienteEjercicioAyudaEjercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Nombre del Aparato "
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/txtvNombreEjercicio_ClienteEjercicioAyudaEjercicio"/>
+    <TextView
+        android:id="@+id/txtvNoActionMusculosImplicados_ClienteEjercicioAyudaEjercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Musculos Implicados:"
+        android:layout_below="@+id/txtvNombreAparato_ClienteEjercicioAyudaEjercicio"
+        android:layout_alignStart="@+id/txtvNombreEjercicio_ClienteEjercicioAyudaEjercicio"
+        android:layout_marginTop="20dp"
+        android:textSize="17dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/txtvMusculosImplicados_ClienteEjercicioAyudaEjercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtvNoActionMusculosImplicados_ClienteEjercicioAyudaEjercicio"
+        android:layout_alignStart="@+id/txtvNombreEjercicio_ClienteEjercicioAyudaEjercicio"
+        android:layout_marginTop="6dp"
+        android:textSize="15dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/txtvNoActionDescripcion_ClienteEjercicioAyudaEjercicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripción:"
+        android:layout_below="@+id/txtvMusculosImplicados_ClienteEjercicioAyudaEjercicio"
+        android:layout_alignStart="@+id/txtvNombreEjercicio_ClienteEjercicioAyudaEjercicio"
+        android:textSize="17dp"
+        android:textColor="#000"
+        android:layout_marginTop="20dp" />
+    <TextView
+        android:id="@+id/txtvDescripcion_ClienteEjercicioAyudaEjercicio"
+        android:layout_width="280dp"
+        android:layout_height="140dp"
+        android:layout_below="@+id/txtvNoActionDescripcion_ClienteEjercicioAyudaEjercicio"
+        android:layout_alignStart="@+id/txtvNoActionDescripcion_ClienteEjercicioAyudaEjercicio"
+        android:textColor="#000"/>
+
+</RelativeLayout>

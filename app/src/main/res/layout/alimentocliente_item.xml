@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/Item_alimentoCliente"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/txtvNombre_alimentoCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/txtvMarca_alimentoCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Marca"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:gravity="right"
+            android:textColor="#000"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtvTipo_alimentoCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TipoAlimento"
+            android:textSize="18dp"
+            android:textColor="#000"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right">
+            <TextView
+                android:id="@+id/txtvCantidad_alimentoCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cantidad "
+                android:textSize="18dp"
+                android:textColor="#000"/>
+            <TextView
+                android:id="@+id/txtvTipoCantidad_alimentoCliente"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="medida"
+                android:textSize="16dp"
+                android:textColor="#000"
+                />
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiempo: "
+        android:textSize="16dp"
+        android:textColor="#000"
+        />
+        <TextView
+            android:id="@+id/txtvHorario_alimentoCliente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="empo "
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#000"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:visibility="invisible"
+        />
+
+</LinearLayout>

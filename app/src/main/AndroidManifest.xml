@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.carloz.gymapp">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logonb"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Login" />
+        <activity android:name=".AgregarEntrenador" />
+        <activity android:name=".AgregarNutriologo" />
+        <activity android:name=".AgregarCliente" />
+        <activity android:name=".ActualizarContraCliente" />
+        <activity android:name=".EncuestaClienteNuevo" />
+        <activity android:name=".EncuestaCodigoCliente" />
+        <activity android:name=".ClienteMenu" />
+        <activity android:name=".ClienteAlimentacion" />
+        <activity android:name=".ClienteSolicitudAlimento" />
+        <activity android:name=".ClienteBuscarAlimento" />
+        <activity android:name=".ClientePerfil" />
+        <activity android:name=".ActualizarContrasena" />
+        <activity android:name=".ClienteBuzonQuejas" />
+        <activity android:name=".ClienteCrearQueja" />
+        <activity android:name=".InstructorPerfil" />
+        <activity android:name=".InstructorMenuCliente" />
+        <activity android:name=".InstructorAsignarRutinaDia" />
+        <activity android:name=".InstructorAsignarSeleccionarMusculo" />
+        <activity android:name=".InstructorAsignarEjercicio" />
+        <activity android:name=".NutriologoPerfil" />
+        <activity android:name=".ClienteEjercicio" />
+        <activity android:name=".ClienteEjercicioAyuda" />
+        <activity android:name=".NutriologoClienteAsignar" />
+        <activity android:name=".NutriologoClienteAsignarComida" />
+        <activity android:name=".NutriologoSolicitudAlimentoLista" />
+        <activity android:name=".NutriologoSolicitudAlimentoSolicitud" />
+        <activity android:name=".admin_menu" />
+        <activity android:name=".Admin_menu_selecusu" />
+        <activity android:name=".AdminEliminarSelecUsuario" />
+        <activity android:name=".EliminarCliente" />
+        <activity android:name=".EliminarEntrenador" />
+        <activity android:name=".EliminarNutriologo" />
+        <activity android:name=".InstructorBuzonQuejas" />
+        <activity android:name=".InstructorCrearQueja" />
+        <activity android:name=".NutriologoBuzonQuejas" />
+        <activity android:name=".NutriologoCrearQueja" />
+        <activity android:name=".AgregarClienteInfo" />
+        <activity android:name=".AdminMenuQuejasUsuarios" />
+        <activity android:name=".AdminMenuQuejasCliente" />
+        <activity android:name=".AdminMenuQuejasInstructor" />
+        <activity android:name=".AdminMenuQuejasNutriologo" />
+        <activity android:name=".AdminMenuModificarUsuarios" />
+        <activity android:name=".AdminModificarUsuario" />
+        <activity android:name=".AdminModificarSelecUsuario" />
+        <activity android:name=".AdminModificarDatosCliente" />
+        <activity android:name=".AdminModificarDatosInstructor" />
+        <activity android:name=".AdminModificarDatosNutriologo" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".BuscarAlimentoSeleccionado" />
+        <activity android:name=".InstructorAsignarEjercicioInfo" />
+        <activity android:name=".InstructorEditarDia" />
+        <activity android:name=".InstructorModificarEjer" />
+        <activity android:name=".InstructorEditarEjer" />
+        <activity android:name=".NutriologoEditarDieta" />
+        <activity android:name=".NutriologoEditDietAlimento" />
+        <activity android:name=".InstructorVisualizarEvaluacion" />
+        <activity android:name=".AdminHistorialClientes" />
+        <activity android:name=".AdminVisualizarQuejaInfo" />
+        <activity android:name=".InstructorGraficaCliente" />
+        <activity android:name=".InstructorMusculoGrafica" />
+        <activity android:name=".ClienteBuscarAlimSelec" />
+        <activity android:name=".ClienteAlimEditarDiario" />
+        <activity android:name=".ClienteDietaDiarioEdit" />
+        <activity android:name=".ClienteAvanceMusculo" />
+        <activity android:name=".NutriologoPuente" />
+        <activity android:name=".InstructorClienteRelizSele" />
+        <activity android:name=".InstructorRelizLista" />
+        <activity android:name=".InstructorRealizInfo" />
+        <activity android:name=".InstructorProgresoCodigo" />
+        <activity android:name=".ClienteListaEjercicio"></activity>
+    </application>
+
+</manifest>

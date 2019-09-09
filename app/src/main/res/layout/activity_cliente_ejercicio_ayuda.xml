@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClienteEjercicioAyuda">
+    <FrameLayout
+        android:id="@+id/fragmentcontenedor_ClienteEjercicio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/menu_ClienteEjercicioAyuda"/>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/menu_ClienteEjercicioAyuda"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_ejercicio"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingbtnRutina_ClienteEjercicioAyuda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_view_headline_black_24dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="60dp"
+        android:layout_above="@+id/menu_ClienteEjercicioAyuda"
+        />
+</RelativeLayout>

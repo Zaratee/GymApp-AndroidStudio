@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructorBuzonQuejas">
+
+
+
+    <TextView
+        android:id="@+id/txtvNoActionTitulo_InstructorBuzonQuejas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buzón de quejas"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/view_InstructorBuzonQuejas"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionTitulo_InstructorBuzonQuejas"/>
+
+    <Button
+        android:id="@+id/btnInvisible_InstructorBuzonQuejas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listvQuejas_InstructorBuzonQuejas"
+        android:layout_width="300dp"
+        android:layout_height="350dp"
+        android:layout_below="@+id/view_InstructorBuzonQuejas"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/etxt_box"/>
+
+    <Button
+        android:id="@+id/btnCrearQueja_InstructorBuzonQuejas"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Crear Queja"
+        android:layout_below="@+id/listvQuejas_InstructorBuzonQuejas"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/btn_box" />
+
+</RelativeLayout>

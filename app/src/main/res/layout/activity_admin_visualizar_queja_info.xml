@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminVisualizarQuejaInfo">
+
+
+    <TextView
+        android:id="@+id/txtvNoActionAgregar_AdminModificarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Información queja"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <View
+        android:id="@+id/view1_AdminModificarUsuario"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionAgregar_AdminModificarUsuario"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/view1_AdminModificarUsuario">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view1_AdminModificarUsuario">
+    <TextView
+        android:id="@+id/txtvNoActionQueja_AdminVisualizarQuejaInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Queja enviada por:"
+        android:textColor="#000"
+        android:padding="10dp"
+        />
+
+        <ImageView
+            android:id="@+id/imgvFoto_AdminVisualizarQuejaInfo"
+            android:layout_width="120dp"
+            android:layout_height="140dp"
+            android:layout_below="@+id/txtvNoActionQueja_AdminVisualizarQuejaInfo"
+            android:layout_marginTop="30dp"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:id="@+id/txtvNoActionNombre_AdminVisualizarQuejaInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:layout_below="@+id/imgvFoto_AdminVisualizarQuejaInfo"
+            android:textColor="#000"
+            android:padding="10dp"
+            android:textSize="10dp"/>
+        <TextView
+            android:id="@+id/txtvNombre_AdminVisualizarQuejaInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtvNoActionNombre_AdminVisualizarQuejaInfo"
+            android:text="Nombre"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:padding="10dp"/>
+        <TextView
+            android:id="@+id/txtvNoActionRegistro_AdminVisualizarQuejaInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro:"
+            android:layout_below="@+id/txtvNombre_AdminVisualizarQuejaInfo"
+            android:layout_marginTop="10dp"
+            android:textColor="#000"
+            android:padding="10dp"
+            android:textSize="10dp"/>
+        <TextView
+            android:id="@+id/txtvRegistro_AdminVisualizarQuejaInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtvNoActionRegistro_AdminVisualizarQuejaInfo"
+            android:text="Registro"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:padding="10dp"/>
+        <TextView
+            android:id="@+id/txtvNoActionQuejaa_AdminVisualizarQuejaInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Queja:"
+            android:layout_below="@+id/txtvRegistro_AdminVisualizarQuejaInfo"
+            android:layout_marginTop="10dp"
+            android:textColor="#000"
+            android:padding="10dp"
+            android:textSize="10dp"/>
+        <TextView
+            android:id="@+id/txtvQuejaa_AdminVisualizarQuejaInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtvNoActionQuejaa_AdminVisualizarQuejaInfo"
+            android:text="Queja"
+            android:textSize="17dp"
+            android:textColor="#000"
+            android:padding="10dp"/>
+        <Button
+            android:id="@+id/btnRealizado_AdminVisualizarQuejaInfo"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Realizado"
+            android:textAllCaps="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/txtvQuejaa_AdminVisualizarQuejaInfo"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/btn_box"
+            android:textColor="#000"
+            android:textSize="17dp"
+            android:layout_marginBottom="15dp"/>
+
+
+    </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

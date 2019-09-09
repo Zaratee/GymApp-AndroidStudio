@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EliminarNutriologo"
+    android:background="@color/backgroundcolor">
+
+    <TextView
+        android:id="@+id/txtvNoActionEliminar_EliminarNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Nutriologo"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/View_EliminarNutriologo"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionEliminar_EliminarNutriologo"/>
+
+    <EditText
+        android:id="@+id/etxtBuscar_EliminarNutriologo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Buscar"
+        android:layout_below="@+id/View_EliminarNutriologo"
+        android:textColor="@color/negro"
+        android:textColorHint="@color/negro"
+        android:background="@drawable/apptheme_textfield_activated_holo_light"
+        android:layout_alignEnd="@+id/btnBuscar_EliminarNutriologo"
+        android:layout_marginTop="20dp"/>
+
+    <ImageButton
+        android:id="@+id/btnBuscar_EliminarNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_search_black_24dp"
+        android:backgroundTint="#00000000"
+        android:text="Button"
+        android:layout_below="@+id/View_EliminarNutriologo"
+        android:layout_marginTop="20dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listvClientesEliminar_EliminarNutriologo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/etxtBuscar_EliminarNutriologo"
+        android:layout_marginTop="20dp"/>
+</RelativeLayout>

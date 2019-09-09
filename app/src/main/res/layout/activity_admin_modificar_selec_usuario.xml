@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminModificarSelecUsuario">
+
+    <LinearLayout
+        android:id="@+id/layFotoUsuario_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="top">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/imgvUsuario_AdminModificarSelecUsuario"
+                    android:layout_width="83dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="1"
+                    app:civ_shadow_color="@color/negro"
+                    app:civ_border_width="4dp"
+                    app:civ_border_color="#EEEE"
+                    android:src="@drawable/logonb" />
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/lightgray"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/txtvNoActionNombre_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre:"
+        android:textSize="12dp"
+        android:textColor="#000"
+        android:layout_below="@+id/layFotoUsuario_AdminModificarSelecUsuario"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:id="@+id/txtvNombre_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre y Apellido "
+        android:layout_below="@+id/txtvNoActionNombre_AdminModificarSelecUsuario"
+        android:layout_alignStart="@+id/txtvNoActionNombre_AdminModificarSelecUsuario"
+        android:textSize="16dp"
+        android:textColor="#000"/>
+
+
+    <TextView
+        android:id="@+id/txtvNoActionRegistro_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro:"
+        android:textSize="12dp"
+        android:textColor="#000"
+        android:layout_below="@+id/txtvNombre_AdminModificarSelecUsuario"
+        android:layout_alignStart="@+id/txtvNombre_AdminModificarSelecUsuario"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/txtvRegistro_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0000 "
+        android:layout_below="@+id/txtvNoActionRegistro_AdminModificarSelecUsuario"
+        android:layout_alignStart="@+id/txtvNoActionRegistro_AdminModificarSelecUsuario"
+        android:textSize="16dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/txtvNoActionTelefono_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefono:"
+        android:textSize="12dp"
+        android:textColor="#000"
+        android:layout_below="@+id/txtvNombre_AdminModificarSelecUsuario"
+        android:layout_toRightOf="@+id/txtvNoActionRegistro_AdminModificarSelecUsuario"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <TextView
+        android:id="@+id/txtvTelefono_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3333333333"
+        android:layout_below="@+id/txtvNoActionRegistro_AdminModificarSelecUsuario"
+        android:layout_alignStart="@+id/txtvNoActionTelefono_AdminModificarSelecUsuario"
+        android:textSize="16dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/txtvNoActionRFID_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RFID:"
+        android:textSize="12dp"
+        android:textColor="#000"
+        android:layout_below="@+id/txtvTelefono_AdminModificarSelecUsuario"
+        android:layout_alignStart="@+id/txtvTelefono_AdminModificarSelecUsuario"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/txtvRFID_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AAAAAAA "
+        android:layout_below="@+id/txtvNoActionRFID_AdminModificarSelecUsuario"
+        android:layout_alignStart="@+id/txtvNoActionRFID_AdminModificarSelecUsuario"
+        android:textSize="16dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/txtvNoActionHorario_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horario:"
+        android:textSize="12dp"
+        android:textColor="#000"
+        android:layout_below="@+id/txtvRegistro_AdminModificarSelecUsuario"
+        android:layout_alignStart="@+id/txtvRegistro_AdminModificarSelecUsuario"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:id="@+id/txtvHorario_AdminModificarSelecUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="hora "
+        android:layout_below="@+id/txtvNoActionHorario_AdminModificarSelecUsuario"
+        android:layout_alignStart="@+id/txtvNoActionHorario_AdminModificarSelecUsuario"
+        android:textSize="16dp"
+        android:textColor="#000"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/txtvRFID_AdminModificarSelecUsuario"
+        android:layout_centerHorizontal="true"
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_marginBottom="30dp">
+
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="150dp"
+            android:weightSum="2"
+            android:layout_weight="2">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvActualizarContra_AdminModificarSelecUsuario"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvActualizarContra_AdminModificarSelecUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Actualizar contraseña"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvModificarDatos_AdminModificarSelecUsuario"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvCerrarSesion_AdminModificarSelecUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Modificar datos"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"/>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

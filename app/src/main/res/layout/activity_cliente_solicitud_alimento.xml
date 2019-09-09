@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClienteSolicitudAlimento"
+    android:background="@color/backgroundcolor">
+
+    <TextView
+        android:id="@+id/txtvNoActionTitulo_ClienteSolicitudAlimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Solicitud Alimento"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/view_ClienteSolicitudAlimento"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionTitulo_ClienteSolicitudAlimento"/>
+
+
+    <ScrollView
+        android:id="@+id/scrollview_ClienteSolicitudAlimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/view_ClienteSolicitudAlimento">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designNombreAlimento_ClienteSolicitudAlimento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_ClienteSolicitudAlimento"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:textColorHint="#000"
+                >
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtNombreAlimento_ClienteSolicitudAlimento"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:textColor="@color/negro"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designMarcaAlimento_ClienteSolicitudAlimento"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/designNombreAlimento_ClienteSolicitudAlimento"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtMarcaAlimento_ClienteSolicitudAlimento"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Marca"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:textColor="@color/negro"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designTipoAlimento_ClienteSolicitudAlimento"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/designMarcaAlimento_ClienteSolicitudAlimento"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtTipoAlimento_ClienteSolicitudAlimento"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Tipo de alimento"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:textColor="@color/negro"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="260dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:weightSum="2"
+                    >
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/designCantidad_ClienteSolicitudAlimento"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/designMarcaAlimento_ClienteSolicitudAlimento"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="#000">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/etxtCantidad_ClienteSolicitudAlimento"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Cantidad"
+                            android:textColorHint="#000"
+                            android:backgroundTint="#000"
+                            android:textColor="@color/negro"
+                            android:background="@drawable/apptheme_textfield_activated_holo_light"
+                            android:gravity="center"/>
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/designMedida_ClienteSolicitudAlimento"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/designMarcaAlimento_ClienteSolicitudAlimento"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="#000">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:id="@+id/etxtMedida_ClienteSolicitudAlimento"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Medida"
+                            android:textColorHint="#000"
+                            android:backgroundTint="#000"
+                            android:textColor="@color/negro"
+                            android:background="@drawable/apptheme_textfield_activated_holo_light"
+                            android:gravity="center"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                </LinearLayout>
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="2"
+            >
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designGrasas_ClienteSolicitudAlimento"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/designMarcaAlimento_ClienteSolicitudAlimento"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtGrasas_ClienteSolicitudAlimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Grasas"
+                    android:textColorHint="#000"
+                    android:inputType="number"
+                    android:backgroundTint="#000"
+                    android:textColor="@color/negro"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designCarboh_ClienteSolicitudAlimento"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/designMarcaAlimento_ClienteSolicitudAlimento"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtCarboh_ClienteSolicitudAlimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Carbohidratos"
+                    android:textSize="14dp"
+                    android:inputType="number"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:textColor="@color/negro"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="2"
+            >
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designProteinas_ClienteSolicitudAlimento"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/designMarcaAlimento_ClienteSolicitudAlimento"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtProteinas_ClienteSolicitudAlimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Proteinas"
+                    android:inputType="number"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:textColor="@color/negro"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designCalorias_ClienteSolicitudAlimento"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/designMarcaAlimento_ClienteSolicitudAlimento"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtCalorias_ClienteSolicitudAlimento"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Calorias"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:inputType="number"
+                    android:textColor="@color/negro"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnEnviar_ClienteSolicitudAlimento"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:textAllCaps="true"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/btn_box"
+            android:textColor="#000"
+            android:textSize="17dp"/>
+
+
+
+            </LinearLayout>
+
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+
+
+
+

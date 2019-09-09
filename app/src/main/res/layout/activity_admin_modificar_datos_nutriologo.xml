@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminModificarDatosNutriologo">
+
+    <TextView
+        android:id="@+id/txtvTitulo_AdminModificarDatosNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modificar Nutriólogo"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/View_AdminModificarDatosNutriologo"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvTitulo_AdminModificarDatosNutriologo"/>
+    <Button
+        android:id="@+id/btnInvisible_AdminModificarDatosNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"/>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designNombre_AdminModificarDatosNutriologo"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnInvisible_AdminModificarDatosNutriologo"
+        android:layout_marginTop="-200dp"
+        android:textColorHint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtNombre_AdminModificarDatosNutriologo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designApellido_AdminModificarDatosNutriologo"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/designNombre_AdminModificarDatosNutriologo"
+        android:textColorHint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtApellido_AdminModificarDatosNutriologo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Apellido"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designTelefono_AdminModificarDatosNutriologo"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/designApellido_AdminModificarDatosNutriologo"
+        android:layout_below="@+id/designApellido_AdminModificarDatosNutriologo"
+        android:textColorHint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtTelefono_AdminModificarDatosNutriologo"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:hint="Telefono"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:inputType="phone"
+            android:maxLength="10"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtvHorario_AdminModificarDatosNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vespertino"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
+        android:layout_below="@+id/designTelefono_AdminModificarDatosNutriologo"
+        android:layout_alignStart="@+id/designTelefono_AdminModificarDatosNutriologo"
+        android:layout_marginTop="10dp" />
+
+    <CheckBox
+        android:id="@+id/chkboxCambiarHorario_AdminModificarNutriologo2"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@+id/txtvHorario_AdminModificarDatosNutriologo"
+        android:layout_alignStart="@+id/txtvHorario_AdminModificarDatosNutriologo"
+        android:layout_marginTop="10dp"
+        />
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imgvUsuario_AdminModificarDatosNutriologo"
+        android:layout_width="83dp"
+        android:layout_height="80dp"
+        app:civ_shadow="true"
+        app:civ_shadow_radius="1"
+        app:civ_shadow_color="@color/negro"
+        app:civ_border_width="4dp"
+        app:civ_border_color="#EEEE"
+        android:src="@drawable/logonb"
+        android:layout_below="@+id/txtvHorario_AdminModificarDatosNutriologo"
+        android:layout_toRightOf="@+id/txtvHorario_AdminModificarDatosNutriologo"
+        android:layout_marginLeft="60dp"/>
+
+    <Button
+        android:id="@+id/btnTomarFoto_AdminModificarDatosNutriologo"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Tomar Foto"
+        android:layout_below="@+id/imgvUsuario_AdminModificarDatosNutriologo"
+        android:layout_alignStart="@+id/imgvUsuario_AdminModificarDatosNutriologo"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_box"
+        />
+
+    <Button
+        android:id="@+id/btnModificarCliente_AdminModificarDatosNutriologo"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Modificar"
+        android:background="@drawable/btn_box"
+        android:textColor="#000"
+        android:textSize="17dp"
+        android:layout_below="@+id/btnTomarFoto_AdminModificarDatosNutriologo"
+        android:layout_marginTop="20dp"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClienteBuscarAlimSelec"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+
+        <TextView
+            android:id="@+id/txtvAlimentoNombre_ClienteBuscarAlimSelec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/lightgray2"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marca:"
+                            android:textSize="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marca:"
+                            android:textSize="16dp"
+                            android:visibility="invisible"/>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/txtvMarca_ClienteBuscarAlimSelec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tipo:"
+                            android:textSize="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tipo:"
+                            android:textSize="16dp"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/txtvTipo_ClienteBuscarAlimSelec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="right"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Carboh:"
+                            android:textSize="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marca:"
+                            android:textSize="16dp"
+                            android:visibility="invisible"/>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/txtvCarbh_CantidadAlimentoSeleccionado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Grasas:"
+                            android:textSize="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="16dp"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/txtvGrasas_ClienteBuscarAlimSelec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="right"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Proteinas:"
+                            android:textSize="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marca:"
+                            android:textSize="16dp"
+                            android:visibility="invisible"/>
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/txtvProteinas_CantidadAlimentoSeleccionado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calorias:"
+                            android:textSize="16dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textSize="16dp"
+                            android:visibility="invisible"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/txtvCalorias_ClienteBuscarAlimSelec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:textSize="20dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="5dp"
+                        android:layout_gravity="right"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/designCantidad_ClienteBuscarAlimSelec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColorHint="#000"
+            android:gravity="center">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/etxtCantidad_ClienteBuscarAlimSelec"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:hint="Cantidad"
+                android:inputType="number"
+                android:textColor="#000"
+                android:textColorHint="#000"
+                android:backgroundTint="#000"
+                android:background="@drawable/apptheme_textfield_activated_holo_light"
+                android:maxLength="4" />
+        </android.support.design.widget.TextInputLayout>
+        <TextView
+            android:id="@+id/txtvMedida_ClienteBuscarAlimSelec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medida"
+            android:textSize="20dp"
+            android:layout_gravity="bottom"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAgregar_ClienteBuscarAlimSelec"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Agregar"
+        android:textAllCaps="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/btn_box"
+        android:textColor="#000"
+        android:textSize="17dp"/>
+
+</LinearLayout>
+

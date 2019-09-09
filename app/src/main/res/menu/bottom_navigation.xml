@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/lightgray">
+    <item android:id="@+id/navDieta_bottom"
+        android:icon="@drawable/ic_restaurant_menu_black_24dp"
+        android:title="Diario"/>
+    <item android:id="@+id/navDiario_bottom"
+        android:icon="@drawable/ic_restaurant_black_24dp"
+        android:title="Dieta"/>
+
+
+
+</menu>

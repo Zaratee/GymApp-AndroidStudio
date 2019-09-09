@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructorAsignarEjercicioInfo"
+    android:orientation="vertical">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.zolad.zoominimageview.ZoomInImageView
+            android:id="@+id/imgvEjercicio_InstructorAsignarEjercicioInfo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="30dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txtvNoActionNombre_InstructorAsignarEjercicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/txtvNombre_InstructorAsignarEjercicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del ejercicio"
+            android:textSize="25dp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="italic"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/txtvNoActionAparato_InstructorAsignarEjercicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aparato:"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/txtvAparato_InstructorAsignarEjercicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/txtvNoActionAparato_InstructorAsignarEjercicioInfo"
+            android:text="Nombre aparato"
+            android:layout_alignBaseline="@+id/txtvNoActionAparato_InstructorAsignarEjercicioInfo"
+            android:textSize="25dp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="italic"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/txtvNoActionArea_InstructorAsignarEjercicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Area:"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/txtvArea_InstructorAsignarEjercicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Area empleada"
+            android:textSize="25dp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="italic"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtvNoActionDescripcion_InstructorAsignarEjercicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descripcion:"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:layout_marginTop="10dp"
+            android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/txtvDescripcion_InstructorAsignarEjercicioInfo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="informacion del ejerciciooooo"
+        android:textSize="20dp"
+        android:layout_marginLeft="5dp"
+        android:textStyle="italic"
+        android:textColor="#000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColorHint="#000">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/etxtRepeticiones_InstructorAsignarEjercicioInfo"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="Repeticiones"
+                android:inputType="number"
+                android:textColor="#000"
+                android:textColorHint="#000"
+                android:backgroundTint="#000"
+                android:background="@drawable/apptheme_textfield_activated_holo_light"
+                android:maxLength="2" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/designSeries_InstructorAsignarEjercicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColorHint="#000">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/etxtSeries_InstructorAsignarEjercicioInfo"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:hint="Series"
+                android:inputType="number"
+                android:textColor="#000"
+                android:textColorHint="#000"
+                android:backgroundTint="#000"
+                android:background="@drawable/apptheme_textfield_activated_holo_light"
+                android:maxLength="2" />
+        </android.support.design.widget.TextInputLayout>
+    </LinearLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/designPeso_InstructorAsignarEjercicioInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColorHint="#000"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/etxtPeso_InstructorAsignarEjercicioInfo"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:hint="Peso(kg)"
+                android:inputType="number"
+                android:textColor="#000"
+                android:textColorHint="#000"
+                android:backgroundTint="#000"
+                android:background="@drawable/apptheme_textfield_activated_holo_light"
+                android:maxLength="2" />
+        </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnAsignar_InstructorAsignarEjercicioInfo"
+        android:layout_gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Asignar"
+        android:textAllCaps="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_box"
+        android:textColor="#000"
+        android:textSize="17dp" />
+        <Button
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Asignar"
+            android:textAllCaps="true"
+            android:background="@drawable/btn_box"
+            android:textColor="#000"
+            android:textSize="17dp" />
+
+    </LinearLayout>
+   </ScrollView>
+
+
+
+</LinearLayout>

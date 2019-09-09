@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EncuestaCodigoCliente"
+    android:background="@color/backgroundcolor">
+    <Button
+        android:id="@+id/btnInvisible_EncuestaCodigoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/txtvNoActionTitulo_EncuestaCodigoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informacion Instructor"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionTitulo_EncuestaCodigoCliente"/>
+    <TextView
+        android:id="@+id/txtvNoActionInstrucorA_EncuestaCodigoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instructor asignado:"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:layout_below="@+id/btnInvisible_EncuestaCodigoCliente"
+        android:layout_marginTop="-220dp"
+        android:layout_alignStart="@+id/btnInvisible_EncuestaCodigoCliente"
+        android:layout_marginLeft="-100dp"
+        android:visibility="invisible"/>
+    <ImageView
+        android:id="@+id/imgVInstructor_EncuestaCodigoCliente"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_below="@+id/btnInvisible_EncuestaCodigoCliente"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-220dp"/>
+    <TextView
+        android:id="@+id/txtvNoActionNombre_EncuestaCodigoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgVInstructor_EncuestaCodigoCliente"
+        android:layout_marginTop="15dp"
+        android:layout_alignStart="@+id/txtvNoActionInstrucorA_EncuestaCodigoCliente"
+        android:text="Nombre:"
+        android:textSize="15dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/txtvNombre_EncuestaCodigoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtvNoActionNombre_EncuestaCodigoCliente"
+        android:layout_marginTop="2dp"
+        android:text="Nombre(s)"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:layout_alignStart="@+id/txtvNoActionNombre_EncuestaCodigoCliente"/>
+
+    <TextView
+        android:id="@+id/txtvApellido_EncuestaCodigoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtvNoActionNombre_EncuestaCodigoCliente"
+        android:layout_marginTop="2dp"
+        android:text="Apellido(s)"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:layout_toRightOf="@+id/txtvNombre_EncuestaCodigoCliente"
+        android:layout_marginLeft="10dp"/>
+
+        <TextView
+        android:id="@+id/txtvNoActionRegistro_EncuestaCodigoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtvNombre_EncuestaCodigoCliente"
+        android:layout_alignStart="@+id/txtvNoActionInstrucorA_EncuestaCodigoCliente"
+        android:text="Registro:"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"    />
+    <TextView
+        android:id="@+id/txtvRegistro_EncuestaCodigoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtvNoActionRegistro_EncuestaCodigoCliente"
+        android:layout_alignStart="@+id/txtvNoActionRegistro_EncuestaCodigoCliente"
+        android:layout_marginTop="2dp"
+        android:text="ºregistro "
+        android:textSize="20dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/txtvNoActionCodigo_EncuestaCodigoCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtvRegistro_EncuestaCodigoCliente"
+        android:layout_alignStart="@+id/txtvNoActionInstrucorA_EncuestaCodigoCliente"
+        android:text="Codigo:"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:layout_marginTop="20dp"/>
+    <EditText
+        android:id="@+id/etxtCodigo_EncuestaCodigoCliente"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txtvNoActionCodigo_EncuestaCodigoCliente"
+        android:layout_below="@+id/txtvRegistro_EncuestaCodigoCliente"
+        android:textColor="@color/negro"
+        android:layout_alignBaseline="@+id/txtvNoActionCodigo_EncuestaCodigoCliente" />
+
+    <TextView
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:text="El codigo sera obtenido al encotrarse con su instructor asignado"
+        android:layout_below="@+id/etxtCodigo_EncuestaCodigoCliente"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/negro"/>
+    <Button
+        android:id="@+id/btnContinuar_EncuestaCodigoCliente"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Continuar"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_box"
+        />
+
+</RelativeLayout>

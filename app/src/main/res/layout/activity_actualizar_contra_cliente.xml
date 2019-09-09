@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActualizarContraCliente"
+    android:background="@color/backgroundcolor">
+
+    <TextView
+        android:id="@+id/txtvNoActionActualizarContra_ActualizarContraCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar Contraseña"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionActualizarContra_ActualizarContraCliente"/>
+
+    <Button
+        android:id="@+id/btnInvisible_ActualizarContraClient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        />
+    
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designContraseña_ActualizarContraCliente"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnInvisible_ActualizarContraClient"
+        android:layout_marginTop="-180dp"
+        app:passwordToggleEnabled="true"
+        android:textColorHint="#000"
+        app:passwordToggleTint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtContraseña_ActualizarContraCliente"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Nueva Contraseña"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:inputType="textPassword"
+            android:backgroundTint="#000"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designContraseñaConfirm_ActualizarContraCliente"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/designContraseña_ActualizarContraCliente"
+        android:layout_marginTop="20dp"
+        app:passwordToggleEnabled="true"
+        android:textColorHint="#000"
+        app:passwordToggleTint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtContraseñaConfirm_ActualizarContraCliente"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Confirmar Contraseña"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:inputType="textPassword"
+            android:backgroundTint="#000"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/txtvinfo_ActualizarContraCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debe contener:"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/designContraseñaConfirm_ActualizarContraCliente"
+        android:layout_alignStart="@+id/designContraseñaConfirm_ActualizarContraCliente"
+        android:layout_alignLeft="@+id/designContraseñaConfirm_ActualizarContraCliente"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000"
+        />
+    <TextView
+        android:id="@+id/txtvCaracteres_ActualizarContraCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mínimo 6 caracteres"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/txtvinfo_ActualizarContraCliente"
+        android:layout_alignStart="@+id/txtvinfo_ActualizarContraCliente"
+        android:layout_alignLeft="@+id/txtvinfo_ActualizarContraCliente"
+        android:layout_marginLeft="10dp"
+        android:textColor="#afafaf"
+        />
+    <TextView
+        android:id="@+id/txtvNumero_ActualizarContraCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mínimo 1 número"
+        android:layout_below="@+id/txtvCaracteres_ActualizarContraCliente"
+        android:layout_alignStart="@+id/txtvCaracteres_ActualizarContraCliente"
+        android:layout_alignLeft="@+id/txtvCaracteres_ActualizarContraCliente"
+        android:textColor="#afafaf"
+        />
+    <Button
+        android:id="@+id/btnContinuar_ActualizarContraCliente"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Actualizar"
+        android:layout_below="@+id/txtvNumero_ActualizarContraCliente"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/btn_box"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgray">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/layoutValores_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtvNoActionGrasas_FragmentDieta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grasas"
+                        android:textColor="#000"/>
+                    <TextView
+                        android:id="@+id/txtvGrasas_FragmentDieta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#000" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtvNoActionCarbh_FragmentDieta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carbohidratos"
+                        android:textColor="#000" />
+                    <TextView
+                        android:id="@+id/txtvCarbh_FragmentDieta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtvNoActionProt_FragmentDieta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proteinas"
+                        android:textColor="#000" />
+                    <TextView
+                        android:id="@+id/txtvProt_FragmentDieta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#000" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtvNoActionCalorias_FragmentDieta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calorias"
+                        android:textColor="#000" />
+                    <TextView
+                        android:id="@+id/txtvCalorias_FragmentDieta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgvDesayuno_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/layoutValores_FragmentDieta"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/lightgray"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/layoutValores_FragmentDieta"
+                android:layout_marginTop="30dp"
+                android:background="#000"/>
+            <TextView
+                android:id="@+id/txtvNoActionDesayuno_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Desayuno"
+                android:layout_below="@+id/layoutValores_FragmentDieta"
+                android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDieta"
+                android:textSize="27dp"
+                android:textColor="#fff"
+                android:layout_marginTop="30dp"
+                android:gravity="center"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:id="@+id/listvDesayuno_FragmentDieta"
+                android:layout_below="@+id/txtvNoActionDesayuno_FragmentDieta"
+                android:layout_alignStart="@+id/imgvDesayuno_FragmentDieta"
+                android:layout_alignBottom="@+id/imgvDesayuno_FragmentDieta"
+                />
+
+            <ImageView
+                android:id="@+id/imgvAlmuerzo_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/txtvNoActionALmuerzo_FragmentDieta"
+                android:layout_centerHorizontal="true"
+                android:background="@color/lightgray" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/imgvDesayuno_FragmentDieta"
+                android:background="#000"/>
+
+            <TextView
+                android:id="@+id/txtvNoActionALmuerzo_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almuerzo"
+                android:layout_below="@+id/imgvDesayuno_FragmentDieta"
+                android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDieta"
+                android:textSize="27dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listvAlmuerzo_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/txtvNoActionALmuerzo_FragmentDieta"
+                android:layout_alignBottom="@+id/imgvAlmuerzo_FragmentDieta" />
+
+            <ImageView
+                android:id="@+id/imgvCena_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/imgvAlmuerzo_FragmentDieta"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/lightgray" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/imgvAlmuerzo_FragmentDieta"
+                android:layout_alignStart="@+id/imgvDesayuno_FragmentDieta"
+                android:background="#000000"/>
+
+            <TextView
+                android:id="@+id/txtvNoActionCena_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Cena"
+                android:layout_below="@+id/imgvAlmuerzo_FragmentDieta"
+                android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDieta"
+                android:textSize="27dp"
+                android:textColor="#fff" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listvCena_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_below="@+id/txtvNoActionCena_FragmentDieta"
+                android:layout_alignBottom="@+id/imgvCena_FragmentDieta" />
+
+            <ImageView
+                android:id="@+id/imgvPasabocas_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/imgvCena_FragmentDieta"
+                android:layout_centerHorizontal="true"
+                android:background="@color/lightgray" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/imgvCena_FragmentDieta"
+                android:background="#000"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgvPasabocas_FragmentDieta"
+                android:visibility="invisible"/>
+
+
+
+            <TextView
+                android:id="@+id/txtvNoActionPasabocas_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pasabocas/otros"
+                android:gravity="center"
+                android:layout_below="@+id/imgvCena_FragmentDieta"
+                android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDieta"
+                android:textSize="27dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listvPasabocas_FragmentDieta"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_below="@+id/txtvNoActionPasabocas_FragmentDieta"
+                android:layout_alignStart="@+id/imgvPasabocas_FragmentDieta"
+                android:layout_alignBottom="@+id/imgvPasabocas_FragmentDieta" />
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Editar dieta"
+                android:textAllCaps="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/listvPasabocas_FragmentDieta"
+                android:background="@drawable/btn_box"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

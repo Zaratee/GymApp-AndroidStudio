@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructorRealizInfo">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.zolad.zoominimageview.ZoomInImageView
+                android:id="@+id/imgvEjercicio_InstructorRealizInfo"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="30dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre:"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:textColor="#000"/>
+
+                    <TextView
+                        android:id="@+id/txtvNombre_InstructorRealizInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre del ejercicio"
+                        android:textSize="25dp"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="italic"
+                        android:textColor="#000"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:id="@+id/txtvNoActionFecha_InstructorRealizInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fecha:"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:textColor="#000"/>
+
+                    <TextView
+                        android:id="@+id/txtvFecha_InstructorRealizInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/txtvNoActionFecha_InstructorRealizInfo"
+                        android:text=""
+                        android:layout_alignBaseline="@+id/txtvNoActionFecha_InstructorRealizInfo"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="italic"
+                        android:textColor="#000"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:layout_marginRight="20dp">
+
+                        <TextView
+                            android:id="@+id/txtvNoActionDia_InstructorRealizInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dia:"
+                            android:textColor="#000"
+                            android:textStyle="bold"
+                            android:typeface="serif" />
+
+                        <TextView
+                            android:id="@+id/txtvDia_InstructorRealizInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBaseline="@+id/txtvNoActionFecha_InstructorRealizInfo"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/txtvNoActionFecha_InstructorRealizInfo"
+                            android:text=""
+                            android:textColor="#000"
+                            android:textSize="25dp"
+                            android:textStyle="italic" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Asignado por instructor"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Series:"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:textColor="#000"/>
+
+                    <TextView
+                        android:id="@+id/txtvSeries_InstructorRealizInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="25dp"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="italic"
+                        android:textColor="#000"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Repeticiones:"
+                            android:textStyle="bold"
+                            android:typeface="serif"
+                            android:textColor="#000"/>
+
+                        <TextView
+                            android:id="@+id/txtvRepeticiones_InstructorRealizInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="25dp"
+                            android:layout_marginLeft="5dp"
+                            android:textStyle="italic"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Realizado"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Series:"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:textColor="#000"/>
+
+                    <TextView
+                        android:id="@+id/txtvSeriesReal_InstructorRealizInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="25dp"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="italic"
+                        android:textColor="#000"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Repeticiones:"
+                            android:textStyle="bold"
+                            android:typeface="serif"
+                            android:textColor="#000"/>
+
+                        <TextView
+                            android:id="@+id/txtvRepeticionesReal_InstructorRealizInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="25dp"
+                            android:layout_marginLeft="5dp"
+                            android:textStyle="italic"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Peso real:"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:textColor="#000"/>
+
+                    <TextView
+                        android:id="@+id/txtvPesoReal_InstructorRealizInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="25dp"
+                        android:layout_marginLeft="5dp"
+                        android:textStyle="italic"
+                        android:textColor="#000"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Peso asignado:"
+                            android:textStyle="bold"
+                            android:typeface="serif"
+                            android:textColor="#000"/>
+
+                        <TextView
+                            android:id="@+id/txtvPesoInstructor_InstructorRealizInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textSize="25dp"
+                            android:textStyle="italic"
+                            android:textColor="#000"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Etapa:"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:id="@+id/txtvEtapa_InstructorRealizInfo"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="italic"
+                    android:textColor="#000"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dificultad:"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#000"/>
+
+                <TextView
+                    android:id="@+id/txtvDificultad_InstructorRealizInfo"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:textStyle="italic"
+                    android:textColor="#000"/>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

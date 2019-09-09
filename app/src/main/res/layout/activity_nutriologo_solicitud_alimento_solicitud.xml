@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NutriologoSolicitudAlimentoSolicitud">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtvNoActionTitulo_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Solicitud Alimento"
+                android:textSize="25dp"
+                android:textColor="#000"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                />
+            <View
+                android:id="@+id/view_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:background="@color/lightgray2"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:layout_below="@+id/txtvNoActionTitulo_NutriologoSolicitudAlimentoSolicitud"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designNombre_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/view_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="20dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtNombre_NutriologoSolicitudAlimentoSolicitud"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designMarca_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/designNombre_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtMarca_NutriologoSolicitudAlimentoSolicitud"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Marca"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designTipo_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/designMarca_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtTipo_NutriologoSolicitudAlimentoSolicitud"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Tipo"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designCantidad_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/designTipo_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_below="@+id/designTipo_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000"
+                android:layout_alignLeft="@+id/designTipo_NutriologoSolicitudAlimentoSolicitud">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtCantidad_NutriologoSolicitudAlimentoSolicitud"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Cantidad"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:inputType="number"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designMedida_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/designCantidad_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_below="@+id/designTipo_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtMedida_NutriologoSolicitudAlimentoSolicitud"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Medida"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txtvNoActionCantidad_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cantidad de:"
+                android:textSize="17dp"
+                android:textColor="#000"
+                android:layout_alignStart="@+id/designCantidad_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_below="@+id/designCantidad_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="10dp"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designCarboh_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/txtvNoActionCantidad_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_below="@+id/txtvNoActionCantidad_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtCarboh_NutriologoSolicitudAlimentoSolicitud"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Carboh."
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:inputType="number"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designGrasas_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/designCarboh_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_below="@+id/txtvNoActionCantidad_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtGrasas_NutriologoSolicitudAlimentoSolicitud"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Grasas"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:inputType="number"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designProteinas_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/txtvNoActionCantidad_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_below="@+id/designCarboh_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtProteinas_NutriologoSolicitudAlimentoSolicitud"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Proteinas"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:inputType="number"
+                    android:backgroundTint="#000"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/designCalorias_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/designCarboh_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_below="@+id/designGrasas_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="10dp"
+                android:textColorHint="#000">
+
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/etxtCalorias_NutriologoSolicitudAlimentoSolicitud"
+                    android:layout_width="125dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Calorias"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
+                    android:backgroundTint="#000"
+                    android:inputType="number"
+                    android:background="@drawable/apptheme_textfield_activated_holo_light"
+                    android:gravity="center"/>
+            </android.support.design.widget.TextInputLayout>
+
+
+            <Button
+                android:id="@+id/btnAgregar_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Agregar"
+                android:textAllCaps="true"
+                android:layout_toRightOf="@+id/btnEliminar_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_below="@+id/designCalorias_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_box"
+                android:textColor="#000"
+                android:textSize="17dp"/>
+
+            <Button
+                android:id="@+id/btnEliminar_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Eliminar"
+                android:textAllCaps="true"
+                android:layout_alignStart="@+id/designProteinas_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_below="@+id/designCalorias_NutriologoSolicitudAlimentoSolicitud"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/btn_box"
+                android:textColor="#000"
+                android:textSize="17dp"/>
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Agregar"
+                android:textAllCaps="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btnAgregar_NutriologoSolicitudAlimentoSolicitud"
+                android:background="@drawable/btn_box"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:visibility="invisible"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>
+

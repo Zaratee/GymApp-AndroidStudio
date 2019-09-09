@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClientePerfil"
+    android:background="@color/backgroundcolor"
+    android:layout_centerInParent="true">
+
+    <TextView
+        android:id="@+id/txtvNoActionTitulo_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perfil"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+
+    <View
+        android:id="@+id/view_ClientePerfil"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionTitulo_ClientePerfil"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_ClientePerfil"
+        android:gravity="center">
+
+    <ImageView
+        android:id="@+id/imgVFotoCliente_PerfilCliente"
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/view_ClientePerfil"
+        android:layout_alignStart="@+id/view_ClientePerfil"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignLeft="@+id/view_ClientePerfil" />
+
+    <TextView
+        android:id="@+id/txtvNoActionNombre_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre"
+        android:layout_below="@+id/imgVFotoCliente_PerfilCliente"
+        android:layout_alignStart="@+id/imgVFotoCliente_PerfilCliente"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/txtvNombre_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_toRightOf="@+id/txtvNoActionNombre_ClientePerfil"
+        android:layout_alignBaseline="@+id/txtvNoActionNombre_ClientePerfil"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"/>
+
+
+    <TextView
+        android:id="@+id/txtvNoActionCodigo_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registro"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:layout_alignBaseline="@+id/txtvCodigo_ClientePerfil"
+        android:layout_alignStart="@+id/txtvNoActionNombre_ClientePerfil"
+        android:layout_marginTop="7dp"
+        />
+    <TextView
+        android:id="@+id/txtvCodigo_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0000"
+        android:layout_below="@+id/txtvNombre_ClientePerfil"
+        android:layout_toRightOf="@+id/txtvNoActionCodigo_ClientePerfil"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/txtvNoActionNutri_ClientePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nutriologo"
+            android:textSize="15dp"
+            android:textColor="#000"
+            android:layout_below="@+id/txtvNoActionCodigo_ClientePerfil"
+            android:layout_alignStart="@+id/txtvNoActionCodigo_ClientePerfil"
+            android:layout_marginTop="17dp"
+            />
+        <TextView
+            android:id="@+id/txtvNutri_ClientePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000"
+            android:layout_alignBaseline="@+id/txtvNoActionNutri_ClientePerfil"
+            android:layout_toRightOf="@+id/txtvNoActionNutri_ClientePerfil"
+            android:textSize="25dp"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"/>
+        <ImageView
+            android:id="@+id/btnInfoNutri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_help_outline_black_24dp"
+            android:layout_toRightOf="@+id/txtvNutri_ClientePerfil"
+            android:layout_alignTop="@+id/txtvNutri_ClientePerfil"/>
+
+        <TextView
+            android:id="@+id/txtvNoActionInst_ClientePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Instructor"
+            android:textSize="15dp"
+            android:textColor="#000"
+            android:layout_below="@+id/txtvNoActionNutri_ClientePerfil"
+            android:layout_alignStart="@+id/txtvNoActionCodigo_ClientePerfil"
+            android:layout_marginTop="17dp"
+            />
+        <TextView
+            android:id="@+id/txtvInst_ClientePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0000"
+            android:layout_alignBaseline="@+id/txtvNoActionInst_ClientePerfil"
+            android:layout_toRightOf="@+id/txtvNoActionNutri_ClientePerfil"
+            android:textSize="25dp"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"/>
+        <ImageView
+            android:id="@+id/btninfoInst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_help_outline_black_24dp"
+            android:layout_toRightOf="@+id/txtvInst_ClientePerfil"
+            android:layout_alignTop="@+id/txtvInst_ClientePerfil"/>
+
+
+    <TextView
+        android:id="@+id/txtvNoActionEdad_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edad:"
+        android:layout_toRightOf="@+id/imgVFotoCliente_PerfilCliente"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@+id/view_ClientePerfil"
+        android:textSize="15dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/txtvEdad_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@+id/txtvNoActionEdad_ClientePerfil"
+        android:layout_alignStart="@+id/txtvNoActionEdad_ClientePerfil"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/txtvNoActionPeso_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Peso:"
+        android:layout_toRightOf="@+id/txtvNoActionEdad_ClientePerfil"
+        android:layout_marginTop="5dp"
+        android:layout_alignBaseline="@+id/txtvNoActionEdad_ClientePerfil"
+        android:layout_marginLeft="50dp"
+        android:textSize="15dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/txtvPeso_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_alignStart="@+id/txtvNoActionPeso_ClientePerfil"
+        android:layout_alignBaseline="@+id/txtvEdad_ClientePerfil"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" kg"
+        android:layout_toRightOf="@+id/txtvPeso_ClientePerfil"
+        android:layout_alignBaseline="@+id/txtvEdad_ClientePerfil"
+        android:textSize="17dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/txtvNoActionGrasa_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grasa:"
+        android:layout_below="@+id/txtvEdad_ClientePerfil"
+        android:layout_alignStart="@+id/txtvEdad_ClientePerfil"
+        android:layout_marginTop="14dp"
+        android:textSize="15dp"
+        android:textColor="#000"/>
+    <TextView
+        android:id="@+id/txtvMasa_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_alignStart="@+id/txtvNoActionGrasa_ClientePerfil"
+        android:layout_below="@+id/txtvNoActionGrasa_ClientePerfil"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" %"
+        android:layout_toRightOf="@+id/txtvMasa_ClientePerfil"
+        android:layout_below="@+id/txtvNoActionGrasa_ClientePerfil"
+        android:textSize="17dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/txtvNoActionEstatura_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Estatura:"
+        android:layout_below="@+id/txtvPeso_ClientePerfil"
+        android:layout_alignStart="@+id/txtvNoActionPeso_ClientePerfil"
+        android:layout_marginTop="5dp"
+        android:layout_alignBaseline="@+id/txtvNoActionGrasa_ClientePerfil"
+        android:textSize="15dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/txtvEstatura_ClientePerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_alignStart="@+id/txtvNoActionEstatura_ClientePerfil"
+        android:layout_alignBaseline="@+id/txtvMasa_ClientePerfil"
+        android:textSize="20dp"
+        android:textColor="#000"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" cm"
+        android:layout_toRightOf="@+id/txtvEstatura_ClientePerfil"
+        android:layout_alignBaseline="@+id/txtvMasa_ClientePerfil"
+        android:textSize="15dp"
+        android:textColor="#000"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/txtvNoActionInst_ClientePerfil"
+        android:layout_centerHorizontal="true"
+        android:weightSum="2"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvProgreso_ClientePerfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvProgreso_ClientePerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Progreso"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"/>
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvCodigo_ClientePerfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvCodigoo_ClientePerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Código"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"/>
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:layout_weight="1">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvActualizarContra_ClientePerfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvActualizarContra_ClientePerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Actualizar contraseña"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"/>
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvCerrarSesion_ClientePerfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvCerrarSesion_ClientePerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Cerrar Sesion"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"/>
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

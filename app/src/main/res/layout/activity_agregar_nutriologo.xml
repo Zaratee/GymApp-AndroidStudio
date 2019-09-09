@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgregarNutriologo"
+    android:background="@color/backgroundcolor">
+
+    <TextView
+        android:id="@+id/txtvNoActionAgregar_AgregarNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Agregar Nutriologo"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/View_AgregarNutriologo"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionAgregar_AgregarNutriologo"/>
+    <Button
+        android:id="@+id/btnInvisible_AgregarNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:layout_centerInParent="true"/>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designNombre_AgregarNutriologo"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btnInvisible_AgregarNutriologo"
+        android:layout_marginTop="-200dp"
+        android:textColorHint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtNombre_AgregarNutriologo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designApellidos_AgregarNutriologo"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/designNombre_AgregarNutriologo"
+        android:layout_marginTop="12dp"
+        app:passwordToggleEnabled="true"
+        android:textColorHint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtApellidos_AgregarNutriologo"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Apellidos"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designTelefono_AgregarNutriologo"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:passwordToggleEnabled="true"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/designApellidos_AgregarNutriologo"
+        android:textColorHint="#000"
+        app:passwordToggleTint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtTelefono_AgregarNutriologo"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono"
+            android:inputType="number"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:maxLength="10"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtvNoActionFoto_AgregarNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/designTelefono_AgregarNutriologo"
+        android:layout_alignEnd="@+id/designTelefono_AgregarNutriologo"
+        android:layout_marginRight="30dp"
+        android:text="Foto:"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:layout_marginTop="12dp"/>
+    <RadioGroup
+        android:id="@+id/radioGroupFoto_AgregarNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtvNoActionFoto_AgregarNutriologo"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:layout_alignStart="@+id/txtvNoActionFoto_AgregarNutriologo">
+
+        <RadioButton
+            android:id="@+id/radioButtonSi_AgregarNutriologo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Si"
+            android:textColor="#000"
+            android:textColorHighlight="#000"
+            android:textColorLink="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:button="@drawable/radiobutton"
+            android:paddingLeft="4dp" />
+        <RadioButton
+            android:id="@+id/radioButtonNo_AgregarNutriologo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No"
+            android:button="@drawable/radiobutton"
+            android:paddingLeft="4dp"/>
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/txtvNoActionHorario_AgregarNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/designTelefono_AgregarNutriologo"
+        android:layout_alignStart="@+id/designTelefono_AgregarNutriologo"
+        android:text="Horario:"
+        android:textSize="18dp"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupHorario_AgregarNutriologo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtvNoActionHorario_AgregarNutriologo"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:layout_alignStart="@+id/designTelefono_AgregarNutriologo">
+
+        <RadioButton
+            android:id="@+id/radioButtonMatutino_AgregarNutriologo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Matutino"
+            android:textColor="#000"
+            android:textColorHighlight="#000"
+            android:textColorLink="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:button="@drawable/radiobutton"
+            android:paddingLeft="4dp"
+            />
+        <RadioButton
+            android:id="@+id/radioButtonVespertino_AgregarNutriologo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vespertino"
+            android:button="@drawable/radiobutton"
+            android:paddingLeft="4dp"/>
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btnAgregarUsuario_AgregarNutriologo"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Agregar"
+        android:background="@drawable/btn_box"
+        android:textColor="#000"
+        android:textSize="17dp"
+        android:layout_below="@+id/radioGroupHorario_AgregarNutriologo"
+        android:layout_marginTop="50dp"
+        />
+
+
+
+</RelativeLayout>

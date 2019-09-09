@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClienteEjercicio">
+
+    <Button
+        android:id="@+id/btnChat_ClienteEjercicio"
+        android:layout_width="55dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_chat_black_24dp"/>
+    <Button
+        android:id="@+id/btnAyuda_ClienteEjercicio"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_help_outline_black_24dp"
+        android:textSize="17dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnChat_ClienteEjercicio"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/txtvNombre_ClienteEjercicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre de Ejercicio"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:textColor="#000"
+                android:textStyle="bold"/>
+
+
+
+        <TextView
+            android:id="@+id/txtvAparato_ClienteEjercicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aparato"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="#000"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp">
+            <Chronometer
+                android:id="@+id/chrono_ClienteEjercicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="40dp"
+                android:textColor="#000"
+                android:format="00:00:00"/>
+            <Chronometer
+                android:id="@+id/chrono2_ClienteEjercicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textSize="40dp"
+                android:textColor="#000"
+                android:format="00:00:00"
+                android:visibility="invisible"/>
+            <TextView
+                android:id="@+id/txtvTiempoDescanso_ClienteEjercicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="60dp"
+                android:layout_centerHorizontal="true"
+                android:textColor="#000"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rutina"
+            android:layout_gravity="center"
+            android:layout_marginTop="45dp"
+            android:textColor="#000"
+            android:textSize="23dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Repeticiones"
+                    android:textColor="#000"/>
+                <TextView
+                    android:id="@+id/txtvRepeticiones_ClienteEjercicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="23dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Series"
+                    android:textColor="#000"/>
+                <TextView
+                    android:id="@+id/txtvSeries_ClienteEjercicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="23dp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Peso"
+                    android:textColor="#000"/>
+                <TextView
+                    android:id="@+id/txtvPeso_ClienteEjercicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="23dp"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Supuesto realizado"
+            android:layout_gravity="center"
+            android:textColor="#000"
+            android:textSize="23dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Repeticiones"
+                    android:textColor="#000"/>
+                <TextView
+                    android:id="@+id/txtvRepeticionesReal_ClienteEjercicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="23dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Series"
+                    android:textColor="#000"/>
+                <TextView
+                    android:id="@+id/txtvSeriesReal_ClienteEjercicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="#000"
+                    android:textSize="23dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp">
+            <Button
+                android:id="@+id/btnSaltar_ClienteEjercicio"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Parar"
+                android:textAllCaps="true"
+                android:background="@drawable/bntsaltarejer"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:layout_gravity="center"
+                />
+            <Button
+                android:id="@+id/btnInicio_ClienteEjercicio"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Inicio"
+                android:textAllCaps="true"
+                android:background="@drawable/btnejer"
+                android:textColor="#FFF"
+                android:textSize="14dp"
+                android:layout_gravity="center" />
+            <Button
+                android:id="@+id/btnPlay_ClienteEjercicio"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:text="Serie"
+                android:textAllCaps="true"
+                android:background="@drawable/btnseriejer"
+                android:textColor="#000"
+                android:textSize="14dp"
+                android:layout_gravity="center"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

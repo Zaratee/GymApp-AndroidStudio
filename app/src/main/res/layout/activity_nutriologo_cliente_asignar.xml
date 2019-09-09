@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NutriologoClienteAsignar"
+    android:background="@color/lightgray">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnChat_NutriologoClienteAsignar"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/ic_chat_black_24dp"/>
+            <LinearLayout
+                android:id="@+id/layoutValores_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_below="@+id/btnChat_NutriologoClienteAsignar">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtvNoActionGrasas_NutriologoClienteAsignar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grasas"
+                        android:textColor="#000"/>
+                    <TextView
+                        android:id="@+id/txtvGrasas_NutriologoClienteAsignar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#000" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtvNoActionCarbh_NutriologoClienteAsignar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carbohidratos"
+                        android:textColor="#000" />
+                    <TextView
+                        android:id="@+id/txtvCarbh_NutriologoClienteAsignar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtvNoActionProt_NutriologoClienteAsignar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Proteinas"
+                        android:textColor="#000" />
+                    <TextView
+                        android:id="@+id/txtvProt_NutriologoClienteAsignar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#000" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtvNoActionCalorias_NutriologoClienteAsignar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calorias"
+                        android:textColor="#000" />
+                    <TextView
+                        android:id="@+id/txtvCalorias_NutriologoClienteAsignar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#000" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/layoutValores_NutriologoClienteAsignar"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/lightgray"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/layoutValores_NutriologoClienteAsignar"
+                android:layout_marginTop="30dp"
+                android:background="#000"/>
+            <Button
+                android:id="@+id/btnAgregarDesayuno_NutriologoClienteAsignar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_add_circle_outline_black_24dp"
+                android:layout_below="@+id/layoutValores_NutriologoClienteAsignar"
+                android:layout_alignStart="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                android:layout_marginTop="35dp"
+                />
+
+            <TextView
+                android:id="@+id/txtvNoActionDesayuno_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Desayuno"
+                android:layout_below="@+id/layoutValores_NutriologoClienteAsignar"
+                android:layout_toRightOf="@+id/btnAgregarDesayuno_NutriologoClienteAsignar"
+                android:textSize="27dp"
+                android:textColor="#fff"
+                android:layout_marginTop="30dp"
+                android:gravity="center"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:id="@+id/listvDesayuno_NutriologoClienteAsignar"
+                android:layout_below="@+id/txtvNoActionDesayuno_NutriologoClienteAsignar"
+                android:layout_alignStart="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                android:layout_alignBottom="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                />
+
+            <ImageView
+                android:id="@+id/imgvAlmuerzo_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/lightgray" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                android:background="#000"/>
+
+            <Button
+                android:id="@+id/btnAgregarAlmuerzo_NutriologoClienteAsignar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_add_circle_outline_black_24dp"
+                android:layout_below="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/txtvNoActionALmuerzo_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Almuerzo"
+                android:layout_below="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                android:layout_toRightOf="@+id/btnAgregarDesayuno_NutriologoClienteAsignar"
+                android:textSize="27dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listvAlmuerzo_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/txtvNoActionALmuerzo_NutriologoClienteAsignar"
+                android:layout_alignBottom="@+id/imgvAlmuerzo_NutriologoClienteAsignar" />
+
+            <ImageView
+                android:id="@+id/imgvCena_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/imgvAlmuerzo_NutriologoClienteAsignar"
+                android:layout_marginTop="30dp"
+                android:layout_centerHorizontal="true"
+                android:background="@color/lightgray" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/imgvAlmuerzo_NutriologoClienteAsignar"
+                android:layout_alignStart="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                android:background="#000000"/>
+
+            <Button
+                android:id="@+id/btnAgregarCena_NutriologoClienteAsignar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_add_circle_outline_black_24dp"
+                android:layout_below="@+id/imgvAlmuerzo_NutriologoClienteAsignar"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/txtvNoActionCena_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Cena"
+                android:layout_below="@+id/imgvAlmuerzo_NutriologoClienteAsignar"
+                android:layout_toRightOf="@+id/btnAgregarDesayuno_NutriologoClienteAsignar"
+                android:textSize="27dp"
+                android:textColor="#fff" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listvCena_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_below="@+id/txtvNoActionCena_NutriologoClienteAsignar"
+                android:layout_alignBottom="@+id/imgvCena_NutriologoClienteAsignar" />
+
+            <ImageView
+                android:id="@+id/imgvPasabocas_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_below="@+id/imgvCena_NutriologoClienteAsignar"
+                android:layout_centerHorizontal="true"
+                android:background="@color/lightgray" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_below="@+id/imgvCena_NutriologoClienteAsignar"
+                android:background="#000"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgvPasabocas_NutriologoClienteAsignar"
+                android:visibility="invisible"/>
+
+            <Button
+                android:id="@+id/btnAgregarPasabocas_NutriologoClienteAsignar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_add_circle_outline_black_24dp"
+                android:layout_below="@+id/imgvCena_NutriologoClienteAsignar"
+                android:layout_alignStart="@+id/imgvPasabocas_NutriologoClienteAsignar"
+                android:layout_marginTop="4dp"/>
+
+            <TextView
+                android:id="@+id/txtvNoActionPasabocas_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pasabocas/otros"
+                android:gravity="center"
+                android:layout_below="@+id/imgvCena_NutriologoClienteAsignar"
+                android:layout_toRightOf="@+id/btnAgregarDesayuno_NutriologoClienteAsignar"
+                android:textSize="27dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listvPasabocas_NutriologoClienteAsignar"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_below="@+id/txtvNoActionPasabocas_NutriologoClienteAsignar"
+                android:layout_alignStart="@+id/imgvPasabocas_NutriologoClienteAsignar"
+                android:layout_alignBottom="@+id/imgvPasabocas_NutriologoClienteAsignar" />
+
+            <Button
+                android:id="@+id/btnEditarDieta_NutriologoClienteAsignar"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Editar dieta"
+                android:textAllCaps="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/listvPasabocas_NutriologoClienteAsignar"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/btn_box"
+                android:textColor="#000"
+                android:textSize="17dp"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Editar dieta"
+                android:textAllCaps="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/btnEditarDieta_NutriologoClienteAsignar"
+                android:background="@drawable/btn_box"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

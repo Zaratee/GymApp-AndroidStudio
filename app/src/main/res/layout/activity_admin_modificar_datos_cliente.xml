@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminModificarDatosCliente">
+
+
+    <TextView
+        android:id="@+id/txtvTitulo_AdminModificarDatosCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modificar Cliente"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/View_AdminModificarDatosCliente"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvTitulo_AdminModificarDatosCliente"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designNombre_AdminModificarDatosCliente"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/View_AdminModificarDatosCliente"
+        android:layout_marginTop="10dp"
+        android:textColorHint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtNombre_AdminModificarDatosCliente"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designApellido_AdminModificarDatosCliente"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/designNombre_AdminModificarDatosCliente"
+        android:textColorHint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtApellido_AdminModificarDatosCliente"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Apellido"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designTelefono_AdminModificarDatosCliente"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/designApellido_AdminModificarDatosCliente"
+        android:layout_below="@+id/designApellido_AdminModificarDatosCliente"
+        android:textColorHint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtTelefono_AdminModificarDatosCliente"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:hint="Telefono"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:backgroundTint="#000"
+            android:inputType="number"
+            android:maxLength="10"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/designRFID_AdminModificarDatosCliente"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/designApellido_AdminModificarDatosCliente"
+        android:layout_toRightOf="@+id/designTelefono_AdminModificarDatosCliente"
+        android:textColorHint="#000">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/etxtRFID_AdminModificarDatosCliente"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/apptheme_textfield_activated_holo_light"
+            android:backgroundTint="#000"
+            android:hint="RFID"
+            android:inputType="number"
+            android:maxLength="10"
+            android:textColor="#000"
+            android:textColorHint="#000" />
+    </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtvNoActionHorario_AdminModificarDatosCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Horario Actual:"
+        android:textColor="@color/negro"
+        android:layout_below="@+id/designTelefono_AdminModificarDatosCliente"
+        android:layout_alignStart="@+id/designTelefono_AdminModificarDatosCliente"
+        android:layout_marginTop="10dp" />
+    <TextView
+        android:id="@+id/txtvHorario_AdminModificarDatosCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vespertino"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/negro"
+        android:layout_below="@+id/txtvNoActionHorario_AdminModificarDatosCliente"
+        android:layout_alignStart="@+id/txtvNoActionHorario_AdminModificarDatosCliente"
+        android:layout_marginTop="10dp" />
+
+    <CheckBox
+        android:id="@+id/chkboxCambiarHorario_AdminModificarNutriologo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@+id/txtvHorario_AdminModificarDatosCliente"
+        android:layout_alignStart="@+id/txtvHorario_AdminModificarDatosCliente"
+        android:layout_marginTop="10dp"
+        />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/imgvUsuario_AdminModificarDatosCliente"
+        android:layout_width="83dp"
+        android:layout_height="80dp"
+        app:civ_shadow="true"
+        app:civ_shadow_radius="1"
+        app:civ_shadow_color="@color/negro"
+        app:civ_border_width="4dp"
+        app:civ_border_color="#EEEE"
+        android:src="@drawable/logonb"
+        android:layout_below="@+id/txtvNoActionHorario_AdminModificarDatosCliente"
+        android:layout_toRightOf="@+id/txtvNoActionHorario_AdminModificarDatosCliente"
+        android:layout_marginLeft="60dp"/>
+
+    <Button
+        android:id="@+id/btnTomarFoto_AdminModificarDatosCliente"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Tomar Foto"
+        android:layout_below="@+id/imgvUsuario_AdminModificarDatosCliente"
+        android:layout_alignStart="@+id/imgvUsuario_AdminModificarDatosCliente"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_box"
+        />
+    <Button
+        android:id="@+id/btnCambiarNutriologo_AdminModificarDatosCliente"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Cambiar nutriologo"
+        android:layout_below="@+id/btnTomarFoto_AdminModificarDatosCliente"
+        android:layout_alignStart="@+id/btnTomarFoto_AdminModificarDatosCliente"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/btn_box"
+        />
+    <Button
+        android:id="@+id/btnCambiarCodigo_AdminModificarDatosCliente"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Cambiar código"
+        android:textSize="16dp"
+        android:layout_alignBaseline="@+id/btnTomarFoto_AdminModificarDatosCliente"
+        android:layout_alignStart="@+id/chkboxCambiarHorario_AdminModificarNutriologo"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_box"
+        />
+
+    <Button
+        android:id="@+id/btnCambiarInstructor_AdminModificarDatosCliente"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Cambiar instructor"
+        android:layout_alignBaseline="@+id/btnCambiarNutriologo_AdminModificarDatosCliente"
+        android:layout_alignStart="@+id/chkboxCambiarHorario_AdminModificarNutriologo"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_box"
+        />
+
+    <Button
+        android:id="@+id/btnModificarCliente_AdminModificarDatosCliente"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Modificar"
+        android:background="@drawable/btn_box"
+        android:textColor="#000"
+        android:textSize="17dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item android:id="@+id/navEjercicio_bottom"
+            android:icon="@drawable/ic_fitness_center_black_24dp"
+            android:title="Ejercicio"/>
+        <item android:id="@+id/navRutina_bottom"
+            android:icon="@drawable/ic_format_list_bulleted_black_24dp"
+            android:title="Rutina"/>
+</menu>

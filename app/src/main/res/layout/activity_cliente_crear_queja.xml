@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClienteCrearQueja"
+    android:background="@color/backgroundcolor">
+    <TextView
+        android:id="@+id/txtvTitulo_ClienteCrearQueja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Queja"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvTitulo_ClienteCrearQueja"/>
+
+
+    <Button
+        android:id="@+id/btnInvisible_ClienteCrearQueja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+
+
+    <EditText
+        android:id="@+id/etxtQueja_ClienteCrearQueja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnInvisible_ClienteCrearQueja"
+        android:layout_alignStart="@+id/btnInvisible_ClienteCrearQueja"
+        android:ems="13"
+        android:lines="6"
+        android:layout_marginTop="-220dp"
+        android:layout_marginLeft="-100dp"
+        android:gravity="top"
+        android:hint="Escribir queja"
+        android:background="@drawable/etxt_box"
+        android:padding="10dp"
+        android:textColorHint="@color/negro"/>
+
+    <Button
+        android:id="@+id/btnEnviar_ClienteCrearQueja"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etxtQueja_ClienteCrearQueja"
+        android:layout_centerInParent="true"
+        android:text="Enviar"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_box"
+        />
+
+
+
+</RelativeLayout>

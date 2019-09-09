@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="frecuencia">
+        <item>Diariamente</item>
+        <item>Semanalmente</item>
+        <item>Mensualmente</item>
+    </string-array>
+
+    <string-array name="Cantidadgr">
+        <item>50gr</item>
+        <item>100gr</item>
+        <item>250gr</item>
+        <item>500gr</item>
+    </string-array>
+</resources>
