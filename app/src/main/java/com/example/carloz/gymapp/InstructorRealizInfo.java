@@ -50,6 +50,7 @@ public class InstructorRealizInfo extends AppCompatActivity {
         conexionBDInfo();
 
 
+
     }
 
     private void conexionBDInfo() {
@@ -68,7 +69,7 @@ public class InstructorRealizInfo extends AppCompatActivity {
                                     String valor = response.getString("Estado");
                                     switch(valor) {
                                         case "OK":
-                                            bdEjeID = response.getString("Ejercicio_id");
+                                            String bdId = response.getString("Ejercicio_id");
                                             String bdNombre = response.getString("Ejercicio_Nombre");
                                             String bdFecha = response.getString("Fecha_Realizada");
                                             String bdDia = response.getString("Dia_Semana");
@@ -80,6 +81,9 @@ public class InstructorRealizInfo extends AppCompatActivity {
                                             String bdPesoReal = response.getString("Peso_Realizado");
                                             String bdEtapa = response.getString("Etapa");
                                             String bdDificultad = response.getString("Dificultad");
+
+                                            Glide.with(InstructorRealizInfo.this).load("http://thegymlife.online/php/fotos/imagenesEjercicio/"+bdId+".JPG").apply(RequestOptions.skipMemoryCacheOf(true))
+                                                    .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(imgvPerfil);
 
                                             txtvNombre.setText(bdNombre);
                                             txtvFecha.setText(bdFecha);
@@ -116,9 +120,6 @@ public class InstructorRealizInfo extends AppCompatActivity {
                                             txtvPesoReal.setText(bdPesoReal);
                                             txtvEtapa.setText(bdEtapa);
                                             txtvDificultad.setText(bdDificultad);
-
-                                            Glide.with(InstructorRealizInfo.this).load("http://thegymlife.online/php/fotos/imagenesEjercicio/"+bdEjeID+".jpg").apply(RequestOptions.skipMemoryCacheOf(true))
-                                                    .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(imgvPerfil);
 
 
                                             break;

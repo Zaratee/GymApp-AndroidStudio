@@ -2,14 +2,17 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.TextView;
 
 public class InstructorMusculoGrafica extends AppCompatActivity {
 
     CardView btnBrazoyAnt, btnPectorales, btnPiernas, btnHombros, btnEspalda, btnGluteos, btnAbdominales;
+    TextView txtvBrazoyAnt, txtvPectorales, txtvPiernas, txtvHombros, txtvEspalda, txtvGluteos, txtvAbdominales;
     String registroCliente;
 
     @Override
@@ -25,6 +28,25 @@ public class InstructorMusculoGrafica extends AppCompatActivity {
         btnEspalda = (CardView) findViewById(R.id.btnEspalda_InstructorMusculoGrafica);
         btnGluteos = (CardView) findViewById(R.id.btnGluteos_InstructorMusculoGrafica);
         btnAbdominales = (CardView) findViewById(R.id.btnAbdominales_InstructorMusculoGrafica);
+
+        txtvBrazoyAnt = (TextView) findViewById(R.id.txtvBrazo_ClientePerfil);
+        txtvPectorales = (TextView) findViewById(R.id.txtvActualizarContra_ClientePerfil);
+        txtvPiernas = (TextView) findViewById(R.id.txtvPiernas_ClientePerfil);
+        txtvHombros = (TextView) findViewById(R.id.txtvHombros_ClientePerfil);
+        txtvEspalda = (TextView) findViewById(R.id.txtvEspalda_ClientePerfil);
+        txtvGluteos = (TextView) findViewById(R.id.txtvGluteos_ClientePerfil);
+        txtvAbdominales = (TextView) findViewById(R.id.txtvCerrarSesion_ClientePerfil);
+
+        Typeface Regular = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
+        txtvBrazoyAnt.setTypeface(Regular);
+        txtvPectorales.setTypeface(Regular);
+        txtvPiernas.setTypeface(Regular);
+        txtvHombros.setTypeface(Regular);
+        txtvEspalda.setTypeface(Regular);
+        txtvGluteos.setTypeface(Regular);
+        txtvAbdominales.setTypeface(Regular);
+
+
 
         registroCliente = getIntent().getStringExtra("REGISTRO");
 

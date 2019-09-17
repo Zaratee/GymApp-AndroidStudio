@@ -2,6 +2,7 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -46,10 +47,11 @@ public class InstructorModificarEjer extends AppCompatActivity {
         recyclerClientes = (RecyclerView) findViewById(R.id.listvEjercicios_InstructorModificarEjer);
         recyclerClientes.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         txtvTitulo = (TextView) findViewById(R.id.txtvDia_InstructorModificarEjer);
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvTitulo.setTypeface(Thin);
+
+
         recibirDatos();
-
-
-
         conexionBDEjercicios();
 
 
@@ -62,7 +64,7 @@ public class InstructorModificarEjer extends AppCompatActivity {
         dianum = (String) bundle.get("DIANUM");
         registroCliente = (String) bundle.get("REGISTRO");
         txtvTitulo.setText(stringTitulo);
-        Toast.makeText(this, ""+dianum, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+dianum, Toast.LENGTH_SHORT).show();
     }
 
     private void conexionBDEjercicios() {

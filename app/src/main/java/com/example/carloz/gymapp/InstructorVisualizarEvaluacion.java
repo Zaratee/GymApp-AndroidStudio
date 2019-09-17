@@ -2,6 +2,7 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,6 +44,7 @@ public class InstructorVisualizarEvaluacion extends AppCompatActivity {
         setContentView(R.layout.activity_instructor_visualizar_evaluacion);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+
         txtvAlcohol = (TextView) findViewById(R.id.txtvTiempoAlcohol_InstructorVisualizarEvaluacion);
         txtvTabaco = (TextView) findViewById(R.id.txtvTiempoTabaco_InstructorVisualizarEvaluacion);
         Codigo = (TextView) findViewById(R.id.txtvCodigo_InstructorVisualizarEvaluacion);
@@ -70,6 +72,8 @@ public class InstructorVisualizarEvaluacion extends AppCompatActivity {
         btnContinuar = (Button) findViewById(R.id.btnContinuar_InstructorVisualizarEvaluacion);
 
         txtvTitulo = (TextView) findViewById(R.id.txtvNoActionTitulo_InstructorVisualizarEvaluacion);
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvTitulo.setTypeface(Thin);
 
         etxtMasa = (EditText) findViewById(R.id.etxtMasa_InstructorVisualizarEvaluacion);
         etxtPeso = (EditText) findViewById(R.id.etxtPeso_InstructorVisualizarEvaluacion);

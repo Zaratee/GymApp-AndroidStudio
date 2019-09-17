@@ -2,11 +2,13 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -24,6 +26,7 @@ public class InstructorProgresoCodigo extends AppCompatActivity {
     EditText etxtCodigo;
     Button btnContinuar;
     String stringRegistro;
+    TextView txtvTitulo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,10 @@ public class InstructorProgresoCodigo extends AppCompatActivity {
 
         etxtCodigo = findViewById(R.id.etxtCodigo_InstructorProgresoCodigo);
         btnContinuar = findViewById(R.id.btnEnviar_InstructorProgresoCodigo);
+        txtvTitulo = findViewById(R.id.txtvTitulo_InstructorProgresoCodigo);
+
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvTitulo.setTypeface(Thin);
 
         stringRegistro = getIntent().getStringExtra("REGISTRO");
 
@@ -64,7 +71,7 @@ public class InstructorProgresoCodigo extends AppCompatActivity {
                                             startActivity(intent);
                                             finish();
                                             break;
-                                        case "Error":
+                                        case "ERROR":
                                             Toast.makeText(InstructorProgresoCodigo.this,"Codigo incorrecto",Toast.LENGTH_SHORT).show();
                                     }
 

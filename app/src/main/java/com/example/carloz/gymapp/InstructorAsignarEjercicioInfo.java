@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +37,7 @@ public class InstructorAsignarEjercicioInfo extends AppCompatActivity {
     Button btnAsignar;
 
     String ID,registroCliente,dianum,Instructor;
+    Integer a = 0, b = 0, c = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +57,6 @@ public class InstructorAsignarEjercicioInfo extends AppCompatActivity {
 
 
 
-
         registroCliente = getIntent().getStringExtra("REGISTRO");
         SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
         Instructor = preferences.getString("instructor","hola");
@@ -70,7 +72,24 @@ public class InstructorAsignarEjercicioInfo extends AppCompatActivity {
         btnAsignar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                conexionBDAsignar();
+                String Repeticiones = etxtRepeticiones.getText().toString();
+                String Peso = etxtPeso.getText().toString();
+                String Series = etxtSeries.getText().toString();
+                if (Repeticiones.isEmpty() || Peso.isEmpty() || Series.isEmpty()){
+                    Toast.makeText(InstructorAsignarEjercicioInfo.this, "Rellenar todos los campos", Toast.LENGTH_SHORT).show();
+                    if (Repeticiones.isEmpty()) {
+                        etxtRepeticiones.setError("Rellenar Repeticiones");
+                    }
+                    if (Peso.isEmpty()){
+                        etxtPeso.setError("Rellenar Peso");
+                    }
+                    if (Series.isEmpty()){
+                        etxtSeries.setError("Rellenar Series");
+                    }
+                }else {
+                    conexionBDAsignar();
+                }
+
             }
         });
     }
@@ -102,6 +121,9 @@ public class InstructorAsignarEjercicioInfo extends AppCompatActivity {
                                     switch(valor) {
                                         case "OK":
                                             Toast.makeText(InstructorAsignarEjercicioInfo.this,"Ejercicio asignado",Toast.LENGTH_SHORT).show();
+                                            etxtPeso.setText("");
+                                            etxtRepeticiones.setText("");
+                                            etxtSeries.setText("");
                                             finish();
                                             break;
 

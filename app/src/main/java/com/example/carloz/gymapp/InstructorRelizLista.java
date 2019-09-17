@@ -1,6 +1,7 @@
 package com.example.carloz.gymapp;
 
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -37,6 +38,11 @@ public class InstructorRelizLista extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_instructor_reliz_lista);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        txtvTitulo = (TextView) findViewById(R.id.txtvNoActionAgregar_InstructorRelizLista);
+
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvTitulo.setTypeface(Thin);
 
         registroCLiente = getIntent().getStringExtra("REGISTRO");
 

@@ -57,7 +57,7 @@ public class InstructorMenuCliente extends AppCompatActivity {
         txtvEjercicioRealizado.setTypeface(Regular);
         txtvEvaluacionCliente.setTypeface(Regular);
 
-        Toast.makeText(this,""+getIntent().getStringExtra("REGISTRO"),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,""+getIntent().getStringExtra("REGISTRO"),Toast.LENGTH_SHORT).show();
         registroCliente = getIntent().getStringExtra("REGISTRO");
 
 
@@ -76,14 +76,14 @@ public class InstructorMenuCliente extends AppCompatActivity {
         String email = Login.Registro+"@gymlife.com", password = "GymLife";
 
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
-            Toast.makeText(InstructorMenuCliente.this,"Complete todos los campos",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(InstructorMenuCliente.this,"Complete todos los campos",Toast.LENGTH_SHORT).show();
         }else {
             auth.signInWithEmailAndPassword(email,password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(InstructorMenuCliente.this, "Logeadoooo parse", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(InstructorMenuCliente.this, "Logeadoooo parse", Toast.LENGTH_SHORT).show();
                                 /*Intent intent = new Intent(InstructorMenuCliente.this,ClienteEjercicio.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 //intent.putExtra("REGISTROINSTRU",registroInstru);

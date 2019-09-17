@@ -61,7 +61,7 @@ public class InstructorEditarEjer extends AppCompatActivity {
         etxtRepeticiones.setText(Repeticiones);
         etxtSeries.setText(Series);
         etxtPeso.setText(Peso);
-        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
         Glide.with(InstructorEditarEjer.this).load("http://thegymlife.online/php/fotos/imagenesEjercicio/"
                 +IDEjercicio+".JPG").apply(RequestOptions.skipMemoryCacheOf(true))
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(imgvEjercicio);
@@ -70,7 +70,24 @@ public class InstructorEditarEjer extends AppCompatActivity {
         btnAsignar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                conexionBDAsignar();
+                String Repeticiones = etxtRepeticiones.getText().toString();
+                String Peso = etxtPeso.getText().toString();
+                String Series = etxtSeries.getText().toString();
+                if (Repeticiones.isEmpty() || Peso.isEmpty() || Series.isEmpty()){
+                    Toast.makeText(InstructorEditarEjer.this, "Rellenar todos los campos", Toast.LENGTH_SHORT).show();
+                    if (Repeticiones.isEmpty()) {
+                        etxtRepeticiones.setError("Rellenar Repeticiones");
+                    }
+                    if (Peso.isEmpty()){
+                        etxtPeso.setError("Rellenar Peso");
+                    }
+                    if (Series.isEmpty()){
+                        etxtSeries.setError("Rellenar Series");
+                    }
+                }else {
+                    conexionBDAsignar();
+                }
+
             }
         });
         btnEliminar.setOnClickListener(new View.OnClickListener() {
@@ -101,11 +118,12 @@ public class InstructorEditarEjer extends AppCompatActivity {
 
                                             Intent intent = new Intent(InstructorEditarEjer.this,InstructorEditarDia.class);
                                             intent.putExtra("REGISTRO",Registro);
+                                            Toast.makeText(InstructorEditarEjer.this, "Ejercicio eliminado", Toast.LENGTH_SHORT).show();
                                             startActivity(intent);
                                             finish();
                                             break;
                                         case "Error":
-                                            Toast.makeText(InstructorEditarEjer.this,"Ejercicio Eliminado",Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(InstructorEditarEjer.this,"Error, ejercicio no eliminado",Toast.LENGTH_SHORT).show();
                                     }
 
                                 } catch (JSONException e) {
@@ -199,6 +217,9 @@ public class InstructorEditarEjer extends AppCompatActivity {
                                             Toast.makeText(InstructorEditarEjer.this,"Ejercicio modificado",Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(InstructorEditarEjer.this,InstructorEditarDia.class);
                                             intent.putExtra("REGISTRO",Registro);
+                                            etxtPeso.setText("");
+                                            etxtRepeticiones.setText("");
+                                            etxtSeries.setText("");
                                             startActivity(intent);
                                             finish();
                                             break;
