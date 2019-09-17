@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -23,12 +26,16 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.regex.Pattern;
+
 public class ActualizarContrasena extends AppCompatActivity {
 
     EditText etxtContraseña, etxtConfirmarContra;
     Button  btnConfirmar;
-    TextView txtvTitulo;
+    TextView txtvTitulo, ContraCaracteres, Contranumero;
     String stringCuenta, contra1,contra2,TipodeCuenta;
+    int num1=0,num2=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +45,8 @@ public class ActualizarContrasena extends AppCompatActivity {
         etxtContraseña = (EditText) findViewById(R.id.etxtContraseña_ActualizarContrasena);
         etxtConfirmarContra = (EditText) findViewById(R.id.etxtContraseñaConfirm_ActualizarContrasena);
         btnConfirmar = (Button) findViewById(R.id.btnContinuar_ActualizarContrasena);
-
+        ContraCaracteres = (TextView) findViewById(R.id.txtvCaracteres_ActualizarContraCliente);
+        Contranumero = (TextView) findViewById(R.id.txtvNumero_ActualizarContraCliente);
         txtvTitulo = (TextView) findViewById(R.id.txtvNoActionTitulo_ActualizarContrasena);
 
         Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
@@ -47,10 +55,48 @@ public class ActualizarContrasena extends AppCompatActivity {
         txtvTitulo.setTypeface(Thin);
         btnConfirmar.setTypeface(Condensed);
 
+
         obtenerdatos();
+        etxtContraseña.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String pass = etxtContraseña.getText().toString();
+                validarContra(pass);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
         clickbtnContinuar();
 
 
+    }
+
+    private void validarContra(String contra) {
+        Pattern numeros = Pattern.compile("[0-9]");
+        if (!numeros.matcher(contra).find()){
+            Contranumero.setTextColor(Color.RED);
+            num1 = 0;
+        } else {
+            num1 = 1;
+            Contranumero.setTextColor(Color.GREEN);
+        }
+
+        if (contra.length() < 6){
+            ContraCaracteres.setTextColor(Color.RED);
+            num1 = 0;
+        }else {
+
+            ContraCaracteres.setTextColor(Color.GREEN);
+            num2 = 1;
+        }
     }
 
     private void obtenerdatos() {
@@ -63,12 +109,18 @@ public class ActualizarContrasena extends AppCompatActivity {
     private void camposllenosBDCliente() {
         contra1 = etxtContraseña.getText().toString().trim();
         contra2 = etxtConfirmarContra.getText().toString().trim();
+
         if(contra1.isEmpty() && contra2.isEmpty()){
             Toast.makeText(ActualizarContrasena.this,"Rellene los campos",Toast.LENGTH_SHORT).show();
             return;
         }
         if (!contra1.contentEquals(contra2)){
             Toast.makeText(ActualizarContrasena.this,"Las contraseñas no son iguales",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        int num = num1 + num2;
+        if (num <= 1 ){
+            Toast.makeText(ActualizarContrasena.this, "Contraseña no valida", Toast.LENGTH_SHORT).show();
             return;
         }
         conexionBDCliente();
@@ -84,6 +136,11 @@ public class ActualizarContrasena extends AppCompatActivity {
             Toast.makeText(ActualizarContrasena.this,"Las contraseñas no son iguales",Toast.LENGTH_SHORT).show();
             return;
         }
+        int num = num1 + num2;
+        if (num <= 1 ){
+            Toast.makeText(ActualizarContrasena.this, "Contraseña no valida", Toast.LENGTH_SHORT).show();
+            return;
+        }
         conexionBDNutriologo();
     }
 
@@ -96,6 +153,11 @@ public class ActualizarContrasena extends AppCompatActivity {
         }
         if (!contra1.contentEquals(contra2)){
             Toast.makeText(ActualizarContrasena.this,"Las contraseñas no son iguales",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        int num = num1 + num2;
+        if (num <= 1 ){
+            Toast.makeText(ActualizarContrasena.this, "Contraseña no valida", Toast.LENGTH_SHORT).show();
             return;
         }
         conexionBDInstructor();
@@ -137,7 +199,7 @@ public class ActualizarContrasena extends AppCompatActivity {
                         camposllenosBDCliente();
                         break;
                     }
-                Toast.makeText(ActualizarContrasena.this,"Contraseña Actualizada",Toast.LENGTH_SHORT).show();
+
                 }
         });
 
@@ -153,6 +215,11 @@ public class ActualizarContrasena extends AppCompatActivity {
         }
         if (!contra1.contentEquals(contra2)){
             Toast.makeText(ActualizarContrasena.this,"Las contraseñas no son iguales",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        int num = num1 + num2;
+        if (num <= 1 ){
+            Toast.makeText(ActualizarContrasena.this, "Contraseña no valida", Toast.LENGTH_SHORT).show();
             return;
         }
         conexionBDAdministrador();
@@ -173,6 +240,7 @@ public class ActualizarContrasena extends AppCompatActivity {
                                     String valor = response.getString("Estado");
                                     switch(valor) {
                                         case "OK":
+                                            Toast.makeText(ActualizarContrasena.this,"Contraseña Actualizada",Toast.LENGTH_SHORT).show();
                                             finish();
                                             break;
                                         case "ERROR":
@@ -222,6 +290,7 @@ public class ActualizarContrasena extends AppCompatActivity {
 
                                                 startActivity(new Intent(ActualizarContrasena.this,ClienteMenu.class));
                                             }
+                                            Toast.makeText(ActualizarContrasena.this,"Contraseña Actualizada",Toast.LENGTH_SHORT).show();
 
                                             finish();
                                             break;
@@ -273,6 +342,7 @@ public class ActualizarContrasena extends AppCompatActivity {
 
                                             startActivity(new Intent(ActualizarContrasena.this,NutriologoPerfil.class));
                                         }
+                                            Toast.makeText(ActualizarContrasena.this,"Contraseña Actualizada",Toast.LENGTH_SHORT).show();
                                             //startActivity(intentNutriologo);
                                             finish();
                                             break;
@@ -324,6 +394,7 @@ public class ActualizarContrasena extends AppCompatActivity {
 
                                                 startActivity(new Intent(ActualizarContrasena.this,InstructorPerfil.class));
                                             }
+                                            Toast.makeText(ActualizarContrasena.this,"Contraseña Actualizada",Toast.LENGTH_SHORT).show();
                                             //startActivity(intentNutriologo);
                                             finish();
                                             break;
@@ -355,8 +426,32 @@ public class ActualizarContrasena extends AppCompatActivity {
         switch (TipodeCuenta){
             case "Cliente":
                 finish();
-            break;
+                break;
             case "Administrador":
+                finish();
+                break;
+            case "Instructor":
+                finish();
+                break;
+            case "Nutriólogo":
+                finish();
+                break;
+            case "ModificarCliente":
+                finish();
+                break;
+            case "ModificarInstructor":
+                finish();
+                break;
+            case "ModificarNutriologo":
+                finish();
+                break;
+            case "contraInstructor":
+                moveTaskToBack(true);
+                break;
+            case "contraNutriologo":
+                moveTaskToBack(true);
+                break;
+            case "contraCliente":
                 moveTaskToBack(true);
                 break;
             default:

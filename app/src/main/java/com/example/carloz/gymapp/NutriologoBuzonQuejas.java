@@ -76,13 +76,14 @@ public class NutriologoBuzonQuejas extends AppCompatActivity {
                                 try {
                                     //String valor = response.getString("Estado");
                                     JSONArray jsonArray = response.getJSONArray("Quejas");
-
+                                    String id;
                                     AdaptadorQueja adapter = new AdaptadorQueja(listaClientes);
                                     adapter.contexto= NutriologoBuzonQuejas.this;
                                     for (int i =0; i<jsonArray.length();i++){
                                         JSONObject clientes = jsonArray.getJSONObject(i);
                                         queja =clientes.getString("Queja_Descripcion");
                                         estado =clientes.getString("Queja_Tipo");
+                                        id = clientes.getString("Queja_id");
 
                                         if (estado.equals("0")){
                                             estado = "No realizado";
@@ -90,7 +91,7 @@ public class NutriologoBuzonQuejas extends AppCompatActivity {
                                             estado = "Realizado";
                                         }
 
-                                        listaClientes.add(new ItemQueja(queja,estado));
+                                        listaClientes.add(new ItemQueja(queja,estado, id));
                                     }
 
                                     recyclerClientes.setAdapter(adapter);

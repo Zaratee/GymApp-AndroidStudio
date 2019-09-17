@@ -76,6 +76,28 @@
             android:backgroundTint="#000"
             android:background="@drawable/apptheme_textfield_activated_holo_light"/>
     </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/txtvCaracteres_ActualizarContraCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mínimo 6 caracteres"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/designContraseñaConfirm_ActualizarContrasena"
+        android:layout_alignStart="@+id/designContraseñaConfirm_ActualizarContrasena"
+        android:layout_alignLeft="@+id/designContraseñaConfirm_ActualizarContrasena"
+        android:layout_marginLeft="10dp"
+        android:textColor="#afafaf"
+        />
+    <TextView
+        android:id="@+id/txtvNumero_ActualizarContraCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mínimo 1 número"
+        android:layout_below="@+id/txtvCaracteres_ActualizarContraCliente"
+        android:layout_alignStart="@+id/txtvCaracteres_ActualizarContraCliente"
+        android:layout_alignLeft="@+id/txtvCaracteres_ActualizarContraCliente"
+        android:textColor="#afafaf"
+        />
     <Button
         android:id="@+id/btnContinuar_ActualizarContrasena"
         android:layout_width="200dp"

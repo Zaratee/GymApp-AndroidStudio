@@ -2,6 +2,7 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -44,7 +45,8 @@ public class InstructorAsignarEjercicio extends AppCompatActivity {
         recyclerClientes = (RecyclerView) findViewById(R.id.listvEjercicios_AsignarEjercicio);
         recyclerClientes.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         txtvMusculo = (TextView) findViewById(R.id.txtvMusculo_InstructorAsignarEjercicio);
-
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvMusculo.setTypeface(Thin);
         registroCliente = getIntent().getStringExtra("REGISTRO");
 
 

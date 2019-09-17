@@ -101,7 +101,7 @@ public class Login extends AppCompatActivity {
         String cuenta = preferences.getString("cuenta","nada");
 
         if (user.equals("nada")){
-            Toast.makeText(this, "nada", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "nada", Toast.LENGTH_SHORT).show();
         }else {
             switch (cuenta){
                 case "instructor":
@@ -177,8 +177,14 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 String txtEmail = etxtUsuario.getText().toString()+"@gymlife.com";
                 String txtPassword = etxtContraseña.getText().toString();
-                conexionBD();
-                camposllenos();
+                if (txtEmail.isEmpty() || txtPassword.isEmpty()){
+                    camposllenos();
+                    return;
+                }else{
+                    conexionBD();
+                    camposllenos();
+                }
+
             }
         });
     }

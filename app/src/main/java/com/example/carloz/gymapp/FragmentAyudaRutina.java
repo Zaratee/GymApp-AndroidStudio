@@ -1,6 +1,7 @@
 package com.example.carloz.gymapp;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -43,8 +44,11 @@ public class FragmentAyudaRutina extends Fragment {
         View v = inflater.inflate(R.layout.cliente_ejercicio_ayuda_rutina, container, false);
 
         txtvDia = v.findViewById(R.id.txtvDia_FragmentAyudaRutina);
-        Toast.makeText(getContext(), ""+ClienteEjercicio.diaSemana, Toast.LENGTH_SHORT).show();
-        Toast.makeText(getContext(), ""+Login.Registro, Toast.LENGTH_SHORT).show();
+        Typeface Thin = Typeface.createFromAsset(getActivity().getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvDia.setTypeface(Thin);
+
+        //Toast.makeText(getContext(), ""+ClienteEjercicio.diaSemana, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), ""+Login.Registro, Toast.LENGTH_SHORT).show();
         switch (ClienteEjercicio.diaSemana){
             case "7":
                 txtvDia.setText("Domingo");

@@ -2,16 +2,19 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.TextView;
 
 public class ClienteAvanceMusculo extends AppCompatActivity {
 
 
     CardView btnBrazoyAnt, btnPectorales, btnPiernas, btnHombros, btnEspalda, btnGluteos, btnAbdominales;
     String registroCliente;
+    TextView txtvBrazoyAnt, txtvHombros, txtvEspalda, txtvPiernas, txtvGluteos, txtvAbdominales, txtvPectorales;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +31,27 @@ public class ClienteAvanceMusculo extends AppCompatActivity {
         btnGluteos = (CardView) findViewById(R.id.btnGluteos_ClienteAvanceMusculo);
         btnAbdominales = (CardView) findViewById(R.id.btnAbdominales_ClienteAvanceMusculo);
 
+        txtvBrazoyAnt = (TextView) findViewById(R.id.txtvBrazo_ClienteAvanceMusculo);
+        txtvEspalda = (TextView) findViewById(R.id.txtvEspalda_ClienteAvanceMusculo);
+        txtvPiernas = (TextView) findViewById(R.id.txtvPiernas_ClienteAvanceMusculo);
+        txtvGluteos = (TextView) findViewById(R.id.txtvGluteos_ClienteAvanceMusculo);
+        txtvAbdominales = (TextView) findViewById(R.id.txtvCerrarSesion_ClienteAvanceMusculo);
+        txtvHombros = (TextView) findViewById(R.id.txtvHombros_ClienteAvanceMusculo);
+        txtvPectorales = (TextView) findViewById(R.id.txtvActualizarContra_ClienteAvanceMusculo);
+
+
         registroCliente = getIntent().getStringExtra("REGISTRO");
+
+        Typeface Condensed = Typeface.createFromAsset(getAssets(),"fonts/RobotoCondensed-Light.ttf");
+
+        txtvBrazoyAnt.setTypeface(Condensed);
+        txtvEspalda.setTypeface(Condensed);
+        txtvPiernas.setTypeface(Condensed);
+        txtvGluteos.setTypeface(Condensed);
+        txtvAbdominales.setTypeface(Condensed);
+        txtvHombros.setTypeface(Condensed);
+        txtvPectorales.setTypeface(Condensed);
+
 
         clickbtnBrazoyAnt();
         clickbtnPectorales();

@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -37,7 +38,7 @@ public class ClienteMenu extends AppCompatActivity {
 
     CardView btnQueja,btnEjercicio,btnAlimentacio;
     String stringCuenta, registroInstru, registroNutri, bdEstadoNutri2, bdEstadoInstru2, dato;
-
+    TextView txtvQueja, txtvEjercicio, txtvAlimentacion, txtvQuejainfo, txtvEjercicioinfo, txtvAlimentacioninfo;
     CircularImageView btnPerfil;
     FirebaseAuth auth;
 
@@ -52,8 +53,28 @@ public class ClienteMenu extends AppCompatActivity {
         btnEjercicio = (CardView) findViewById(R.id.btnEjercicio_ClienteMenu);
         btnAlimentacio = (CardView) findViewById(R.id.btnAlimentacion_ClienteMenu);
 
+        txtvEjercicio = (TextView) findViewById(R.id.txtvAgregar_admin_menu);
+        txtvAlimentacion = (TextView) findViewById(R.id.txtvEliminar_admin_menu);
+        txtvQueja = (TextView) findViewById(R.id.txtvBuzon_admin_menu);
+
+        txtvEjercicioinfo = (TextView) findViewById(R.id.txtvAgregarinfo_admin_menu);
+        txtvAlimentacioninfo = (TextView) findViewById(R.id.txtvEliminarInfo_admin_menu);
+        txtvQuejainfo = (TextView) findViewById(R.id.txtvBuzonInfo_admin_menu);
+
         btnPerfil = (CircularImageView) findViewById(R.id.imgvUsuarioAdmin_cliente_menu);
 
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        Typeface Light = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Light.ttf");
+        Typeface Regular = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
+        Typeface Condensed = Typeface.createFromAsset(getAssets(),"fonts/RobotoCondensed-Light.ttf");
+
+        txtvEjercicioinfo.setTypeface(Light);
+        txtvAlimentacioninfo.setTypeface(Light);
+        txtvQuejainfo.setTypeface(Light);
+
+        txtvQueja.setTypeface(Light);
+        txtvAlimentacion.setTypeface(Regular);
+        txtvEjercicio.setTypeface(Regular);
 
         SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
         String user = preferences.getString("usuario","nada");
@@ -163,7 +184,7 @@ public class ClienteMenu extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(ClienteMenu.this, "Logeadoooo parse", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ClienteMenu.this, "Logeadoooo parse", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(ClienteMenu.this,ClienteEjercicio.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.putExtra("REGISTROINSTRU",registroInstru);
@@ -188,7 +209,7 @@ public class ClienteMenu extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(ClienteMenu.this, "Logeadoooo parse", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(ClienteMenu.this, "Logeadoooo parse", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(ClienteMenu.this,ClienteAlimentacion.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                 intent.putExtra("REGISTRONUTRI",registroNutri);

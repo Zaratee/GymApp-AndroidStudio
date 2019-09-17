@@ -11,12 +11,12 @@
         android:id="@+id/txtvNoActionAgregar_AdminMenuQuejasCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Quejas Cliente"
+        android:text="Quejas"
         android:textSize="30dp"
         android:textColor="#000"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        />
+        android:layout_marginTop="15dp"/>
+
     <View
         android:id="@+id/view1_AdminMenuQuejasCliente"
         android:layout_width="350dp"
@@ -26,12 +26,17 @@
         android:layout_margin="10dp"
         android:layout_below="@+id/txtvNoActionAgregar_AdminMenuQuejasCliente"/>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/listvClientesEliminar_AdminMenuQuejasCliente"
+    <FrameLayout
+        android:id="@+id/fragmentcontenedor_AdminMenuQuejasCliente"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/view1_AdminMenuQuejasCliente"
-        android:layout_marginTop="20dp"/>
+        android:layout_above="@+id/menu_AdminMenuQuejasCliente"/>
 
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/menu_AdminMenuQuejasCliente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_quejas" />
 
 </RelativeLayout>

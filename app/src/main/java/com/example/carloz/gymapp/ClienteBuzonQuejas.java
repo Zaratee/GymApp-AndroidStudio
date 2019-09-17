@@ -71,23 +71,22 @@ public class ClienteBuzonQuejas extends AppCompatActivity {
                             @Override
                             public void onResponse(JSONObject response) {
                                 try {
-                                    //String valor = response.getString("Estado");
+                                    String id;
                                     JSONArray jsonArray = response.getJSONArray("Quejas");
-
                                     AdaptadorQueja adapter = new AdaptadorQueja(listaClientes);
                                     adapter.contexto= ClienteBuzonQuejas.this;
                                     for (int i =0; i<jsonArray.length();i++){
                                         JSONObject clientes = jsonArray.getJSONObject(i);
                                         queja =clientes.getString("Queja_Descripcion");
                                         estado =clientes.getString("Queja_Tipo");
-
+                                        id = clientes.getString("Queja_id");
                                         if (estado.equals("0")){
                                             estado = "No realizado";
                                         }else if (estado.equals("1")) {
                                             estado = "Realizado";
                                         }
 
-                                        listaClientes.add(new ItemQueja(queja,estado));
+                                        listaClientes.add(new ItemQueja(queja,estado,id));
                                     }
 
                                     recyclerClientes.setAdapter(adapter);

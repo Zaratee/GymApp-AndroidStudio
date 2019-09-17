@@ -103,7 +103,7 @@ public class ClienteEjercicio extends AppCompatActivity {
         registroInstructor = getIntent().getStringExtra("REGISTROINSTRU");
         rutina = getIntent().getStringExtra("IDEJER");
 
-        Toast.makeText(this, "Rutina :"+ rutina+" "+Login.Registro, Toast.LENGTH_SHORT).show();
+        //eºToast.makeText(this, "Rutina :"+ rutina+" "+Login.Registro, Toast.LENGTH_SHORT).show();
 
         conexionBDEjeActual();
         
@@ -114,6 +114,7 @@ public class ClienteEjercicio extends AppCompatActivity {
                 btnSig.setEnabled(true);
                 if (!isResume){
                     btnInicio.setText("PAUSA");
+                    btnSig.setEnabled(true);
                     tStart = SystemClock.uptimeMillis();
                     handler.postDelayed(runnable,0);
                     cronome.start();
@@ -122,6 +123,7 @@ public class ClienteEjercicio extends AppCompatActivity {
 
                 }else {
                     btnInicio.setText("INICIO");
+                    btnSig.setEnabled(false);
                     tBuff += tMillils;
                     handler.removeCallbacks(runnable);
                     cronome.stop();
@@ -173,6 +175,8 @@ public class ClienteEjercicio extends AppCompatActivity {
             tBuff += tMillils;
             handler.removeCallbacks(runnable);
             cronome.stop();
+            btnSig.setEnabled(false);
+            btnParar.setEnabled(false);
             isResume = false;
             cronome.setVisibility(View.INVISIBLE);
             txtvNombre.setText("Tiempo de descanso");
@@ -183,8 +187,12 @@ public class ClienteEjercicio extends AppCompatActivity {
 
                 public void onTick(long millisUntilFinished) {
                     txtvDescanso.setText(""+millisUntilFinished / 1000);
+                    btnInicio.setEnabled(false);
+                    btnParar.setEnabled(false);
                 }
                 public void onFinish() {
+                    btnInicio.setEnabled(true);
+                    btnParar.setEnabled(true);
                     txtvSeriesReal.setText("0");
                     txtvRepReal.setText("0");
                     serie=1;
@@ -242,7 +250,7 @@ public class ClienteEjercicio extends AppCompatActivity {
 
                                     switch(valor) {
                                         case "OK":
-                                            Toast.makeText(ClienteEjercicio.this, "Realizao chavon", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(ClienteEjercicio.this, "Realizado", Toast.LENGTH_SHORT).show();
 
                                             break;
                                         case "RUTINA":
@@ -314,7 +322,9 @@ public class ClienteEjercicio extends AppCompatActivity {
                                         case "RUTINA":
                                             btnSig.setEnabled(false);
                                             btnInicio.setEnabled(false);
-                                           // Toast.makeText(ClienteEjercicio.this, "Rutina del dia terminada", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(ClienteEjercicio.this, "Rutina del dia terminada", Toast.LENGTH_SHORT).show();
+                                            cronoDescanso.setVisibility(View.VISIBLE);
+                                            cronome.setVisibility(View.INVISIBLE);
                                             break;
                                     }
 

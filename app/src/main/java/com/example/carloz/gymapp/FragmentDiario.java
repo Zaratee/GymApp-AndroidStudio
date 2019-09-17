@@ -142,7 +142,6 @@ public class FragmentDiario extends Fragment {
     private void conexionBDInfoPasabocas() {
         String url = "http://thegymlife.online/php/cliente/Cliente_Visualizar_Alimentos_Diarios.php?registro="+Login.Registro+"&tipo=3";
         url = url.replaceAll(" ", "%20");
-
         JsonObjectRequest peticion = new JsonObjectRequest
                 (
                         Request.Method.GET,
@@ -154,7 +153,6 @@ public class FragmentDiario extends Fragment {
                                 try {
                                     //String valor = response.getString("Estado");
                                     JSONArray jsonArray = response.getJSONArray("Alimentos");
-
                                     AdaptadorAlimentoAsignado adapter = new AdaptadorAlimentoAsignado(listaPasabocas);
                                     adapter.contexto= getContext();
                                     for (int i =0; i<jsonArray.length();i++){

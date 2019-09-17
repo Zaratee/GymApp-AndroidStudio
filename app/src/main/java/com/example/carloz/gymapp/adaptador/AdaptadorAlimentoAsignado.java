@@ -41,7 +41,7 @@ public class AdaptadorAlimentoAsignado extends RecyclerView.Adapter<AdaptadorAli
         viewHolderAlimento.nombre.setText(listaClientes.get(i).getNombre());
         viewHolderAlimento.marca.setText(listaClientes.get(i).getMarca());
         viewHolderAlimento.TipoAlimento.setText(listaClientes.get(i).getTiempo());
-        viewHolderAlimento.Cantidad.setText(listaClientes.get(i).getCantidad());
+        viewHolderAlimento.Cantidad.setText(listaClientes.get(i).getCantidad()+" ");
         viewHolderAlimento.CantidadTipo.setText(listaClientes.get(i).getCantidadTipo());
 
         viewHolderAlimento.linearLayout.setOnClickListener(new View.OnClickListener() {

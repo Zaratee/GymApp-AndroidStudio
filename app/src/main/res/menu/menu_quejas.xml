@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/navRealizado_bottom"
+        android:icon="@drawable/ic_check_black_24dp"
+        android:title="Realizado"/>
+    <item android:id="@+id/navNoRealizado_bottom"
+        android:icon="@drawable/ic_clear_black_24dp"
+        android:title="No Realizado"/>
+</menu>

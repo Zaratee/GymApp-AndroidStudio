@@ -49,7 +49,7 @@ public class FragmentAyudaEjercicio extends Fragment {
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(imgEjercicio);
 
         conexionBDInfo();
-        Toast.makeText(getContext(), ""+ClienteEjercicio.idEjercicio, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getContext(), ""+ClienteEjercicio.idEjercicio, Toast.LENGTH_SHORT).show();
         return v;
     }
 

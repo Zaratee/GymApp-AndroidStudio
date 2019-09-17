@@ -1,6 +1,8 @@
 package com.example.carloz.gymapp;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -42,8 +44,11 @@ public class ClienteBuscarAlimento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_buscar_alimento);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         txtvTiempo = (TextView) findViewById(R.id.txtvTiempo_ClienteBuscarAlimento);
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvTiempo.setTypeface(Thin);
         etxtAlimento = (EditText) findViewById(R.id.etxtAlimento_ClienteBuscarAlimento);
         btnBuscar = (Button) findViewById(R.id.btnBuscarAlimento_ClienteBuscarAlimento);
 

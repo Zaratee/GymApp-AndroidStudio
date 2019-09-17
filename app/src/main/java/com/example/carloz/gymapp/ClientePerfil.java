@@ -35,7 +35,7 @@ public class ClientePerfil extends AppCompatActivity {
     String stringCuenta, bdRegistro,bdNombre,bdApellido,bdEdad,bdPeso,bdEstatura,bdGrasaCorporal, nutriNombre,nutriApell,
     instNombre, instApellido,codigoCliente;
     TextView NARegistro, NANombre, NAEdad, NAGrasa, NAEstatura, NAPeso , Estatura, Edad, Nombre, Registro, Grasa, Titulo,
-            Peso, Progreso, ActualizarContra, CerrarSesion, RegInst, RegNutr;
+            Peso, Progreso, ActualizarContra, CerrarSesion, RegInst, RegNutr, Codigo;
     ImageView imgPerfil, btnInst, btnNutri;
     Integer valor = 0;
 
@@ -75,6 +75,7 @@ public class ClientePerfil extends AppCompatActivity {
 
         ActualizarContra = (TextView) findViewById(R.id.txtvActualizarContra_ClientePerfil);
         CerrarSesion = (TextView) findViewById(R.id.txtvCerrarSesion_ClientePerfil);
+        Codigo = (TextView) findViewById(R.id.txtvCodigoo_ClientePerfil);
 
         RegInst = (TextView) findViewById(R.id.txtvInst_ClientePerfil);
         RegNutr = (TextView) findViewById(R.id.txtvNutri_ClientePerfil);
@@ -84,10 +85,11 @@ public class ClientePerfil extends AppCompatActivity {
         Typeface Light = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Light.ttf");
         Typeface Regular = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
         Typeface Condensed = Typeface.createFromAsset(getAssets(),"fonts/RobotoCondensed-Light.ttf");
-        Progreso.setTypeface(Condensed);
 
+        Progreso.setTypeface(Condensed);
         ActualizarContra.setTypeface(Condensed);
         CerrarSesion.setTypeface(Condensed);
+        Codigo.setTypeface(Condensed);
 
         Titulo.setTypeface(Thin);
 
@@ -195,7 +197,6 @@ public class ClientePerfil extends AppCompatActivity {
         TextView txtvNombre = (TextView) view.findViewById(R.id.txtvNombre_Perfil);
         TextView txtvRegistro = (TextView) view.findViewById(R.id.txtvRegistro_Perfil);
         ImageView imgvFoto = (ImageView) view.findViewById(R.id.imgvUsuario_ClientePerfil);
-
 
 
         if (valor==1){

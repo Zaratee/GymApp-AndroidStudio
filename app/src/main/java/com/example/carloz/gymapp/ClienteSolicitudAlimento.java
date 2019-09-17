@@ -1,14 +1,17 @@
 package com.example.carloz.gymapp;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,22 +62,91 @@ public class ClienteSolicitudAlimento extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!usuario.equals("NUTRIOLOGO")){
-                    clickBtnMandarSolicitud();
+                    revisarInfoCliente();
                 }else {
-                    Toast.makeText(ClienteSolicitudAlimento.this, "Hola", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(ClienteSolicitudAlimento.this, "Hola", Toast.LENGTH_SHORT).show();
                     clickBtnMandarSolicitudNutriologo();
                 }
             }
         });
+        if (!usuario.equals("NUTRIOLOGO")){
+            final android.app.AlertDialog.Builder alertbox = new android.app.AlertDialog.Builder(this);
+            alertbox.setMessage(" Nombre\n Marca \n Tipo de alimento \n Cantidad \n Medida");
+            alertbox.setTitle("Datos necesarios para enviar la solicitud:");
+
+
+            alertbox.setPositiveButton("Recibido",
+                    new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0,
+                                            int arg1) {
+                        }
+                    });
+
+            alertbox.show();
+        }
+
+
     }
+
+    private void revisarInfoCliente() {
+        String Nombre = etxtNombre.getText().toString();
+        String Marca = etxtMarca.getText().toString();
+        String TipoAlimento = etxtTipoAlimento.getText().toString();
+        String Cantidad = etxtCantidad.getText().toString();
+        String Medida = etxtMedida.getText().toString();
+
+        if (Nombre.isEmpty()){
+            etxtNombre.setError("Rellenar Nombre");
+        }
+        if (Marca.isEmpty()){
+            etxtMarca.setError("Rellenar Marca");
+        }
+        if (TipoAlimento.isEmpty()){
+            etxtTipoAlimento.setError("Rellenar Marca");
+
+        }
+        if (Cantidad.isEmpty()){
+            etxtCantidad.setError("Rellenar Cantidad");
+        }
+        if (Medida.isEmpty()){
+            etxtMedida.setError("Rellenar Medida");
+        }
+        if (Nombre.isEmpty() && Marca.isEmpty() && TipoAlimento.isEmpty() && Cantidad.isEmpty() && Medida.isEmpty()){
+            final android.app.AlertDialog.Builder alertbox = new android.app.AlertDialog.Builder(this);
+            alertbox.setMessage(" Nombre\n Marca \n Tipo de alimento \n Cantidad \n Medida");
+            alertbox.setTitle("Datos necesarios para enviar la solicitud:");
+
+
+            alertbox.setPositiveButton("Recibido",
+                    new DialogInterface.OnClickListener() {
+
+                        public void onClick(DialogInterface arg0,
+                                            int arg1) {
+                        }
+                    });
+
+            alertbox.show();
+
+            return;
+        }
+        if (Nombre.isEmpty() || Marca.isEmpty() || TipoAlimento.isEmpty() || Cantidad.isEmpty() || Medida.isEmpty()){
+        }else{
+            //Toast.makeText(this, "ya", Toast.LENGTH_SHORT).show();
+            clickBtnMandarSolicitud();
+
+        }
+
+    }
+
 
     private void clickBtnMandarSolicitudNutriologo() {
 
         String url = "http://thegymlife.online/php/nutriologo/Nutriologo_Agregar_Alimento.php?nombre="+etxtNombre.getText().toString().trim()
                 +"&marca="+etxtMarca.getText().toString().trim()+ "&tipo="+etxtTipoAlimento.getText().toString().trim()
-                +"&cantidad="+etxtCalorias.getText().toString().trim()+"&medida="+etxtMedida.getText().toString().trim()
-                +"&grasas="+etxtGrasas.getText().toString().trim()+"&carbohidratos="+etxtCarboh.getText().toString()+"&proteinas="
-                +etxtProteinas.getText().toString().trim()+"&calorias="+etxtCalorias.getText().toString().trim();
+                +"&cantidad="+etxtCantidad.getText().toString().trim()+"&medida="+etxtMedida.getText().toString().trim()
+                +"&grasas="+etxtGrasas.getText().toString().trim()+"&carbohidratos="+etxtCarboh.getText().toString()
+                +"&proteinas="+etxtProteinas.getText().toString().trim()+"&calorias="+etxtCalorias.getText().toString().trim();
         url = url.replaceAll(" ", "%20");
         JsonObjectRequest peticion = new JsonObjectRequest
                 (
@@ -92,42 +164,6 @@ public class ClienteSolicitudAlimento extends AppCompatActivity {
                                             finish();
                                             break;
                                         case "ERROR":
-                                            if (etxtNombre.getText().toString().trim().equalsIgnoreCase("")) {
-                                                etxtNombre.setError("Rellenar nombre");
-                                            }
-                                            if (etxtCalorias.getText().toString().trim().equalsIgnoreCase("")) {
-                                                etxtCalorias.setError("Rellenar calorias");
-                                            }
-
-                                            if (etxtCantidad.getText().toString().trim().equalsIgnoreCase("")) {
-                                                etxtCantidad.setError("Rellenar cantidad");
-                                            }
-
-                                            if (etxtCarboh.getText().toString().trim().equalsIgnoreCase("")) {
-                                                etxtCarboh.setError("Rellenar carbohidratos");
-                                            }
-
-                                            if (etxtGrasas.getText().toString().trim().equalsIgnoreCase("")) {
-                                                etxtGrasas.setError("Rellenar grasas");
-                                            }
-
-                                            if (etxtMarca.getText().toString().trim().equalsIgnoreCase("")) {
-                                                etxtMarca.setError("Rellenar marca");
-                                            }
-
-                                            if (etxtMedida.getText().toString().trim().equalsIgnoreCase("")) {
-                                                etxtMedida.setError("Rellenar medida");
-                                            }
-
-                                            if (etxtProteinas.getText().toString().trim().equalsIgnoreCase("")) {
-                                                etxtProteinas.setError("Rellenar proteinas");
-                                            }
-
-                                            if (etxtTipoAlimento.getText().toString().trim().equalsIgnoreCase("")) {
-                                                etxtTipoAlimento.setError("Rellenar tipo alimento");
-                                            }
-
-
                                             Toast.makeText(ClienteSolicitudAlimento.this, "Rellene los campos", Toast.LENGTH_SHORT).show();
                                     }
 
@@ -153,7 +189,7 @@ public class ClienteSolicitudAlimento extends AppCompatActivity {
 
                     String url = "http://thegymlife.online/php/cliente/Cliente_Ingresar_Encuesta_Alimento.php?nombre="+etxtNombre.getText().toString().trim()
                             +"&marca="+etxtMarca.getText().toString().trim()+ "&tipo="+etxtTipoAlimento.getText().toString().trim()
-                            +"&cantidad="+etxtCalorias.getText().toString().trim()+"&medida="+etxtMedida.getText().toString().trim()
+                            +"&cantidad="+etxtCantidad.getText().toString().trim()+"&medida="+etxtMedida.getText().toString().trim()
                             +"&grasas="+etxtGrasas.getText().toString().trim()+"&carbohidratos="+etxtCarboh.getText().toString()+"&proteinas="
                             +etxtProteinas.getText().toString().trim()+"&calorias="+etxtCalorias.getText().toString().trim();
                     url = url.replaceAll(" ", "%20");

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,6 +48,8 @@ public class ClienteBuscarAlimSelec extends AppCompatActivity {
         etxtCantidad = findViewById(R.id.etxtCantidad_ClienteBuscarAlimSelec);
         txtvMedida = findViewById(R.id.txtvMedida_ClienteBuscarAlimSelec);
 
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvNombre.setTypeface(Thin);
         Toast.makeText(this, "aqui", Toast.LENGTH_SHORT).show();
         recibirDatos();
 

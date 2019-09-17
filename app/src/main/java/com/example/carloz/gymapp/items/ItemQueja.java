@@ -1,11 +1,20 @@
 package com.example.carloz.gymapp.items;
 
 public class ItemQueja {
-    String Queja,Estado;
+    String Queja,Estado, id;
 
-    public ItemQueja(String queja, String estado) {
+    public ItemQueja(String queja, String estado, String id) {
         Queja = queja;
         Estado = estado;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getQueja() {

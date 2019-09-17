@@ -1,10 +1,12 @@
 package com.example.carloz.gymapp;
 
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -29,6 +31,7 @@ public class ClienteListaEjercicio extends AppCompatActivity {
     ArrayList<ItemEjercicioSemana> listaClientes;
     RecyclerView recyclerClientes;
     String nombre, series,repeticiones,peso,dia;
+    TextView txtvTitulo;
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +40,10 @@ public class ClienteListaEjercicio extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         listaClientes = new ArrayList<>();
-
         recyclerClientes = (RecyclerView) findViewById(R.id.listvEjercicios_ClienteListaEjercicio);
+        txtvTitulo = (TextView) findViewById(R.id.txtvNoActionTitulo_InstructorBuzonQuejas);
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvTitulo.setTypeface(Thin);
         recyclerClientes.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
         
         conexionBDLista();

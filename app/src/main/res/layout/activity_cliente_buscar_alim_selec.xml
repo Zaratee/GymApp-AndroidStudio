@@ -21,7 +21,7 @@
             android:textSize="25dp"
             android:textStyle="bold"
             android:gravity="center"
-            />
+            android:textColor="#000"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -54,13 +54,15 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Marca:"
-                            android:textSize="16dp"/>
+                            android:textSize="16dp"
+                            android:textColor="#000"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Marca:"
                             android:textSize="16dp"
-                            android:visibility="invisible"/>
+                            android:visibility="invisible"
+                            />
 
                     </LinearLayout>
 
@@ -71,7 +73,8 @@
                         android:layout_height="35dp"
                         android:textSize="20dp"
                         android:gravity="center"
-                        android:layout_marginLeft="5dp"/>
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -87,7 +90,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Tipo:"
-                            android:textSize="16dp"/>
+                            android:textSize="16dp"
+                            android:textColor="#000"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -104,7 +108,8 @@
                         android:textSize="20dp"
                         android:gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:layout_gravity="right"/>
+                        android:layout_gravity="right"
+                        android:textColor="#000"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -139,7 +144,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Carboh:"
-                            android:textSize="16dp"/>
+                            android:textSize="16dp"
+                            android:textColor="#000"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -156,7 +162,8 @@
                         android:layout_height="35dp"
                         android:textSize="20dp"
                         android:gravity="center"
-                        android:layout_marginLeft="5dp"/>
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -172,7 +179,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Grasas:"
-                            android:textSize="16dp"/>
+                            android:textSize="16dp"
+                            android:textColor="#000"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -189,7 +197,8 @@
                         android:textSize="20dp"
                         android:gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:layout_gravity="right"/>
+                        android:layout_gravity="right"
+                        android:textColor="#000"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -226,7 +235,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Proteinas:"
-                            android:textSize="16dp"/>
+                            android:textSize="16dp"
+                            android:textColor="#000"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -243,7 +253,8 @@
                         android:layout_height="35dp"
                         android:textSize="20dp"
                         android:gravity="center"
-                        android:layout_marginLeft="5dp"/>
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -259,7 +270,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Calorias:"
-                            android:textSize="16dp"/>
+                            android:textSize="16dp"
+                            android:textColor="#000"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -276,7 +288,8 @@
                         android:textSize="20dp"
                         android:gravity="center"
                         android:layout_marginLeft="5dp"
-                        android:layout_gravity="right"/>
+                        android:layout_gravity="right"
+                        android:textColor="#000"/>
                 </LinearLayout>
             </LinearLayout>
 
