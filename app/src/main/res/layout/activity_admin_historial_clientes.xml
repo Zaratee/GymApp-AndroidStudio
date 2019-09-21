@@ -15,8 +15,8 @@
         android:textSize="30dp"
         android:textColor="#000"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        />
+        android:layout_marginTop="15dp" />
+
     <View
         android:id="@+id/View_AgregarEntrenador"
         android:layout_width="350dp"
@@ -25,12 +25,217 @@
         android:layout_centerHorizontal="true"
         android:layout_margin="10dp"
         android:layout_below="@+id/txtvNoActionAgregar_AdminHistorialClientes"/>
+    <EditText
+        android:id="@+id/etxtHistorial_AdminHistorialClientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Buscar"
+        android:layout_below="@+id/View_AgregarEntrenador"
+        android:textColor="@color/negro"
+        android:textColorHint="@color/negro"
+        android:background="@drawable/apptheme_textfield_activated_holo_light"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        android:id="@+id/btnBuscarAlimento_ClienteBuscarAlimento"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/ic_search_black_24dp"
+        android:layout_below="@+id/View_AgregarEntrenador"
+        android:layout_marginTop="26dp"/>
+
+    <LinearLayout
+        android:id="@+id/layoutbtnHistorial"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:weightSum="3"
+        android:orientation="vertical"
+        android:layout_below="@+id/etxtHistorial_AdminHistorialClientes">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvProgreso_ClientePerfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvProgreso_ClientePerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Eliminados"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:textColor="#000"/>
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvCodigo_ClientePerfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvCodigoo_ClientePerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Creados"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:textColor="#000"/>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:layout_weight="1">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvActualizarContra_ClientePerfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvActualizarContra_ClientePerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Clientes"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:textColor="#000"/>
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvCerrarSesion_ClientePerfil"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvCerrarSesion_ClientePerfil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Entrenadores"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:textColor="#000"/>
+
+
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="2"
+            android:layout_weight="1"
+            android:gravity="center">
+            <android.support.v7.widget.CardView
+                android:id="@+id/cardvActualizarContra_Nutriologo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clickable="true"
+                android:foreground="?android:selectableItemBackground"
+                android:layout_weight="1">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtvActualizarContra_Nutriologo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Nutriologos"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="12dp"
+                        android:textColor="#000"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/listvHistorialClientes_AdminHistorialClientes"
+        android:id="@+id/recycler_view_AdminHistorialClientes"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/View_AgregarEntrenador"
-        android:layout_marginTop="15dp"/>
-
-
+        android:layout_below="@+id/etxtHistorial_AdminHistorialClientes"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"/>
 </RelativeLayout>

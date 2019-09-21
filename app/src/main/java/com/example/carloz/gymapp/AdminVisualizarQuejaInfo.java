@@ -2,6 +2,7 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,9 +26,9 @@ import org.json.JSONObject;
 
 public class AdminVisualizarQuejaInfo extends AppCompatActivity {
 
-    String ID, registroo;;
+    String ID, registroo,estado;
 
-    TextView txtvNombre, txtvRegistro, txtvQueja;
+    TextView txtvNombre, txtvRegistro, txtvQueja,Titulo;
     ImageView imgvFoto;
     Button btnRealizado;
     @Override
@@ -36,14 +37,24 @@ public class AdminVisualizarQuejaInfo extends AppCompatActivity {
         setContentView(R.layout.activity_admin_visualizar_queja_info);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        Titulo = (TextView) findViewById(R.id.txtvNoActionAgregar_AdminModificarUsuario);
         txtvNombre = (TextView) findViewById(R.id.txtvNombre_AdminVisualizarQuejaInfo);
         txtvQueja = (TextView) findViewById(R.id.txtvQuejaa_AdminVisualizarQuejaInfo);
         txtvRegistro = (TextView) findViewById(R.id.txtvRegistro_AdminVisualizarQuejaInfo);
         imgvFoto = (ImageView) findViewById(R.id.imgvFoto_AdminVisualizarQuejaInfo);
         btnRealizado = (Button) findViewById(R.id.btnRealizado_AdminVisualizarQuejaInfo);
 
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        Titulo.setTypeface(Thin);
+
         ID = getIntent().getStringExtra("ID");
         registroo = getIntent().getStringExtra("REGISTRO");
+        estado = getIntent().getStringExtra("ESTADO");
+
+        if (estado.equals("Realizado")) {
+            btnRealizado.setVisibility(View.INVISIBLE);
+        }
+
         int registro = Integer.parseInt(registroo);
         if (registro>=1000 && registro<3000){
             Glide.with(this).load("http://thegymlife.online/php/fotos/imagenesClientes/"+registro+".jpg").apply(RequestOptions.skipMemoryCacheOf(true))
@@ -124,7 +135,7 @@ public class AdminVisualizarQuejaInfo extends AppCompatActivity {
                                     String valor = response.getString("Estado");
                                     String Cliente_Nombre = response.getString("Cliente_Nombre");
                                     String bdApellido = response.getString("Cliente_Apellido");
-                                    String bdRegistro = response.getString("Cliente_Nombre");
+                                    String bdRegistro = response.getString("Cliente_Registro");
                                     String bdQueja = response.getString("Queja_Descripcion");
 
                                     txtvNombre.setText(Cliente_Nombre+" "+bdApellido);

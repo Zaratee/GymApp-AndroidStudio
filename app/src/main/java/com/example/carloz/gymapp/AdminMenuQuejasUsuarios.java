@@ -48,28 +48,35 @@ public class AdminMenuQuejasUsuarios extends AppCompatActivity implements View.O
 
     @Override
     public void onClick(View v) {
-        Intent intentQuejaCliente = new Intent(AdminMenuQuejasUsuarios.this, AdminMenuQuejasCliente.class);
-        Intent intentQuejaInstuctor = new Intent(AdminMenuQuejasUsuarios.this, AdminMenuQuejasInstructor.class);
-        Intent intentQuejaNutriologo = new Intent(AdminMenuQuejasUsuarios.this, AdminMenuQuejasNutriologo.class);
+
+        Intent intentQueja = new Intent(AdminMenuQuejasUsuarios.this, AdminMenuQuejasCliente.class);
+        String Usuario="";
 
         switch (v.getId()) {
             case R.id.cardvAgregarCliente_AdminMenuQuejasUsuarios:
-                startActivity(intentQuejaCliente);
+                Usuario = "CLIENTE";
+                intentQueja.putExtra("USUARIO",Usuario);
+                startActivity(intentQueja);
                 break;
 
             case R.id.cardvAgregarInstructor_AdminMenuQuejasUsuarios:
-                startActivity(intentQuejaInstuctor);
+                Usuario = "INSTRUCTOR";
+                intentQueja.putExtra("USUARIO",Usuario);
+                startActivity(intentQueja);
                 break;
 
             case R.id.cardvAgregarNutriologo_AdminMenuQuejasUsuarios:
-                intentQuejaNutriologo.putExtra("REGISTRO",stringCuenta);
-                startActivity(intentQuejaNutriologo);
+                Usuario = "NUTRIOLOGO";
+                intentQueja.putExtra("USUARIO",Usuario);
+                startActivity(intentQueja);
                 break;
 
             default:
                 break;
 
+
         }
+
     }
 
 }

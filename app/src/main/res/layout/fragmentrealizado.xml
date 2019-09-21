@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtvNoActionTitulo_fragmentRealizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Editar dieta"
+        android:textSize="25dp"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/view_fragmentRealizado"
+        android:layout_width="350dp"
+        android:layout_height="1dp"
+        android:background="@color/lightgray2"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_below="@+id/txtvNoActionTitulo_fragmentRealizado"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_viewRealizado"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_fragmentRealizado"/>
+
+
+
+</RelativeLayout>

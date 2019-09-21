@@ -14,17 +14,17 @@ import android.widget.TextView;
 import com.example.carloz.gymapp.InstructorEditarEjer;
 import com.example.carloz.gymapp.R;
 import com.example.carloz.gymapp.items.ItemEjercicioEditar;
-import com.example.carloz.gymapp.items.ItemUsuariosAdmin;
+import com.example.carloz.gymapp.items.ItemHistorial;
 
 import java.util.ArrayList;
 
 public class AdaptadorAdminHistorial extends RecyclerView.Adapter<AdaptadorAdminHistorial.ViewHolderAlimentos> {
 
 
-    private ArrayList<ItemUsuariosAdmin> listaClientes;
+    private ArrayList<ItemHistorial> listaClientes;
     public Context contexto;
 
-    public AdaptadorAdminHistorial(ArrayList<ItemUsuariosAdmin> listaClientes) {
+    public AdaptadorAdminHistorial(ArrayList<ItemHistorial> listaClientes) {
         this.listaClientes = listaClientes;
     }
 
@@ -43,7 +43,6 @@ public class AdaptadorAdminHistorial extends RecyclerView.Adapter<AdaptadorAdmin
         viewHolderAlimento.telefono.setText(listaClientes.get(i).getTelefono());
         viewHolderAlimento.fecha.setText(listaClientes.get(i).getFecha());
         viewHolderAlimento.estado.setText(listaClientes.get(i).getEstado());
-
 
         if (listaClientes.get(i).getEstado().equals("Eliminado")){
             viewHolderAlimento.estado.setTextColor(Color.parseColor("#C00303"));

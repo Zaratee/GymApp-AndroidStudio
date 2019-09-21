@@ -75,6 +75,7 @@ public class InstructorVisualizarEvaluacion extends AppCompatActivity {
         Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
         txtvTitulo.setTypeface(Thin);
 
+
         etxtMasa = (EditText) findViewById(R.id.etxtMasa_InstructorVisualizarEvaluacion);
         etxtPeso = (EditText) findViewById(R.id.etxtPeso_InstructorVisualizarEvaluacion);
         etxtEstatura = (EditText) findViewById(R.id.etxtTalla_InstructorVisualizarEvaluacion);

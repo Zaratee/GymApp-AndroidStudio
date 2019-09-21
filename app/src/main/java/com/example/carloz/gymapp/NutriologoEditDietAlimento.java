@@ -2,6 +2,7 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,6 +47,9 @@ public class NutriologoEditDietAlimento extends AppCompatActivity {
         txtvMedida = findViewById(R.id.txtvMedida_NutriologoEditDietAlimento);
         btnEliminar = findViewById(R.id.btnEliminar_NutriologoEditDietAlimento);
 
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvNombre.setTypeface(Thin);
+
         rdbtnDesayuno = findViewById(R.id.radiobtnDesayuno_NutriologoEditDietAlimento);
         rdbtnAlmuerzo = findViewById(R.id.radiobtnAlmuerzo_NutriologoEditDietAlimento);
         rdbtnCena = findViewById(R.id.radiobtnCena_NutriologoEditDietAlimento);
@@ -53,7 +57,7 @@ public class NutriologoEditDietAlimento extends AppCompatActivity {
 
         recibirDatos();
         BDinfoAlimento();
-        Toast.makeText(this, ""+stringLista, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+stringLista, Toast.LENGTH_SHORT).show();
 
 
         btnEliminar.setOnClickListener(new View.OnClickListener() {

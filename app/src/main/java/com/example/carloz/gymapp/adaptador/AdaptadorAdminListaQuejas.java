@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.example.carloz.gymapp.AdminMenuQuejasCliente;
 import com.example.carloz.gymapp.AdminVisualizarQuejaInfo;
 import com.example.carloz.gymapp.R;
 import com.example.carloz.gymapp.items.ItemClienteInstructor;
@@ -47,16 +48,16 @@ public class AdaptadorAdminListaQuejas extends RecyclerView.Adapter<AdaptadorAdm
 
         String opcion = contexto.getClass().getSimpleName();
 
-        switch (opcion){
-            case "AdminMenuQuejasCliente":
+        switch (AdminMenuQuejasCliente.Usuario){
+            case "CLIENTE":
                 Glide.with(contexto).load("http://thegymlife.online/php/fotos/imagenesClientes/"+listaQuejas.get(j).getRegistro()+".jpg").apply(RequestOptions.skipMemoryCacheOf(true))
                         .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(viewHolderClientes.foto);
                 break;
-            case "AdminMenuQuejasInstructor":
+            case "INSTRUCTOR":
                 Glide.with(contexto).load("http://thegymlife.online/php/fotos/imagenesInstructor/"+listaQuejas.get(j).getRegistro()+".jpg").apply(RequestOptions.skipMemoryCacheOf(true))
                         .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(viewHolderClientes.foto);
                 break;
-            case "AdminMenuQuejasNutriologo":
+            case "NUTRIOLOGO":
                 Glide.with(contexto).load("http://thegymlife.online/php/fotos/imagenesNutriologo/"+listaQuejas.get(j).getRegistro()+".jpg").apply(RequestOptions.skipMemoryCacheOf(true))
                         .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(viewHolderClientes.foto);
         }
@@ -66,11 +67,11 @@ public class AdaptadorAdminListaQuejas extends RecyclerView.Adapter<AdaptadorAdm
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(contexto,AdminVisualizarQuejaInfo.class);
-                intent.putExtra("ID",listaQuejas.get(j).getQueja());
-                intent.putExtra("REGISTRO",listaQuejas.get(j).getRegistro());
-                contexto.startActivity(intent);
-
+                        Intent intent = new Intent(contexto,AdminVisualizarQuejaInfo.class);
+                        intent.putExtra("ID",listaQuejas.get(j).getQueja());
+                        intent.putExtra("REGISTRO",listaQuejas.get(j).getRegistro());
+                        intent.putExtra("ESTADO",listaQuejas.get(j).getEstado());
+                        contexto.startActivity(intent);
             }
         });
 

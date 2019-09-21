@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,13 +48,15 @@ public class BuscarAlimentoSeleccionado extends AppCompatActivity {
         etxtCantidad = findViewById(R.id.etxtCantidad_BuscarAlimentoSeleccionado);
         txtvMedida = findViewById(R.id.txtvMedida_BuscarAlimentoSeleccionado);
         recibirDatos();
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvNombre.setTypeface(Thin);
         SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
         user = preferences.getString("NutritClientReg","nada");
 
-        Toast.makeText(this,"dia: "+stringTiempo,Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "id alimento: "+stringAlimento, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "regNutr: "+Login.Registro, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "regClien: "+user, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,"dia: "+stringTiempo,Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "id alimento: "+stringAlimento, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "regNutr: "+Login.Registro, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "regClien: "+user, Toast.LENGTH_SHORT).show();
 
         BDinfoAlimento();
         btnAgregar.setOnClickListener(new View.OnClickListener() {

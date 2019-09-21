@@ -68,7 +68,7 @@ public class NutriologoPerfil extends AppCompatActivity {
 
         SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
         String user = preferences.getString("usuario","nada");
-        Toast.makeText(this, "reg: "+user, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "reg: "+user, Toast.LENGTH_SHORT).show();
         if (!user.equals("nada")){
             Login.Registro = user;
         }
@@ -83,31 +83,7 @@ public class NutriologoPerfil extends AppCompatActivity {
         conexionBDListaUsuarios();
     }
 
-    /*private void conexionFirebase() {
-        String email = Login.Registro+"@gymlife.com", password = "GymLife";
 
-        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
-            Toast.makeText(NutriologoPerfil.this,"Complete todos los campos",Toast.LENGTH_SHORT).show();
-        }else {
-            auth.signInWithEmailAndPassword(email,password)
-                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                Toast.makeText(NutriologoPerfil.this, "Logeadoooo parse", Toast.LENGTH_SHORT).show();
-                                Toast.makeText(NutriologoPerfil.this, "alo? "+auth.getUid(), Toast.LENGTH_LONG).show();
-                                /*Intent intent = new Intent(NutriologoPerfil.this,NutriologoPuente.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                //intent.putExtra("CLIENTE",registroCliente);
-                                startActivity(intent)
-                            }else {
-                                Toast.makeText(NutriologoPerfil.this,"Usuario no existe",Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                    });
-
-        }
-    }*/
 
 
 

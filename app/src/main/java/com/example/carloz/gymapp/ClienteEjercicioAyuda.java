@@ -15,6 +15,7 @@ public class ClienteEjercicioAyuda extends AppCompatActivity {
 
     String idEjercicio, diaSemana;
     FloatingActionButton btnListaRutina;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -175,8 +175,8 @@ public class AdaptadorInstructorClientesAsignados extends RecyclerView.Adapter<A
                                         @Override
                                         public void onComplete(@NonNull Task<AuthResult> task) {
                                             if (task.isSuccessful()) {
-                                                Toast.makeText(contexto, "Logeadoooo parse", Toast.LENGTH_SHORT).show();
-                                                Toast.makeText(contexto, "alo? " + auth.getUid(), Toast.LENGTH_LONG).show();
+                                                //Toast.makeText(contexto, "Logeadoooo parse", Toast.LENGTH_SHORT).show();
+                                                //Toast.makeText(contexto, "alo? " + auth.getUid(), Toast.LENGTH_LONG).show();
                                                 Intent intent = new Intent(contexto, NutriologoClienteAsignar.class);
                                                 intent.putExtra("REGISTRO", listaClientes.get(j).getRegistro());
                                                 intent.putExtra("BANDERA", "1");

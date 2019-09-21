@@ -129,7 +129,42 @@ public class NutriologoSolicitudAlimentoSolicitud extends AppCompatActivity {
                                             startActivity(intent);
                                             finish();
                                             break;
-                                        case "Error":
+                                        case "ERROR":
+                                            String txtNombreAlimento, txtTipoAlimento, txtCantidadAlimento, txtMedidaTiempo, txtGrasas,txtCarbohidratos,
+                                                    txtproteinanas, txtCalorias;
+                                            txtNombreAlimento = etxtNombreAlimento.getText().toString();
+                                            txtTipoAlimento = etxtTipoDeAlimento.getText().toString();
+                                            txtCantidadAlimento = etxtCantidadAlimento.getText().toString();
+                                            txtMedidaTiempo = etxtMedidaTipo.getText().toString();
+                                            txtGrasas = etxtCantidadDeGrasas.getText().toString();
+                                            txtCarbohidratos = etxtCantidadCarboh.getText().toString();
+                                            txtproteinanas = etxtCantidadProteinas.getText().toString();
+                                            txtCalorias = etxtCantidadCalorias.getText().toString();
+                                            if (txtNombreAlimento.isEmpty()){
+                                                etxtNombreAlimento.setError("Rellenar Nombre");
+                                            }
+                                            if (txtTipoAlimento.isEmpty()){
+                                                etxtTipoDeAlimento.setError("Rellenar Tipo");
+                                            }
+                                            if (txtCantidadAlimento.isEmpty()){
+                                                etxtCantidadAlimento.setError("Rellenar Cantidad");
+                                            }
+                                            if (txtMedidaTiempo.isEmpty()){
+                                                etxtMedidaTipo.setError("Rellenar Medida");
+                                            }
+                                            if (txtGrasas.isEmpty()){
+                                                etxtCantidadDeGrasas.setError("Rellenar Grasa");
+                                            }
+                                            if (txtCarbohidratos.isEmpty()){
+                                                etxtCantidadCarboh.setError("Rellenar Carbohidratos");
+                                            }
+                                            if (txtproteinanas.isEmpty()){
+                                                etxtCantidadProteinas.setError("Rellenar Proteinas");
+                                            }
+                                            if (txtCalorias.isEmpty()){
+                                                etxtCantidadCalorias.setError("Rellenar Calorias");
+                                            }
+
                                             Toast.makeText(NutriologoSolicitudAlimentoSolicitud.this,"Rellene todos los campos",Toast.LENGTH_SHORT).show();
                                     }
 

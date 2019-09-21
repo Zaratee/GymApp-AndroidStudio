@@ -36,13 +36,15 @@
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
                 android:text="Nombre"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="#000"/>
             <TextView
                 android:id="@+id/txtvNombre_listaquejas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="13dp"
-                android:text="Carlos Eduardo Zarate Monroy " />
+                android:text="name "
+                android:textColor="#000"/>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -62,14 +64,16 @@
                         android:layout_height="wrap_content"
                         android:textSize="16dp"
                         android:text="Registro"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/txtvRegistro_listaquejas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="13dp"
-                        android:text="1000" />
+                        android:text="1000"
+                        android:textColor="#000"/>
                     </LinearLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -82,14 +86,16 @@
                         android:layout_height="wrap_content"
                         android:textSize="16dp"
                         android:text="Queja id"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold"
+                        android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/txtvQuejaId_listaquejas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="13dp"
-                        android:text="1000" />
+                        android:text="1000"
+                        android:textColor="#000" />
                     </LinearLayout>
 
                 </LinearLayout>

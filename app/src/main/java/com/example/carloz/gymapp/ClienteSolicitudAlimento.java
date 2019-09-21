@@ -164,6 +164,48 @@ public class ClienteSolicitudAlimento extends AppCompatActivity {
                                             finish();
                                             break;
                                         case "ERROR":
+                                            String Nombre = etxtNombre.getText().toString();
+                                            String Marca = etxtMarca.getText().toString();
+                                            String TipoAlimento = etxtTipoAlimento.getText().toString();
+                                            String Cantidad = etxtCantidad.getText().toString();
+                                            String Medida = etxtMedida.getText().toString();
+                                            String Grasas = etxtGrasas.getText().toString();
+                                            String Carboh = etxtCarboh.getText().toString();
+                                            String Proteinas = etxtProteinas.getText().toString();
+                                            String Calorias = etxtCalorias.getText().toString();
+
+                                            if (Nombre.isEmpty()){
+                                                etxtNombre.setError("Rellenar Nombre");
+                                            }
+                                            if (Marca.isEmpty()){
+                                                etxtMarca.setError("Rellenar Marca");
+                                            }
+                                            if (TipoAlimento.isEmpty()){
+                                                etxtTipoAlimento.setError("Rellenar Marca");
+
+                                            }
+                                            if (Cantidad.isEmpty()){
+                                                etxtCantidad.setError("Rellenar Cantidad");
+                                            }
+                                            if (Medida.isEmpty()){
+                                                etxtMedida.setError("Rellenar Medida");
+                                            }
+
+                                            if (Grasas.isEmpty()){
+                                                etxtGrasas.setError("Rellenar Grasa");
+                                            }
+                                            if (Carboh.isEmpty()){
+                                                etxtCarboh.setError("Rellenar Carbohidratos");
+                                            }
+                                            if (Proteinas.isEmpty()){
+                                                etxtProteinas.setError("Rellenar Proteinas");
+                                            }
+                                            if (Calorias.isEmpty()){
+                                                etxtCalorias.setError("Rellenar Calorias");
+                                            }
+
+
+
                                             Toast.makeText(ClienteSolicitudAlimento.this, "Rellene los campos", Toast.LENGTH_SHORT).show();
                                     }
 

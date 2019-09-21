@@ -2,6 +2,7 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -34,6 +36,7 @@ public class NutriologoSolicitudAlimentoLista extends AppCompatActivity {
     RecyclerView recyclerClientes;
     String Nombre, Marca, TipoAlimento, Cantidad, CantidadTipo, ID;
     FloatingActionButton  AgregarAlimento;
+    TextView txtvTitulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +44,13 @@ public class NutriologoSolicitudAlimentoLista extends AppCompatActivity {
         setContentView(R.layout.activity_nutriologo_solicitud_alimento_lista);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+        txtvTitulo = (TextView) findViewById(R.id.txtvNoActionTitulo_NutriologoSolicitudAlimentoLista);
         AgregarAlimento = findViewById(R.id.floatingbtnAgregarAlimento_NutriologoSolicitudAlimentoLista);
         listaClientes = new ArrayList<>();
         recyclerClientes = (RecyclerView) findViewById(R.id.listvSolicitudes_NutriologoSolicitudAlimentoLista);
         recyclerClientes.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvTitulo.setTypeface(Thin);
         conexionBDSolicitudes();
         AgregarAlimento.setOnClickListener(new View.OnClickListener() {
             @Override

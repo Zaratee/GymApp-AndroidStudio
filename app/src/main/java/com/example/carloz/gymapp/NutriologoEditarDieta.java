@@ -4,10 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -31,17 +33,22 @@ public class NutriologoEditarDieta extends AppCompatActivity {
 
     ArrayList<ItemAlimentoEditar> listaClientes;
     RecyclerView recyclerClientes;
+    TextView titulo;
     String regCliente, Nombre,TipoAlimento, Marca, Tiempo, Cantidad,CantidadTipo,ID, CantidadAsignada, Lista;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nutriologo_editar_dieta);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        titulo = (TextView) findViewById(R.id.txtvNoActionTitulo_NutriologoEditarDieta);
 
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+
+        titulo.setTypeface(Thin);
         listaClientes = new ArrayList<>();
         SharedPreferences preferences = getSharedPreferences("Cuemta", Context.MODE_PRIVATE);
         regCliente = preferences.getString("NutritClientReg","nada");
-        Toast.makeText(this, ""+regCliente, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+regCliente, Toast.LENGTH_SHORT).show();
 
         recyclerClientes = (RecyclerView) findViewById(R.id.listvEditarDieta_NutriologoEditarDieta);
         recyclerClientes.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));

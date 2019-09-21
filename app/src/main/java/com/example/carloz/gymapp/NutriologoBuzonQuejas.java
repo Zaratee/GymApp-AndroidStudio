@@ -119,6 +119,7 @@ public class NutriologoBuzonQuejas extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(NutriologoBuzonQuejas.this,NutriologoCrearQueja.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

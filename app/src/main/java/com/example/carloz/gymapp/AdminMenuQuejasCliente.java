@@ -35,17 +35,17 @@ public class AdminMenuQuejasCliente extends AppCompatActivity {
 
     TextView txtvTitulo;
     String registro, nombre, quejaRegistro,apellido;
+    public static String Usuario="0000";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_menu_quejas_cliente);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        txtvTitulo = (TextView) findViewById(R.id.txtvNoActionAgregar_AdminMenuQuejasCliente);
-        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
-        txtvTitulo.setTypeface(Thin);
         BottomNavigationView bottomNav = (BottomNavigationView) findViewById(R.id.menu_AdminMenuQuejasCliente);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
+        Usuario = getIntent().getStringExtra("USUARIO");
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentcontenedor_AdminMenuQuejasCliente, new FragmentQuejasRealizado()).commit();
 
     }
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

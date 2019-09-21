@@ -75,7 +75,7 @@ public class AdminMenuQuejasInstructor extends AppCompatActivity {
                                             apellido =clientes.getString("Entrenador_Apellido");
                                             quejaRegistro =clientes.getString("Queja_id");
 
-                                            listaClientes.add(new ItemListaQuejasAdmin(nombre,registro,apellido,quejaRegistro));
+                                            //listaClientes.add(new ItemListaQuejasAdmin(nombre,registro,apellido,quejaRegistro));
                                         }
 
                                         recyclerClientes.setAdapter(adapter);

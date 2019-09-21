@@ -75,7 +75,7 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
         txtvCalorias = (TextView) findViewById(R.id.txtvCalorias_NutriologoClienteAsignar);
 
         registroCliente = getIntent().getStringExtra("REGISTRO");
-        Toast.makeText(this, "2: "+registroCliente, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "2: "+registroCliente, Toast.LENGTH_SHORT).show();
         bandera = getIntent().getStringExtra("BANDERA");
 
 
@@ -115,7 +115,7 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
         listPasabocas.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
 
-        Toast.makeText(this, "3: "+registroCliente, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "3: "+registroCliente, Toast.LENGTH_SHORT).show();
         auth = FirebaseAuth.getInstance();
 
         clickbtnMasDesayuno();

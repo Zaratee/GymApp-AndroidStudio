@@ -7,24 +7,7 @@
     tools:context=".AdminMenuQuejasCliente"
     android:background="@color/backgroundcolor">
 
-    <TextView
-        android:id="@+id/txtvNoActionAgregar_AdminMenuQuejasCliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Quejas"
-        android:textSize="30dp"
-        android:textColor="#000"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"/>
 
-    <View
-        android:id="@+id/view1_AdminMenuQuejasCliente"
-        android:layout_width="350dp"
-        android:layout_height="1dp"
-        android:background="@color/lightgray2"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
-        android:layout_below="@+id/txtvNoActionAgregar_AdminMenuQuejasCliente"/>
 
     <FrameLayout
         android:id="@+id/fragmentcontenedor_AdminMenuQuejasCliente"
