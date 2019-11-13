@@ -1,9 +1,11 @@
 package com.example.carloz.gymapp;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -38,7 +40,7 @@ public class admin_menu extends AppCompatActivity implements View.OnClickListene
     String stringCuenta;
     TextView txtvAgregar, txtvAgregarInfo, txtvEliminar, txtvEliminarInfo, txtvRegistro,
     txtvRegistroInfo, txtvBuzon, txtvBuzonInfo,txtvListaUsuarios;
-
+    int REQUEST_CAMERA;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,196 +99,185 @@ public class admin_menu extends AppCompatActivity implements View.OnClickListene
                 .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(imgPerfil);
 
 
-
-        cargarPreferencias();
         recibirDatos();
 
     }
 
-    private void cargarPreferencias() {
-        SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
-
-        String user = preferences.getString("usuario","nada");
-        String pass = preferences.getString("contrasena","nada");
-
-        if (user.equals("nada")){
-            Toast.makeText(this, "nada", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(this, "admin "+user, Toast.LENGTH_SHORT).show();
-        }
-
-    }
 
     private void recibirDatos() {
-        Intent intent= getIntent();
-        Bundle bundle = intent.getExtras();
         stringCuenta =Login.Registro;
-
-
     }
 
     @Override
-    public void onClick(View v) {
-        Intent intentAgregar = new Intent(admin_menu.this,Admin_menu_selecusu.class);
-        Intent intentEliminar = new Intent(admin_menu.this,AdminEliminarSelecUsuario.class);
-        Intent intentModificar = new Intent(admin_menu.this,AdminMenuModificarUsuarios.class);
-        Intent intentBuzon = new Intent(admin_menu.this,AdminMenuQuejasUsuarios.class);
-        Intent intentHistorial = new Intent(admin_menu.this,AdminHistorialClientes.class);
+public void onClick(View v) {
+Intent intentAgregar = new Intent(admin_menu.this,Admin_menu_selecusu.class);
+Intent intentEliminar = new Intent(admin_menu.this,AdminEliminarSelecUsuario.class);
+Intent intentModificar = new Intent(admin_menu.this,AdminMenuModificarUsuarios.class);
+Intent intentBuzon = new Intent(admin_menu.this,AdminMenuQuejasUsuarios.class);
+Intent intentHistorial = new Intent(admin_menu.this,AdminHistorialClientes.class);
 
-        switch (v.getId()){
-            case R.id.cardvAgregar_admin_menu :
+switch (v.getId()){
+case R.id.cardvAgregar_admin_menu :
+
+            if (checkSelfPermission(Manifest.permission.CAMERA)==PackageManager.PERMISSION_GRANTED){
                 intentAgregar.putExtra("REGISTRO",stringCuenta);
                 startActivity(intentAgregar);
-                break;
-            case R.id.cardvListaClientes_admin_menu:
-                intentHistorial.putExtra("REGISTRO",stringCuenta);
-                startActivity(intentHistorial);
-                break;
-
-            case R.id.cardvEliminar_admin_menu:
-                intentEliminar.putExtra("REGISTRO",stringCuenta);
-                startActivity(intentEliminar);
-                break;
-
-            case R.id.cardvRegistro_admin_menu:
-                startActivity(intentModificar);
-                break;
-
-            case R.id.cardvBuzonQuejas_admin_menu:
-                startActivity(intentBuzon);
-                break;
-
-            case R.id.imgvUsuarioAdmin_admin_menu:
-
-                final AlertDialog.Builder mbuilder = new AlertDialog.Builder(admin_menu.this);
-                final AlertDialog dialog;
-
-                View view = getLayoutInflater().inflate(R.layout.perfiladmin, null);
-
-                CircularImageView imgvPerfil = (CircularImageView) view.findViewById(R.id.imgvUsuario_PerfilAdmin);
-
-                final TextView txtvNombre = (TextView) view.findViewById(R.id.txtvNombre_PerfilAdmin);
-                final TextView txtvApellido = (TextView) view.findViewById(R.id.txtvApellido_PerfilAdmin);
-                final TextView txtvRegistro = (TextView) view.findViewById(R.id.txtvRegistro_PerfilAdmin);
-                TextView txtvNANombre = (TextView) view.findViewById(R.id.txtvNoActionNombre_PerfilAdmin);
-                TextView txtvNARegistro = (TextView) view.findViewById(R.id.txtvNoActionRegistro_PerfilAdmin);
-
-                TextView txtvCerrarSesion = (TextView) view.findViewById(R.id.txtvCerrarSesion_PerfilAdmin);
-
-                TextView txtvActulizarContra = (TextView) view.findViewById(R.id.txtvActualizarContra_PerfilAdmin);
-
-                CardView btnCerrarSesion = (CardView) view.findViewById(R.id.cardvCerrarSesion_PerfilAdmin);
-                CardView btnActualizarContra = (CardView) view.findViewById(R.id.cardvActualizarContra_PerfilAdmin);
+            }else {
+                if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)){
+                    Toast.makeText(admin_menu.this, "Se necesita dar permiso a la " +
+                            "camara para escanear QR", Toast.LENGTH_SHORT).show();
+                }
+                requestPermissions(new String[]{Manifest.permission.CAMERA},REQUEST_CAMERA);
+            }
 
 
-                Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
-                Typeface Light = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Light.ttf");
-                Typeface Regular = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
-                Typeface Condensed = Typeface.createFromAsset(getAssets(),"fonts/RobotoCondensed-Light.ttf");
+    break;
+case R.id.cardvListaClientes_admin_menu:
+    intentHistorial.putExtra("REGISTRO",stringCuenta);
+    startActivity(intentHistorial);
+    break;
+
+case R.id.cardvEliminar_admin_menu:
+    intentEliminar.putExtra("REGISTRO",stringCuenta);
+    startActivity(intentEliminar);
+    break;
+
+case R.id.cardvRegistro_admin_menu:
+    startActivity(intentModificar);
+    break;
+
+case R.id.cardvBuzonQuejas_admin_menu:
+    startActivity(intentBuzon);
+    break;
+
+case R.id.imgvUsuarioAdmin_admin_menu:
+
+    final AlertDialog.Builder mbuilder = new AlertDialog.Builder(admin_menu.this);
+    final AlertDialog dialog;
+
+    View view = getLayoutInflater().inflate(R.layout.perfiladmin, null);
+
+    CircularImageView imgvPerfil = (CircularImageView) view.findViewById(R.id.imgvUsuario_PerfilAdmin);
+
+    final TextView txtvNombre = (TextView) view.findViewById(R.id.txtvNombre_PerfilAdmin);
+    final TextView txtvApellido = (TextView) view.findViewById(R.id.txtvApellido_PerfilAdmin);
+    final TextView txtvRegistro = (TextView) view.findViewById(R.id.txtvRegistro_PerfilAdmin);
+    TextView txtvNANombre = (TextView) view.findViewById(R.id.txtvNoActionNombre_PerfilAdmin);
+    TextView txtvNARegistro = (TextView) view.findViewById(R.id.txtvNoActionRegistro_PerfilAdmin);
+
+    TextView txtvCerrarSesion = (TextView) view.findViewById(R.id.txtvCerrarSesion_PerfilAdmin);
+
+    TextView txtvActulizarContra = (TextView) view.findViewById(R.id.txtvActualizarContra_PerfilAdmin);
+
+    CardView btnCerrarSesion = (CardView) view.findViewById(R.id.cardvCerrarSesion_PerfilAdmin);
+    CardView btnActualizarContra = (CardView) view.findViewById(R.id.cardvActualizarContra_PerfilAdmin);
+
+    Typeface Light = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Light.ttf");
+    Typeface Regular = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
+    Typeface Condensed = Typeface.createFromAsset(getAssets(),"fonts/RobotoCondensed-Light.ttf");
 
 
-                txtvCerrarSesion.setTypeface(Condensed);
-                txtvActulizarContra.setTypeface(Condensed);
+    txtvCerrarSesion.setTypeface(Condensed);
+    txtvActulizarContra.setTypeface(Condensed);
 
-                txtvNANombre.setTypeface(Regular);
-                txtvNARegistro.setTypeface(Regular);
+    txtvNANombre.setTypeface(Regular);
+    txtvNARegistro.setTypeface(Regular);
 
-                txtvNombre.setTypeface(Light);
-                txtvApellido.setTypeface(Light);
-                txtvRegistro.setTypeface(Light);
+    txtvNombre.setTypeface(Light);
+    txtvApellido.setTypeface(Light);
+    txtvRegistro.setTypeface(Light);
 
-                txtvNombre.setText("Nombre");
-                txtvApellido.setText("Apellido");
-                txtvRegistro.setText("0000");
-                Glide.with(admin_menu.this).load("http://thegymlife.online/php/fotos/imagenesAdmin/"+Login.Registro+".jpg")
-                        .apply(RequestOptions.skipMemoryCacheOf(true))
-                        .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(imgvPerfil);
+    txtvNombre.setText("Nombre");
+    txtvApellido.setText("Apellido");
+    txtvRegistro.setText("0000");
+    Glide.with(admin_menu.this).load("http://thegymlife.online/php/fotos/imagenesAdmin/"+Login.Registro+".jpg")
+            .apply(RequestOptions.skipMemoryCacheOf(true))
+            .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)).error(R.drawable.logonb).into(imgvPerfil);
 
+    String url = "http://thegymlife.online/php/admin/Administrador_Visualizar_perfil.php?registro="+Login.Registro;
+    url = url.replaceAll(" ", "%20");
 
-                String url = "http://thegymlife.online/php/admin/Administrador_Visualizar_perfil.php?registro="+Login.Registro;
-                url = url.replaceAll(" ", "%20");
-
-                JsonObjectRequest peticion = new JsonObjectRequest
-                        (
-                                Request.Method.GET,
-                                url,
-                                null,
-                                new Response.Listener<JSONObject>() {
-                                    @Override
-                                    public void onResponse(JSONObject response) {
-                                        try {
-                                            String valor = response.getString("Estado");
-                                            String nombre = response.getString("Administrador_Nombre");
-                                            String apellido = response.getString("Administrador_Apellido");
-                                            switch(valor) {
-                                                case "OK":
-                                                    txtvNombre.setText(nombre);
-                                                    txtvApellido.setText(apellido);
-                                                    txtvRegistro.setText(""+Login.Registro);
-                                                    break;
-                                                case "ERROR":
-                                                    Toast.makeText(admin_menu.this,"Error Conexion",Toast.LENGTH_SHORT).show();
-                                            }
-
-
-                                        } catch (JSONException e) {
-                                            e.printStackTrace();
-                                        }
-                                    }
+    JsonObjectRequest peticion = new JsonObjectRequest
+            (
+                    Request.Method.GET,
+                    url,
+                    null,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            try {
+                                String valor = response.getString("Estado");
+                                String nombre = response.getString("Administrador_Nombre");
+                                String apellido = response.getString("Administrador_Apellido");
+                                switch(valor) {
+                                    case "OK":
+                                        txtvNombre.setText(nombre);
+                                        txtvApellido.setText(apellido);
+                                        txtvRegistro.setText(""+Login.Registro);
+                                        break;
+                                    case "ERROR":
+                                        Toast.makeText(admin_menu.this,"Error Conexion",Toast.LENGTH_SHORT).show();
                                 }
-                                , new Response.ErrorListener()
-                        {
-                            @Override
-                            public void onErrorResponse(VolleyError error)
-                            {
-                                Toast.makeText(admin_menu.this,"Error php",Toast.LENGTH_SHORT).show();
+
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-                        });
-                RequestQueue x = Volley.newRequestQueue(admin_menu.this);
-                x.add(peticion);
-
-
-
-                btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(admin_menu.this,Login.class);
-
-                        SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
-
-                        SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString("usuario","nada");
-                        editor.putString("contrasena","nada");
-                        editor.putString("cuenta","nada");
-                        editor.commit();
-
-                        startActivity(intent);
-                        finish();
+                        }
                     }
-                });
-                btnActualizarContra.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(admin_menu.this,ActualizarContrasena.class);
-                        String cuenta = "Administrador";
-                        intent.putExtra("CUENTA", cuenta);
-                        intent.putExtra("REGISTRO",Login.Registro);
-                        startActivity(intent);
-
-                    }
-                });
-
-                mbuilder.setView(view);
-                dialog = mbuilder.create();
-                dialog.show();
+                    , new Response.ErrorListener()
+            {
+                @Override
+                public void onErrorResponse(VolleyError error)
+                {
+                    Toast.makeText(admin_menu.this,"Error php",Toast.LENGTH_SHORT).show();
+                }
+            });
+    RequestQueue x = Volley.newRequestQueue(admin_menu.this);
+    x.add(peticion);
 
 
-                break;
-            default:
-                break;
+
+    btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(admin_menu.this,Login.class);
+
+            SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
+
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("usuario","nada");
+            editor.putString("contrasena","nada");
+            editor.putString("cuenta","nada");
+            editor.commit();
+
+            startActivity(intent);
+            finish();
         }
+    });
+    btnActualizarContra.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent intent = new Intent(admin_menu.this,ActualizarContrasena.class);
+            String cuenta = "Administrador";
+            intent.putExtra("CUENTA", cuenta);
+            intent.putExtra("REGISTRO",Login.Registro);
+            startActivity(intent);
 
-    }
+        }
+    });
+
+    mbuilder.setView(view);
+    dialog = mbuilder.create();
+    dialog.show();
+
+
+    break;
+default:
+    break;
+}
+
+}
     public void onBackPressed(){
         moveTaskToBack(true);
     }

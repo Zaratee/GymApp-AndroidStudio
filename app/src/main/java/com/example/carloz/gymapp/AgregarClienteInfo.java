@@ -57,6 +57,7 @@ public class AgregarClienteInfo extends AppCompatActivity {
     CircularImageView imgFoto;
     String stringTelefono, stringCuenta, stringFoto;
 
+
     private static final String CARPETA_PRINCIPAL = "misImagenes/";
     private static final String CARPETA_IMAGEN = "imagenesGYM";
     private static final String DIRECTORIO_IMAGEN = CARPETA_PRINCIPAL + CARPETA_IMAGEN;
@@ -303,7 +304,6 @@ public class AgregarClienteInfo extends AppCompatActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
                 break;
             case COD_FOTO:
                 MediaScannerConnection.scanFile(AgregarClienteInfo.this, new String[]{path}, null,
@@ -401,7 +401,7 @@ public class AgregarClienteInfo extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(AgregarClienteInfo.this, "Firebase Usuario Creado", Toast.LENGTH_SHORT).show();
+                                        //Toast.makeText(AgregarClienteInfo.this, "Firebase Usuario Creado", Toast.LENGTH_SHORT).show();
                                         /*Intent intent = new Intent(AgregarCliente.this, MainActivity.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
@@ -410,7 +410,7 @@ public class AgregarClienteInfo extends AppCompatActivity {
                                 }
                             });
                         } else {
-                            Toast.makeText(AgregarClienteInfo.this, "No te puedes registrar con esos datos", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(AgregarClienteInfo.this, "No te puedes registrar con esos datos", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

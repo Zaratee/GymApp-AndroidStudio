@@ -342,7 +342,7 @@ public class AdminModificarDatosCliente extends AppCompatActivity {
                         //Descartar el diálogo de progreso
                         loading.dismiss();
                         //Mostrando el mensaje de la respuesta
-                        Toast.makeText(AdminModificarDatosCliente.this, s , Toast.LENGTH_LONG).show();
+                        //Toast.makeText(AdminModificarDatosCliente.this, s , Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -534,7 +534,7 @@ public class AdminModificarDatosCliente extends AppCompatActivity {
                                             etxtApellido.setText(bdApellido);
                                             etxtTelefono.setText(bdTelefono);
                                             etxtRFID.setText(bdRFID);
-                                            Toast.makeText(AdminModificarDatosCliente.this, ""+bdHorario, Toast.LENGTH_SHORT).show();
+                                            //Toast.makeText(AdminModificarDatosCliente.this, ""+bdHorario, Toast.LENGTH_SHORT).show();
                                             if (bdHorario.equals("0")){
                                                 txtvHora.setText("Matutino");
                                                 chckBoxHorario.setText("Cambiar horario a Vespertino");

@@ -49,7 +49,6 @@ import java.security.Permission;
 public class Login extends AppCompatActivity {
 
 
-    TextInputLayout txtInputContraseña;
     EditText etxtUsuario, etxtContraseña;
     TextView txtVObtener_contraseña;
     Button btnIngresar;
@@ -72,7 +71,6 @@ public class Login extends AppCompatActivity {
         etxtUsuario = (EditText) findViewById(R.id.etxtUsuario_loginActivity);
         etxtContraseña = (EditText) findViewById(R.id.etxtContraseña_loginActivity);
 
-        txtInputContraseña = (TextInputLayout) findViewById(R.id.designContraseña_loginActivity);
         chckbxSesion = (CheckBox) findViewById(R.id.chkboxMantenerSesion_loginActivity);
 
         Typeface Condensed = Typeface.createFromAsset(getAssets(),"fonts/RobotoCondensed-Light.ttf");
@@ -93,59 +91,59 @@ public class Login extends AppCompatActivity {
 
     }
 
-    private void cargarPreferencias() {
-        SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
+private void cargarPreferencias() {
+SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
 
-        String user = preferences.getString("usuario","nada");
-        String pass = preferences.getString("contrasena","nada");
-        String cuenta = preferences.getString("cuenta","nada");
+String user = preferences.getString("usuario","nada");
+String pass = preferences.getString("contrasena","nada");
+String cuenta = preferences.getString("cuenta","nada");
 
-        if (user.equals("nada")){
-            //Toast.makeText(this, "nada", Toast.LENGTH_SHORT).show();
-        }else {
-            switch (cuenta){
-                case "instructor":
-                    startActivity(new Intent(Login.this,InstructorPerfil.class) );
-                    break;
-                case "nutriologo":
-                    startActivity(new Intent(Login.this,NutriologoPerfil.class) );
-                    break;
-                case "admin":
-                    startActivity(new Intent(Login.this,admin_menu.class) );
-                    break;
-                case "cliente":
-                    startActivity(new Intent(Login.this,ClienteMenu.class) );
-                    break;
-                case "clientenuevo":
-                    startActivity(new Intent(Login.this,ActualizarContraCliente.class) );
-                    break;
-                case "contraInstructor":
-                    Intent intentContraInst = new Intent(Login.this,ActualizarContrasena.class);
-                    intentContraInst.putExtra("REGISTRO",user);
-                    intentContraInst.putExtra("CUENTA","contraInstructor");
-                    startActivity(intentContraInst);
-                    break;
-                case "contraNutriologo":
-                    Intent intentContraNutri = new Intent(Login.this,ActualizarContrasena.class);
-                    intentContraNutri.putExtra("REGISTRO",user);
-                    intentContraNutri.putExtra("CUENTA","contraNutriologo");
-                    startActivity(intentContraNutri);
-                    break;
-                case "contraCliente":
-                    Intent intentContraCliente = new Intent(Login.this,ActualizarContrasena.class);
-                    intentContraCliente.putExtra("REGISTRO",user);
-                    intentContraCliente.putExtra("CUENTA","contraCliente");
-                    startActivity(intentContraCliente);
-                    break;
-                case "clienteEncu":
-                    startActivity(new Intent(Login.this,EncuestaClienteNuevo.class));
-                    break;
-                case "clienteEncuCodigo":
-                    startActivity(new Intent(Login.this,EncuestaCodigoCliente.class));
+if (user.equals("nada")){
+    //Toast.makeText(this, "nada", Toast.LENGTH_SHORT).show();
+}else {
+    switch (cuenta){
+        case "instructor":
+            startActivity(new Intent(Login.this,InstructorPerfil.class) );
+            break;
+        case "nutriologo":
+            startActivity(new Intent(Login.this,NutriologoPerfil.class) );
+            break;
+        case "admin":
+            startActivity(new Intent(Login.this,admin_menu.class) );
+            break;
+        case "cliente":
+            startActivity(new Intent(Login.this,ClienteMenu.class) );
+            break;
+        case "clientenuevo":
+            startActivity(new Intent(Login.this,ActualizarContraCliente.class) );
+            break;
+        case "contraInstructor":
+            Intent intentContraInst = new Intent(Login.this,ActualizarContrasena.class);
+            intentContraInst.putExtra("REGISTRO",user);
+            intentContraInst.putExtra("CUENTA","contraInstructor");
+            startActivity(intentContraInst);
+            break;
+        case "contraNutriologo":
+            Intent intentContraNutri = new Intent(Login.this,ActualizarContrasena.class);
+            intentContraNutri.putExtra("REGISTRO",user);
+            intentContraNutri.putExtra("CUENTA","contraNutriologo");
+            startActivity(intentContraNutri);
+            break;
+        case "contraCliente":
+            Intent intentContraCliente = new Intent(Login.this,ActualizarContrasena.class);
+            intentContraCliente.putExtra("REGISTRO",user);
+            intentContraCliente.putExtra("CUENTA","contraCliente");
+            startActivity(intentContraCliente);
+            break;
+        case "clienteEncu":
+            startActivity(new Intent(Login.this,EncuestaClienteNuevo.class));
+            break;
+        case "clienteEncuCodigo":
+            startActivity(new Intent(Login.this,EncuestaCodigoCliente.class));
 
-            }
-        }
     }
+}
+}
 
     private void guardarPreferencias(String cuenta) {
         SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
@@ -218,141 +216,142 @@ public class Login extends AppCompatActivity {
     }
 
     private void conexionBD() {
-        final Intent intentClienteNuevo = new Intent(Login.this,ActualizarContraCliente.class);
-        final Intent intentClienteNuevoCodigo = new Intent(Login.this,EncuestaCodigoCliente.class);
-        final Intent intentClienteViejo = new Intent(Login.this,ClienteMenu.class);
-        final Intent intentInstructor = new Intent(Login.this,InstructorPerfil.class);
-        final Intent intentNutriologo = new Intent(Login.this,NutriologoPerfil.class);
-        final Intent intentAdministrador = new Intent(Login.this,admin_menu.class);
-        String url = "http://thegymlife.online/php/sistema/login_consulta.php?registro="+ etxtUsuario.getText().toString()+"&contrasena="+etxtContraseña.getText().toString();
-        JsonObjectRequest peticion = new JsonObjectRequest
-                (
-                        Request.Method.GET,
-                        url,
-                        null,
-                        new Response.Listener<JSONObject>() {
-                            @Override
-                            public void onResponse(JSONObject response) {
-                                try {
-                                    String valor = response.getString("Estado");
-                                    switch(valor) {
-                                        case "CODIGO":
-                                            Registro = etxtUsuario.getText().toString();
-                                            intentClienteNuevoCodigo.putExtra("REGISTRO",etxtUsuario.getText().toString());
-                                            if (chckbxSesion.isChecked()){
-                                                guardarPreferencias("clienteEncuCodigo");
-                                            }
-                                            startActivity(intentClienteNuevoCodigo);
-                                            break;
-                                        case "OK":
+final Intent intentClienteNuevo = new Intent(Login.this,ActualizarContraCliente.class);
+final Intent intentClienteNuevoCodigo = new Intent(Login.this,EncuestaCodigoCliente.class);
+final Intent intentClienteViejo = new Intent(Login.this,ClienteMenu.class);
+final Intent intentInstructor = new Intent(Login.this,InstructorPerfil.class);
+final Intent intentNutriologo = new Intent(Login.this,NutriologoPerfil.class);
+final Intent intentAdministrador = new Intent(Login.this,admin_menu.class);
+String url = "http://thegymlife.online/php/sistema/login_consulta.php?registro="+ etxtUsuario.getText().toString()+
+        "&contrasena="+etxtContraseña.getText().toString();
+JsonObjectRequest peticion = new JsonObjectRequest
+(
+    Request.Method.GET,
+    url,
+    null,
+    new Response.Listener<JSONObject>() {
+        @Override
+public void onResponse(JSONObject response) {
+try {
+String valor = response.getString("Estado");
+switch(valor) {
+    case "CODIGO":
+        Registro = etxtUsuario.getText().toString();
+        intentClienteNuevoCodigo.putExtra("REGISTRO",etxtUsuario.getText().toString());
+        if (chckbxSesion.isChecked()){
+            guardarPreferencias("clienteEncuCodigo");
+        }
+        startActivity(intentClienteNuevoCodigo);
+        break;
+    case "OK":
 
-                                            final int registro  = Integer.parseInt(etxtUsuario.getText().toString());
-                                            if (registro>=3000 && registro<4000)
-                                            {
-                                                Registro = etxtUsuario.getText().toString();
-                                                intentInstructor.putExtra("REGISTRO",etxtUsuario.getText().toString());
+        final int registro  = Integer.parseInt(etxtUsuario.getText().toString());
+        if (registro>=3000 && registro<4000)
+        {
+            Registro = etxtUsuario.getText().toString();
+            intentInstructor.putExtra("REGISTRO",etxtUsuario.getText().toString());
 
-                                                if (chckbxSesion.isChecked()){
-                                                    guardarPreferencias("instructor");
-                                                }
-                                                startActivity(intentInstructor);
+            if (chckbxSesion.isChecked()){
+                guardarPreferencias("instructor");
+            }
+            startActivity(intentInstructor);
 
-                                            }else  if (registro>=4000 && registro<5000)
-                                            {
-                                                Registro = etxtUsuario.getText().toString();
-                                                intentNutriologo.putExtra("REGISTRO",etxtUsuario.getText().toString());
-                                                if (chckbxSesion.isChecked()){
-                                                    guardarPreferencias("nutriologo");
-                                                }
-                                                startActivity(intentNutriologo);
+        }else  if (registro>=4000 && registro<5000)
+        {
+            Registro = etxtUsuario.getText().toString();
+            intentNutriologo.putExtra("REGISTRO",etxtUsuario.getText().toString());
+            if (chckbxSesion.isChecked()){
+                guardarPreferencias("nutriologo");
+            }
+            startActivity(intentNutriologo);
 
-                                            }else  if (registro>=5000 && registro<6000)
-                                            {
-                                                Registro = etxtUsuario.getText().toString();
-                                                intentAdministrador.putExtra("REGISTRO",etxtUsuario.getText().toString());
-                                                if (chckbxSesion.isChecked()){
-                                                    guardarPreferencias("admin");
-                                                }
-                                                startActivity(intentAdministrador);
-                                            }
+        }else  if (registro>=5000 && registro<6000)
+        {
+            Registro = etxtUsuario.getText().toString();
+            intentAdministrador.putExtra("REGISTRO",etxtUsuario.getText().toString());
+            if (chckbxSesion.isChecked()){
+                guardarPreferencias("admin");
+            }
+            startActivity(intentAdministrador);
+        }
 
-                                            break;
-                                        case "CLIENTE":
-                                            Registro = etxtUsuario.getText().toString();
-                                            intentClienteViejo.putExtra("REGISTRO",etxtUsuario.getText().toString());
-                                            if (chckbxSesion.isChecked()){
-                                                guardarPreferencias("cliente");
-                                            }
-                                            startActivity(intentClienteViejo);
+        break;
+    case "CLIENTE":
+        Registro = etxtUsuario.getText().toString();
+        intentClienteViejo.putExtra("REGISTRO",etxtUsuario.getText().toString());
+        if (chckbxSesion.isChecked()){
+            guardarPreferencias("cliente");
+        }
+        startActivity(intentClienteViejo);
 
-                                            break;
-                                        case "NUEVO":
-                                            Registro = etxtUsuario.getText().toString();
-                                            intentClienteNuevo.putExtra("REGISTRO",etxtUsuario.getText().toString());
-                                            if (chckbxSesion.isChecked()){
-                                                guardarPreferencias("clientenuevo");
-                                            }
-                                            startActivity(intentClienteNuevo);
+        break;
+    case "NUEVO":
+        Registro = etxtUsuario.getText().toString();
+        intentClienteNuevo.putExtra("REGISTRO",etxtUsuario.getText().toString());
+        if (chckbxSesion.isChecked()){
+            guardarPreferencias("clientenuevo");
+        }
+        startActivity(intentClienteNuevo);
 
-                                            break;
-                                        case "CONTRASENA":
+        break;
+    case "CONTRASENA":
 
-                                            final int registroo  = Integer.parseInt(etxtUsuario.getText().toString());
-                                            if (registroo>=3000 && registroo<4000)
-                                            {
-                                                Registro = etxtUsuario.getText().toString();
-                                                Intent intentContraInst = new Intent(Login.this,ActualizarContrasena.class);
-                                                intentContraInst.putExtra("REGISTRO",etxtUsuario.getText().toString());
-                                                intentContraInst.putExtra("CUENTA","contraInstructor");
+        final int registroo  = Integer.parseInt(etxtUsuario.getText().toString());
+        if (registroo>=3000 && registroo<4000)
+        {
+            Registro = etxtUsuario.getText().toString();
+            Intent intentContraInst = new Intent(Login.this,ActualizarContrasena.class);
+            intentContraInst.putExtra("REGISTRO",etxtUsuario.getText().toString());
+            intentContraInst.putExtra("CUENTA","contraInstructor");
 
-                                                if (chckbxSesion.isChecked()){
-                                                    guardarPreferencias("contraInstructor");
-                                                }
-                                                startActivity(intentContraInst);
+            if (chckbxSesion.isChecked()){
+                guardarPreferencias("contraInstructor");
+            }
+            startActivity(intentContraInst);
 
-                                            }else  if (registroo>=4000 && registroo<5000)
-                                            {
-                                                Registro = etxtUsuario.getText().toString();
-                                                Intent intentContraNutri = new Intent(Login.this,ActualizarContrasena.class);
-                                                intentContraNutri.putExtra("REGISTRO",etxtUsuario.getText().toString());
-                                                intentContraNutri.putExtra("CUENTA","contraNutriologo");
+        }else  if (registroo>=4000 && registroo<5000)
+        {
+            Registro = etxtUsuario.getText().toString();
+            Intent intentContraNutri = new Intent(Login.this,ActualizarContrasena.class);
+            intentContraNutri.putExtra("REGISTRO",etxtUsuario.getText().toString());
+            intentContraNutri.putExtra("CUENTA","contraNutriologo");
 
-                                                if (chckbxSesion.isChecked()){
-                                                    guardarPreferencias("contraNutriologo");
-                                                }
-                                                startActivity(intentContraNutri);
+            if (chckbxSesion.isChecked()){
+                guardarPreferencias("contraNutriologo");
+            }
+            startActivity(intentContraNutri);
 
-                                            }else if (registroo>=1000 && registroo<3000)
-                                            {
-                                                Registro = etxtUsuario.getText().toString();
-                                                Intent intentContraCliente = new Intent(Login.this,ActualizarContrasena.class);
-                                                intentContraCliente.putExtra("REGISTRO",etxtUsuario.getText().toString());
-                                                intentContraCliente.putExtra("CUENTA","contraCliente");
+        }else if (registroo>=1000 && registroo<3000)
+        {
+            Registro = etxtUsuario.getText().toString();
+            Intent intentContraCliente = new Intent(Login.this,ActualizarContrasena.class);
+            intentContraCliente.putExtra("REGISTRO",etxtUsuario.getText().toString());
+            intentContraCliente.putExtra("CUENTA","contraCliente");
 
-                                                if (chckbxSesion.isChecked()){
-                                                    guardarPreferencias("contraCliente");
-                                                }
-                                                startActivity(intentContraCliente);
-                                            }
-                                            break;
-                                        case "ERROR":
-                                            Toast.makeText(Login.this,"Usuario no existe",Toast.LENGTH_SHORT).show();
-                                            break;
-                                    }
+            if (chckbxSesion.isChecked()){
+                guardarPreferencias("contraCliente");
+            }
+            startActivity(intentContraCliente);
+        }
+        break;
+    case "ERROR":
+        Toast.makeText(Login.this,"Usuario no existe",Toast.LENGTH_SHORT).show();
+        break;
+}
 
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-                        }
-                        , new Response.ErrorListener()
-                {
-                    @Override
-                    public void onErrorResponse(VolleyError error)
-                    {
-                        Toast.makeText(Login.this,error.getMessage(),Toast.LENGTH_SHORT).show();
-                    }
-                });
+} catch (JSONException e) {
+e.printStackTrace();
+}
+}
+            }
+            , new Response.ErrorListener()
+    {
+        @Override
+        public void onErrorResponse(VolleyError error)
+        {
+            Toast.makeText(Login.this,error.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+    });
         RequestQueue x = Volley.newRequestQueue(Login.this);
         x.add(peticion);
     }

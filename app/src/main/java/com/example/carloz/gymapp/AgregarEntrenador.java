@@ -1,5 +1,7 @@
 package com.example.carloz.gymapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
@@ -39,6 +41,8 @@ public class AgregarEntrenador extends AppCompatActivity {
     String stringCuenta, stringHorario, nombre, apellido, stringFoto,registro;
     RadioButton rdbtnMatutino,rdbtnVespertino, rdbtnSi, rdbtnNo;
     TextView txtvNAHorario,txtvAgregar;
+    String registroBD="";
+    int flag;
 
     //FirebaseAuth auth;
     //DatabaseReference reference;
@@ -125,16 +129,27 @@ public class AgregarEntrenador extends AppCompatActivity {
                 if (rdbtnNo.isChecked()){
                     stringFoto = "0";
                 }
-                Toast.makeText(AgregarEntrenador.this, "Usuario Agregado", Toast.LENGTH_SHORT).show();
-                conexionBD();
+                String sApellido = etxtApellido.getText().toString().trim();
+                String sNombre = etxtNombre.getText().toString().trim();
+
+                String sTelefono = etxtTelefono.getText().toString().trim();
+                if (!sApellido.isEmpty() && !sNombre.isEmpty() && !sTelefono.isEmpty()){
+                    if (sTelefono.length()<8 ){
+                        Toast.makeText(AgregarEntrenador.this, "El teléfono tiene que ser de 8 a 10 digitos", Toast.LENGTH_SHORT).show();
+                    }else {
+                        conexionBD();
+                    }
+                }else {
+                    Toast.makeText(AgregarEntrenador.this, "Rellenar todos los campos", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
     private void conexionBD() {
         //Log.d("Error","inicioo");
-        String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Entrenador.php?nombre="+etxtNombre.getText().toString().trim()+"&apellido="+etxtApellido.getText().toString().trim()+
-                "&horario="+stringHorario+"&telefono="+etxtTelefono.getText().toString().trim()+"&foto="+stringFoto;
+        String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Entrenador.php?registro="+registroBD+"&nombre="+etxtNombre.getText().toString().trim()
+                +"&apellido="+etxtApellido.getText().toString().trim()+"&telefono="+etxtTelefono.getText().toString().trim()+"&horario="+stringHorario+"&foto="+stringFoto;
         url = url.replaceAll(" ", "%20");
         JsonObjectRequest peticion = new JsonObjectRequest
                 (
@@ -146,9 +161,19 @@ public class AgregarEntrenador extends AppCompatActivity {
                             public void onResponse(JSONObject response) {
                                 try {
                                     String valor = response.getString("Estado");
+                                    if (flag==2){
+                                        valor="OK";
+                                    }
                                     switch(valor) {
                                         case "OK":
-                                            Conexion2BD();
+                                            Intent intent = new Intent(AgregarEntrenador.this, AgregarClienteInfo.class);
+                                            intent.putExtra("TELEFONO", etxtTelefono.getText().toString());
+                                            intent.putExtra("CUENTA", "Instructor");
+                                            intent.putExtra("FOTO",stringFoto);
+                                            startActivity(intent);
+                                            break;
+                                        case "USUARIO":
+                                            verificarUsuarioEliminado();
                                             break;
                                         case "REGISTRO":
                                             Toast.makeText(AgregarEntrenador.this,"Entrenador ya existe",Toast.LENGTH_SHORT).show();
@@ -156,6 +181,10 @@ public class AgregarEntrenador extends AppCompatActivity {
                                         case "ERROR":
                                             Toast.makeText(AgregarEntrenador.this,"Rellene todos los campos",Toast.LENGTH_SHORT).show();
                                             break;
+                                        case "PRE-REGISTRO":
+                                            verificarUsuarioEliminado();
+                                            break;
+
                                     }
                                 } catch (JSONException e) {
                                     e.printStackTrace();
@@ -174,10 +203,8 @@ public class AgregarEntrenador extends AppCompatActivity {
         x.add(peticion);
 
     }
-
-    private void Conexion2BD(){
-        //Log.d("Error","inicioo");
-        String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Entrenador_Visualizar.php?telefono="+etxtTelefono.getText().toString();
+    private void verificarUsuarioEliminado(){
+        String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Visualizar_Registrado.php?telefono="+etxtTelefono.getText().toString();
         url = url.replaceAll(" ", "%20");
         JsonObjectRequest peticion = new JsonObjectRequest
                 (
@@ -189,85 +216,95 @@ public class AgregarEntrenador extends AppCompatActivity {
                             public void onResponse(JSONObject response) {
                                 try {
                                     String valor = response.getString("Estado");
-                                    switch(valor) {
+                                    final String nombreBD = response.getString("Usuario_Nombre");
+                                    final String apellidoBD = response.getString("Usuario_Apellido");
+                                    registroBD = response.getString("Usuario_Registro");
+                                    final String telefonoBD = response.getString("Usuario_Telefono");
+                                    switch (valor) {
                                         case "OK":
-                                            Intent intent = new Intent(AgregarEntrenador.this, AgregarClienteInfo.class);
-                                            intent.putExtra("TELEFONO", etxtTelefono.getText().toString());
-                                            intent.putExtra("CUENTA", "Instructor");
-                                            intent.putExtra("FOTO",stringFoto);
-                                            registro = response.getString("Entrenador_Registro");
+                                            etxtNombre.setText(nombreBD);
+                                            etxtApellido.setText(apellidoBD);
+                                            etxtTelefono.setText(telefonoBD);
+                                            etxtTelefono.setEnabled(false);
 
-                                            //IngresarUsuarioFirebase();
-                                            startActivity(intent);
-                                            finish();
+                                            verificarUsuarioAceptar(etxtTelefono.getText().toString());
+                                            AlertDialog.Builder alertbox = new AlertDialog.Builder(AgregarEntrenador.this);
+                                            alertbox.setMessage("Entrenador eliminado previamente con la siguiente información: \n\n" +
+                                                    "Nombre: "+nombreBD +" "+apellidoBD+"\nRegistro: "+registroBD+"\nTeléfono: "+telefonoBD);
+                                            alertbox.setTitle("Entrenador eliminado");
+                                            flag=2;
 
-                                            break;
-                                        case "ERROR":
-                                            Toast.makeText(AgregarEntrenador.this,"Rellene todos los campos",Toast.LENGTH_SHORT).show();
+                                            alertbox.setPositiveButton("Recibido",
+                                                    new DialogInterface.OnClickListener() {
+
+                                                        public void onClick(DialogInterface arg0,
+                                                                            int arg1) {
+                                                            etxtNombre.setText(nombreBD);
+                                                            etxtApellido.setText(apellidoBD);
+                                                            etxtTelefono.setText(telefonoBD);
+                                                            etxtTelefono.setEnabled(false);
+                                                        }
+                                                    });
+
+                                            alertbox.show();
+
                                             break;
                                     }
+
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
                             }
                         }
-                        , new Response.ErrorListener()
-                {
+                        , new Response.ErrorListener() {
                     @Override
-                    public void onErrorResponse(VolleyError error)
-                    {
-                        Toast.makeText(AgregarEntrenador.this,"Error php",Toast.LENGTH_SHORT).show();
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(AgregarEntrenador.this, "Error", Toast.LENGTH_SHORT).show();
                     }
                 });
         RequestQueue x = Volley.newRequestQueue(AgregarEntrenador.this);
         x.add(peticion);
 
     }
-/*
-    private void IngresarUsuarioFirebase() {
-        String txt_username = etxtNombre.getText().toString();
-        String txt_email = registro+"@gymlife.com";
-        String txt_password = "GymLife";
-        String txt_telefono = etxtTelefono.getText().toString();
 
-        registrar(txt_username,txt_email,txt_password,txt_telefono);
+    private void verificarUsuarioAceptar(String telefono) {
+        String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Visualizar_Registrado_Aceptar.php?telefono="+telefono;
+        url = url.replaceAll(" ", "%20");
+
+        JsonObjectRequest peticion = new JsonObjectRequest
+                (
+                        Request.Method.GET,
+                        url,
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String valor = response.getString("Estado");
+                                    switch (valor) {
+                                        case "OK":
+                                            Toast.makeText(AgregarEntrenador.this, "Usuario en estado Pre-Registro ", Toast.LENGTH_SHORT).show();
+                                            break;
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                        , new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(AgregarEntrenador.this, "Error", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue x = Volley.newRequestQueue(AgregarEntrenador.this);
+        x.add(peticion);
 
     }
 
-    private void registrar(final String usuario, String email, final String password, final String telefono){
-        auth.createUserWithEmailAndPassword(email,password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
 
-                            FirebaseUser firebaseUser = auth.getCurrentUser();
-                            assert firebaseUser != null;
-                            String userid = firebaseUser.getUid();
 
-                            reference = FirebaseDatabase.getInstance().getReference("Users").child(userid);
 
-                            HashMap<String, String> hashMap = new HashMap<>();
-                            hashMap.put("id", userid);
-                            hashMap.put("username", usuario);
-                            hashMap.put("telefono", telefono);
 
-                            reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(AgregarEntrenador.this, "Firebase Usuario Creado", Toast.LENGTH_SHORT).show();
-                                        /*Intent intent = new Intent(AgregarCliente.this, MainActivity.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                }
-                            });
-                        } else {
-                            Toast.makeText(AgregarEntrenador.this, "No te puedes registrar con esos datos", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-    }*/
 }

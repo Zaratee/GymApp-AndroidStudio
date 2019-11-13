@@ -76,7 +76,7 @@ public class AdminModificarSelecUsuario extends AppCompatActivity {
         txtvBTNModificarDatos.setTypeface(Condensed);
 
 
-        Toast.makeText(this,""+getIntent().getStringExtra("REGISTRO"),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,""+getIntent().getStringExtra("REGISTRO"),Toast.LENGTH_SHORT).show();
         Cuenta = getIntent().getStringExtra("REGISTRO");
         conexionBDInfoUsuario();
 
@@ -106,20 +106,140 @@ public class AdminModificarSelecUsuario extends AppCompatActivity {
                 Intent intent = new Intent(AdminModificarSelecUsuario.this,ActualizarContrasena.class);
                 int registro  = Integer.parseInt(Cuenta);
                 if (registro>=1000 && registro<3000){
-                    intent.putExtra("CUENTA","ModificarCliente");
-                    intent.putExtra("REGISTRO",""+registro);
-                    startActivity(intent);
+                    modificarContraCliente();
                 }else if (registro>=3000 && registro<4000){
-                    intent.putExtra("CUENTA","ModificarInstructor");
-                    intent.putExtra("REGISTRO",""+registro);
-                    startActivity(intent);
+                    modificarContraInstructor();
                 }else if (registro>=4000 && registro<5000){
-                    intent.putExtra("CUENTA","ModificarNutriologo");
-                    intent.putExtra("REGISTRO",""+registro);
-                    startActivity(intent);
+                    modificarContraNutriologo();
                 }
             }
         });
+    }
+
+    private void modificarContraNutriologo() {
+        int registro  = Integer.parseInt(Cuenta);
+        String url = "http://thegymlife.online/php/admin/Administrador_Modificar_Nutriologo_Contrasena.php?registro="+registro;
+        url = url.replaceAll(" ", "%20");
+
+        JsonObjectRequest peticion = new JsonObjectRequest
+                (
+                        Request.Method.GET,
+                        url,
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String valor = response.getString("Estado");
+                                    switch(valor) {
+                                        case "OK":
+                                            Toast.makeText(AdminModificarSelecUsuario.this, "Nueva contraseña: Nutriologo123", Toast.LENGTH_SHORT).show();
+                                            break;
+                                        case "Error":
+                                            Toast.makeText(AdminModificarSelecUsuario.this,"Contraseña no actualizada",Toast.LENGTH_SHORT).show();
+                                            break;
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                        , new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        Toast.makeText(AdminModificarSelecUsuario.this,"Error php",Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue x = Volley.newRequestQueue(AdminModificarSelecUsuario.this);
+        x.add(peticion);
+
+
+    }
+
+    private void modificarContraInstructor() {
+        int registro  = Integer.parseInt(Cuenta);
+        String url = "http://thegymlife.online/php/admin/Administrador_Modificar_Entrenador_Contrasena.php?registro="+registro;
+        url = url.replaceAll(" ", "%20");
+
+        JsonObjectRequest peticion = new JsonObjectRequest
+                (
+                        Request.Method.GET,
+                        url,
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String valor = response.getString("Estado");
+                                    switch(valor) {
+                                        case "OK":
+                                            Toast.makeText(AdminModificarSelecUsuario.this, "Nueva contraseña: Entrenador123", Toast.LENGTH_SHORT).show();
+                                            break;
+                                        case "Error":
+                                            Toast.makeText(AdminModificarSelecUsuario.this,"Contraseña no actualizada",Toast.LENGTH_SHORT).show();
+                                            break;
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                        , new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        Toast.makeText(AdminModificarSelecUsuario.this,"Error php",Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue x = Volley.newRequestQueue(AdminModificarSelecUsuario.this);
+        x.add(peticion);
+
+
+    }
+
+    private void modificarContraCliente() {
+        int registro  = Integer.parseInt(Cuenta);
+        String url = "http://thegymlife.online/php/admin/Administrador_Modificar_Cliente_Contrasena.php?registro="+registro;
+        url = url.replaceAll(" ", "%20");
+
+        JsonObjectRequest peticion = new JsonObjectRequest
+                (
+                        Request.Method.GET,
+                        url,
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String valor = response.getString("Estado");
+                                    switch(valor) {
+                                        case "OK":
+                                            Toast.makeText(AdminModificarSelecUsuario.this, "Nueva contraseña: Gymlife123", Toast.LENGTH_SHORT).show();
+                                            break;
+                                        case "Error":
+                                            Toast.makeText(AdminModificarSelecUsuario.this,"Contraseña no actualizada",Toast.LENGTH_SHORT).show();
+                                            break;
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                        , new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        Toast.makeText(AdminModificarSelecUsuario.this,"Error php",Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue x = Volley.newRequestQueue(AdminModificarSelecUsuario.this);
+        x.add(peticion);
+        
+        
     }
 
     private void conexionBDInfoUsuario() {

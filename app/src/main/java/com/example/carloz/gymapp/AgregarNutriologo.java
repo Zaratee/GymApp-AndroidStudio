@@ -1,5 +1,7 @@
 package com.example.carloz.gymapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
@@ -40,6 +42,8 @@ public class AgregarNutriologo extends AppCompatActivity {
     String stringCuenta,stringHorario, stringFoto, registro;
     TextView txtvNAHorario,txtvAgregar;
     String nombre, apellido;
+    String registroBD="";
+    int flag;
 
     //FirebaseAuth auth;
     //DatabaseReference reference;
@@ -125,15 +129,26 @@ public class AgregarNutriologo extends AppCompatActivity {
                 if (rdbtnNo.isChecked()){
                     stringFoto = "0";
                 }
-                Toast.makeText(AgregarNutriologo.this, "Usuario Agregado", Toast.LENGTH_SHORT).show();
-                conexionBD();
+                String sApellido = etxtApellido.getText().toString().trim();
+                String sNombre = etxtNombre.getText().toString().trim();
+
+                String sTelefono = etxtTelefono.getText().toString().trim();
+                if (!sApellido.isEmpty() && !sNombre.isEmpty() && !sTelefono.isEmpty()){
+                    if (sTelefono.length()<8 ){
+                        Toast.makeText(AgregarNutriologo.this, "El teléfono tiene que ser de 8 a 10 digitos", Toast.LENGTH_SHORT).show();
+                    }else {
+                        conexionBD();
+                    }
+                }else {
+                    Toast.makeText(AgregarNutriologo.this, "Rellenar todos los campos", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
 
     private void conexionBD() {
         //Log.d("Error","inicioo");
-        String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Nutriologo.php?nombre="+etxtNombre.getText().toString().trim()+"&apellido="+etxtApellido.getText().toString().trim()+
+        String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Nutriologo.php?registro="+registroBD+"&nombre="+etxtNombre.getText().toString().trim()+"&apellido="+etxtApellido.getText().toString().trim()+
                 "&horario="+stringHorario+"&telefono="+etxtTelefono.getText().toString().trim()+"&foto="+stringFoto;
         url = url.replaceAll(" ", "%20");
         JsonObjectRequest peticion = new JsonObjectRequest
@@ -146,9 +161,22 @@ public class AgregarNutriologo extends AppCompatActivity {
                             public void onResponse(JSONObject response) {
                                 try {
                                     String valor = response.getString("Estado");
+                                    if (flag==2){
+                                        valor="OK";
+                                    }
                                     switch(valor) {
                                         case "OK":
-                                            Conexion2BD();
+                                            Intent intent = new Intent(AgregarNutriologo.this, AgregarClienteInfo.class);
+                                            intent.putExtra("TELEFONO", etxtTelefono.getText().toString());
+                                            intent.putExtra("CUENTA", "Nutriologo");
+                                            intent.putExtra("FOTO",stringFoto);
+                                            startActivity(intent);
+                                            break;
+                                        case "USUARIO":
+                                            verificarUsuarioEliminado();
+                                            break;
+                                        case "PRE-REGISTRO":
+                                            verificarUsuarioEliminado();
                                             break;
                                         case "REGISTRO":
                                             Toast.makeText(AgregarNutriologo.this,"Nutriologo ya existe",Toast.LENGTH_SHORT).show();
@@ -174,8 +202,109 @@ public class AgregarNutriologo extends AppCompatActivity {
         x.add(peticion);
 
     }
+    private void verificarUsuarioEliminado(){
+        String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Visualizar_Registrado.php?telefono="+etxtTelefono.getText().toString();
+        url = url.replaceAll(" ", "%20");
 
-    private void Conexion2BD(){
+        JsonObjectRequest peticion = new JsonObjectRequest
+                (
+                        Request.Method.GET,
+                        url,
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String valor = response.getString("Estado");
+                                    final String nombreBD = response.getString("Usuario_Nombre");
+                                    final String apellidoBD = response.getString("Usuario_Apellido");
+                                    registroBD = response.getString("Usuario_Registro");
+                                    final String telefonoBD = response.getString("Usuario_Telefono");
+
+                                    switch (valor) {
+                                        case "OK":
+                                            etxtNombre.setText(nombreBD);
+                                            etxtApellido.setText(apellidoBD);
+                                            etxtTelefono.setText(telefonoBD);
+                                            etxtTelefono.setEnabled(false);
+
+                                            verificarUsuarioAceptar(etxtTelefono.getText().toString());
+                                            AlertDialog.Builder alertbox = new AlertDialog.Builder(AgregarNutriologo.this);
+                                            alertbox.setMessage("Nutriologo eliminado previamente con la siguiente información: \n\n" +
+                                                    "Nombre: "+nombreBD +" "+apellidoBD+"\nRegistro: "+registroBD+"\nTeléfono: "+telefonoBD);
+                                            alertbox.setTitle("Nutriologo eliminado");
+                                            flag=2;
+
+                                            alertbox.setPositiveButton("Recibido",
+                                                    new DialogInterface.OnClickListener() {
+
+                                                        public void onClick(DialogInterface arg0,
+                                                                            int arg1) {
+                                                            etxtNombre.setText(nombreBD);
+                                                            etxtApellido.setText(apellidoBD);
+                                                            etxtTelefono.setText(telefonoBD);
+                                                            etxtTelefono.setEnabled(false);
+                                                        }
+                                                    });
+                                            alertbox.show();
+
+                                            break;
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                        , new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(AgregarNutriologo.this, "Error", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue x = Volley.newRequestQueue(AgregarNutriologo.this);
+        x.add(peticion);
+
+    }
+    private void verificarUsuarioAceptar(String telefono) {
+        String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Visualizar_Registrado_Aceptar.php?telefono="+telefono;
+        url = url.replaceAll(" ", "%20");
+
+        JsonObjectRequest peticion = new JsonObjectRequest
+                (
+                        Request.Method.GET,
+                        url,
+                        null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                try {
+                                    String valor = response.getString("Estado");
+                                    switch (valor) {
+                                        case "OK":
+                                            Toast.makeText(AgregarNutriologo.this, "Usuario en estado Pre-Registro ", Toast.LENGTH_SHORT).show();
+                                            break;
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }
+                        , new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(AgregarNutriologo.this, "Error", Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue x = Volley.newRequestQueue(AgregarNutriologo.this);
+        x.add(peticion);
+
+    }
+
+
+
+   /* private void Conexion2BD(){
         //Log.d("Error","inicioo");
         String url = "http://thegymlife.online/php/admin/Usuario_Ingresar_Nutriologo_Visualizar.php?telefono="+etxtTelefono.getText().toString();
         JsonObjectRequest peticion = new JsonObjectRequest
@@ -220,7 +349,7 @@ public class AgregarNutriologo extends AppCompatActivity {
         RequestQueue x = Volley.newRequestQueue(AgregarNutriologo.this);
         x.add(peticion);
 
-    }
+    }*/
 /*
     private void IngresarUsuarioFirebase() {
         String txt_username = etxtNombre.getText().toString();
