@@ -50,10 +50,6 @@ public class FragmentAyudaRutina extends Fragment {
         //Toast.makeText(getContext(), ""+ClienteEjercicio.diaSemana, Toast.LENGTH_SHORT).show();
         //Toast.makeText(getContext(), ""+Login.Registro, Toast.LENGTH_SHORT).show();
         switch (ClienteEjercicio.diaSemana){
-            case "7":
-                txtvDia.setText("Domingo");
-            break;
-
             case "1":
                 txtvDia.setText("Lunes");
                 break;
@@ -76,6 +72,9 @@ public class FragmentAyudaRutina extends Fragment {
 
             case "6":
                 txtvDia.setText("Sabado");
+                break;
+            case "7":
+                txtvDia.setText("Domingo");
                 break;
 
         }

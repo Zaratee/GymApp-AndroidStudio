@@ -20,9 +20,9 @@ public class AdminMenuModificarUsuarios extends AppCompatActivity implements Vie
         setContentView(R.layout.activity_admin_menu_modificar_usuarios);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        cardvAgregarCliente = (CardView) findViewById(R.id.cardvAgregarCliente_AdminMenuModificarUsuarios);
-        cardvAgregarInstructor = (CardView) findViewById(R.id.cardvAgregarInstructor_AdminMenuModificarUsuarios);
-        cardvAgregarNutriologo = (CardView) findViewById(R.id.cardvAgregarNutriologo_AdminMenuModificarUsuarios);
+        cardvAgregarCliente = (CardView) findViewById(R.id.cardvModificarCliente_AdminMenuModificarUsuarios);
+        cardvAgregarInstructor = (CardView) findViewById(R.id.cardvModificarInstructor_AdminMenuModificarUsuarios);
+        cardvAgregarNutriologo = (CardView) findViewById(R.id.cardvModificarNutriologo_AdminMenuModificarUsuarios);
 
 
         txtvCliente = (TextView) findViewById(R.id.txtVCliente_AdminMenuModificarUsuarios);
@@ -56,17 +56,17 @@ public class AdminMenuModificarUsuarios extends AppCompatActivity implements Vie
 
 
         switch (v.getId()) {
-            case R.id.cardvAgregarCliente_AdminMenuModificarUsuarios:
+            case R.id.cardvModificarCliente_AdminMenuModificarUsuarios:
                 intentAgregarCliente.putExtra("Cuenta", "Cliente");
                 startActivity(intentAgregarCliente);
                 break;
 
-            case R.id.cardvAgregarInstructor_AdminMenuModificarUsuarios:
+            case R.id.cardvModificarInstructor_AdminMenuModificarUsuarios:
                 intentAgregarInstuctor.putExtra("Cuenta", "Instructor");
                 startActivity(intentAgregarInstuctor);
                 break;
 
-            case R.id.cardvAgregarNutriologo_AdminMenuModificarUsuarios:
+            case R.id.cardvModificarNutriologo_AdminMenuModificarUsuarios:
                 intentAgregarNutriologo.putExtra("Cuenta", "Nutriologo");
                 startActivity(intentAgregarNutriologo);
                 break;

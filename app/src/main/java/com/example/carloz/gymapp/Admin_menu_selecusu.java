@@ -22,14 +22,14 @@ public class Admin_menu_selecusu extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_admin_menu_selecusu);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        cardvAgregarCliente = (CardView) findViewById(R.id.cardvAgregarCliente_Admin_menu_selecusu);
-        cardvAgregarInstructor = (CardView) findViewById(R.id.cardvAgregarInstructor_Admin_menu_selecusu);
-        cardvAgregarNutriologo = (CardView) findViewById(R.id.cardvAgregarNutriologo_Admin_menu_selecusu);
+        cardvAgregarCliente = (CardView) findViewById(R.id.cardvAgregarCliente_AdminMenuQuejasUsuarios);
+        cardvAgregarInstructor = (CardView) findViewById(R.id.cardvAgregarInstructor_AdminMenuQuejasUsuarios);
+        cardvAgregarNutriologo = (CardView) findViewById(R.id.cardvAgregarNutriologo_AdminMenuQuejasUsuarios);
 
         txtvAgregar = (TextView) findViewById(R.id.txtvNoActionAgregar_Admin_menu_selecusu);
-        txtvCliente = (TextView) findViewById(R.id.txtVCliente_Admin_menu_selecusu);
-        txtvNutriologo = (TextView) findViewById(R.id.txtvNutriologo_Admin_menu_selecusu);
-        txtvInstructor = (TextView) findViewById(R.id.txtvInstructor_Admin_menu_selecusu);
+        txtvCliente = (TextView) findViewById(R.id.txtVCliente_AdminMenuQuejasUsuarios);
+        txtvNutriologo = (TextView) findViewById(R.id. txtvNutriologo_AdminMenuQuejasUsuarios);
+        txtvInstructor = (TextView) findViewById(R.id.txtvInstructor_AdminMenuQuejasUsuarios);
 
         Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
         Typeface Regular = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
@@ -61,17 +61,17 @@ public class Admin_menu_selecusu extends AppCompatActivity implements View.OnCli
 
 
         switch (v.getId()) {
-            case R.id.cardvAgregarCliente_Admin_menu_selecusu:
+            case R.id.cardvAgregarCliente_AdminMenuQuejasUsuarios:
                 intentAgregarCliente.putExtra("REGISTRO",stringCuenta);
                 startActivity(intentAgregarCliente);
                 break;
 
-            case R.id.cardvAgregarInstructor_Admin_menu_selecusu:
+            case R.id.cardvAgregarInstructor_AdminMenuQuejasUsuarios:
                 intentAgregarInstuctor.putExtra("REGISTRO",stringCuenta);
                 startActivity(intentAgregarInstuctor);
                 break;
 
-            case R.id.cardvAgregarNutriologo_Admin_menu_selecusu:
+            case R.id.cardvAgregarNutriologo_AdminMenuQuejasUsuarios:
                 intentAgregarNutriologo.putExtra("REGISTRO",stringCuenta);
                 startActivity(intentAgregarNutriologo);
                 break;

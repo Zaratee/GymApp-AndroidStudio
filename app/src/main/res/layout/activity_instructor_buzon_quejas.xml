@@ -38,19 +38,20 @@
         android:id="@+id/listvQuejas_InstructorBuzonQuejas"
         android:layout_width="300dp"
         android:layout_height="350dp"
-        android:layout_below="@+id/view_InstructorBuzonQuejas"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:background="@drawable/etxt_box"/>
+        android:background="@drawable/etxt_box"
+        android:layout_centerInParent="true"/>
 
     <Button
         android:id="@+id/btnCrearQueja_InstructorBuzonQuejas"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Crear Queja"
-        android:layout_below="@+id/listvQuejas_InstructorBuzonQuejas"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/btn_box" />
+        android:background="@drawable/btn_box"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"/>
 
 </RelativeLayout>

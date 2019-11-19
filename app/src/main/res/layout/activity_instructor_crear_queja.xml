@@ -38,27 +38,26 @@
         android:id="@+id/etxtQueja_InstructorCrearQueja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnInvisible_InstructorCrearQueja"
-        android:layout_alignStart="@+id/btnInvisible_InstructorCrearQueja"
         android:ems="13"
         android:lines="6"
-        android:layout_marginTop="-220dp"
-        android:layout_marginLeft="-100dp"
         android:gravity="top"
         android:hint="Escribir queja"
         android:background="@drawable/etxt_box"
         android:padding="10dp"
-        android:textColorHint="@color/negro"/>
+        android:textColorHint="@color/negro"
+        android:layout_centerInParent="true"/>
 
     <Button
         android:id="@+id/btnEnviar_InstructorCrearQueja"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etxtQueja_InstructorCrearQueja"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:text="Enviar"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_box"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+
         />
 
 

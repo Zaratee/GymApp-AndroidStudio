@@ -73,6 +73,7 @@ public class admin_menu extends AppCompatActivity implements View.OnClickListene
         txtvEliminarInfo.setTypeface(Light);
         txtvRegistroInfo.setTypeface(Light);
         txtvBuzonInfo.setTypeface(Light);
+
         txtvAgregar.setTypeface(Regular);
         txtvEliminar.setTypeface(Regular);
         txtvRegistro.setTypeface(Regular);

@@ -33,7 +33,7 @@ public class ClientePerfil extends AppCompatActivity {
 
     CardView btnProgreso,btnCambiarContraseña,btnCerrarSesion, btnCodigo;
     String stringCuenta, bdRegistro,bdNombre,bdApellido,bdEdad,bdPeso,bdEstatura,bdGrasaCorporal, nutriNombre,nutriApell,
-    instNombre, instApellido,codigoCliente;
+    instNombre, instApellido,codigoCliente, stringRegInfo, stringRegNutri;
     TextView NARegistro, NANombre, NAEdad, NAGrasa, NAEstatura, NAPeso , Estatura, Edad, Nombre, Registro, Grasa, Titulo,
             Peso, Progreso, ActualizarContra, CerrarSesion, RegInst, RegNutr, Codigo;
     ImageView imgPerfil, btnInst, btnNutri;
@@ -116,6 +116,24 @@ public class ClientePerfil extends AppCompatActivity {
         ClickbtnCerrarSesion();
         ClickbtnCambiarContraseña();
         ClickbtnProgreso();
+
+        if (stringRegInfo.equals("0")){
+            RegInst.setText("No asignado");
+            btnInst.setVisibility(View.INVISIBLE);
+        }else{
+            RegInst.setText(stringRegInfo);
+            btnInst.setVisibility(View.VISIBLE);
+
+        }
+        if (stringRegNutri.equals("0")){
+            RegNutr.setText("No asignado");
+            btnNutri.setVisibility(View.INVISIBLE);
+        }else{
+            RegNutr.setText(stringRegNutri);
+            btnNutri.setVisibility(View.VISIBLE);
+
+        }
+
         btnNutri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -232,8 +250,8 @@ public class ClientePerfil extends AppCompatActivity {
         bdGrasaCorporal =(String)bundle.get("BDGRASA");
 
 
-        RegInst.setText(bundle.getString("REGINST"));
-        RegNutr.setText(bundle.getString("REGNUTRI"));
+        stringRegInfo = bundle.getString("REGINST");
+        stringRegNutri = bundle.getString("REGNUTRI");
 
         nutriNombre = bundle.getString("NUTRNOMB");
         nutriApell = bundle.getString("NUTRAPELL");
@@ -286,6 +304,8 @@ public class ClientePerfil extends AppCompatActivity {
                 editor.putString("usuario","nada");
                 editor.putString("contrasena","nada");
                 editor.putString("cuenta","nada");
+                editor.putString("clienteRegInstr","nada");
+                editor.putString("clienteRegNutri","nada");
                 editor.commit();
                 startActivity(intent);
             }

@@ -77,7 +77,9 @@
                                             android:layout_height="wrap_content"
                                             android:textStyle="bold"
                                             android:layout_marginTop="10dp"
-                                            android:text="Ejercicio"/>
+                                            android:text="Ejercicio"
+                                            android:textColor="@color/negro"
+                                            />
                                         <View
                                             android:layout_width="match_parent"
                                             android:layout_height="1dp"
@@ -119,7 +121,8 @@
                                             android:layout_height="wrap_content"
                                             android:textStyle="bold"
                                             android:layout_marginTop="10dp"
-                                            android:text="Alimentacion"/>
+                                            android:text="Alimentacion"
+                                            android:textColor="@color/negro"/>
                                         <View
                                             android:layout_width="match_parent"
                                             android:layout_height="1dp"
@@ -171,7 +174,8 @@
                                             android:layout_height="wrap_content"
                                             android:textStyle="bold"
                                             android:layout_marginTop="10dp"
-                                            android:text="Buzon"/>
+                                            android:text="Buzon"
+                                            android:textColor="@color/negro"/>
                                         <View
                                             android:layout_width="match_parent"
                                             android:layout_height="1dp"

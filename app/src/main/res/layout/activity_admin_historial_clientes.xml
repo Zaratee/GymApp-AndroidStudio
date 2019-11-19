@@ -48,9 +48,9 @@
     <LinearLayout
         android:id="@+id/layoutbtnHistorial"
         android:layout_width="match_parent"
-        android:layout_height="280dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:weightSum="3"
         android:orientation="vertical"
         android:layout_below="@+id/etxtHistorial_AdminHistorialClientes">
@@ -72,7 +72,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:padding="30dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/circulorosa"
+                        android:src="@drawable/ic_sentiment_very_dissatisfied_black_24dp"
+                        android:padding="14dp"/>
 
                     <TextView
                         android:id="@+id/txtvProgreso_ClientePerfil"
@@ -81,8 +89,9 @@
                         android:textStyle="bold"
                         android:text="Eliminados"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"
-                        android:textColor="#000"/>
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"/>
 
 
 
@@ -103,6 +112,13 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/circuloamarillo"
+                        android:src="@drawable/ic_mood_black_24dp"
+                        android:padding="14dp"/>
+
                     <TextView
                         android:id="@+id/txtvCodigoo_ClientePerfil"
                         android:layout_width="wrap_content"
@@ -110,8 +126,9 @@
                         android:textStyle="bold"
                         android:text="Creados"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"
-                        android:textColor="#000"/>
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"/>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -137,7 +154,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:padding="30dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/circuloverde"
+                        android:src="@drawable/ic_person_black_24dp"
+                        android:padding="14dp"/>
 
                     <TextView
                         android:id="@+id/txtvActualizarContra_ClientePerfil"
@@ -146,8 +171,9 @@
                         android:textStyle="bold"
                         android:text="Clientes"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"
-                        android:textColor="#000"/>
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"/>
 
 
 
@@ -169,6 +195,13 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/circulomorado"
+                        android:src="@drawable/ic_fitness_center_black_24dp"
+                        android:padding="14dp"/>
+
                     <TextView
                         android:id="@+id/txtvCerrarSesion_ClientePerfil"
                         android:layout_width="wrap_content"
@@ -176,8 +209,9 @@
                         android:textStyle="bold"
                         android:text="Entrenadores"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"
-                        android:textColor="#000"/>
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"/>
 
 
 
@@ -206,7 +240,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:padding="30dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:background="@drawable/circuloorojo"
+                        android:src="@drawable/ic_favorite_border_black_24dp"
+                        android:padding="14dp"/>
+
 
                     <TextView
                         android:id="@+id/txtvActualizarContra_Nutriologo"
@@ -215,20 +258,12 @@
                         android:textStyle="bold"
                         android:text="Nutriologos"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"
-                        android:textColor="#000"/>
+                        android:textSize="18dp"
+                        android:textColor="#000"
+                        android:layout_marginTop="10dp"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
         </LinearLayout>
-
-
-
-
-
-
-
-
-
 
     </LinearLayout>
     <android.support.v7.widget.RecyclerView

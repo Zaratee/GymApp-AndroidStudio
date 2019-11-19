@@ -121,6 +121,12 @@ public class ClienteMenu extends AppCompatActivity {
                                     registroInstru = response.getString("Cliente_Entrenador");
                                     registroNutri = response.getString("Cliente_Nutriologo");
 
+                                    SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = preferences.edit();
+                                    editor.putString("clienteRegInstr",registroInstru);
+                                    editor.putString("clienteRegNutri",registroNutri);
+                                    editor.commit();
+
                                     if (bdEstadoInstru2.equals("NUEVO") && bdEstadoNutri2.equals("OK")){
                                         dato="Instructor asignado";
                                         alertDialog();
@@ -179,6 +185,7 @@ public class ClienteMenu extends AppCompatActivity {
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
             Toast.makeText(ClienteMenu.this,"Complete todos los campos",Toast.LENGTH_SHORT).show();
         }else {
+
             auth.signInWithEmailAndPassword(email,password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -204,6 +211,7 @@ public class ClienteMenu extends AppCompatActivity {
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
             Toast.makeText(ClienteMenu.this,"Complete todos los campos",Toast.LENGTH_SHORT).show();
         }else {
+
             auth.signInWithEmailAndPassword(email,password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -310,6 +318,11 @@ public class ClienteMenu extends AppCompatActivity {
                                                 intentCliente.putExtra("INSTNOMB",nombreInst);
                                                 intentCliente.putExtra("NUTRNOMB",nombreNutr);
                                                 intentCliente.putExtra("NUTRAPELL",apellNutr);
+                                                SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
+                                                SharedPreferences.Editor editor = preferences.edit();
+                                                editor.putString("clienteRegInstr",registroInstru);
+                                                editor.putString("clienteRegNutri",registroNutri);
+                                                editor.commit();
 
 
                                                 startActivity(intentCliente);

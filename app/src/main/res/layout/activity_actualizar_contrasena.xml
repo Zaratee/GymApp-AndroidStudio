@@ -32,13 +32,21 @@
         android:visibility="invisible"
         />
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+
+
+
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/designContraseña_ActualizarContrasena"
         android:layout_width="260dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/btnInvisible_ActualizarContrasena"
-        android:layout_marginTop="-180dp"
         app:passwordToggleEnabled="true"
         android:textColorHint="#000"
         app:passwordToggleTint="#000">
@@ -98,15 +106,17 @@
         android:layout_alignLeft="@+id/txtvCaracteres_ActualizarContraCliente"
         android:textColor="#afafaf"
         />
+    </RelativeLayout>
     <Button
         android:id="@+id/btnContinuar_ActualizarContrasena"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="Actualizar"
-        android:layout_below="@+id/designContraseñaConfirm_ActualizarContrasena"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="70dp"
         android:background="@drawable/btn_box"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
         />
 
 </RelativeLayout>

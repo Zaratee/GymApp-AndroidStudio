@@ -28,6 +28,7 @@ public class InstructorMenuCliente extends AppCompatActivity {
 
     CardView btnChat, btnAsignarRutina, btnEditarRutina, btnEvaluacionCliente, btnEjercicioRealizado;
     TextView txtvChat, txtvAsignarRutina, txtvEditarRutina, txtvEjercicioRealizado, txtvEvaluacionCliente;
+    TextView txtvChatinfo, txtvAsignarRutinainfo, txtvEditarRutinainfo, txtvEjercicioRealizadoinfo, txtvEvaluacionClienteinfo;
     String registroCliente;
     FirebaseAuth auth;
     @Override
@@ -48,7 +49,22 @@ public class InstructorMenuCliente extends AppCompatActivity {
         txtvEjercicioRealizado = (TextView) findViewById(R.id.txtvEjercicioRealizado_InstructorMenuCliente);
         txtvEvaluacionCliente = (TextView) findViewById(R.id.txtvEvaluacionCliente_InstructorMenuCliente);
 
+        txtvChatinfo = (TextView) findViewById(R.id.txtvChatinfo_InstructorMenuCliente);
+        txtvAsignarRutinainfo = (TextView) findViewById(R.id.txtvRutinainfo_InstructorMenuCliente);
+        txtvEditarRutinainfo = (TextView) findViewById(R.id.txtvEditarRutinainfo_InstructorMenuCliente);
+        txtvEjercicioRealizadoinfo = (TextView) findViewById(R.id.txtvEjercicioRealizadoinfo_InstructorMenuCliente);
+        txtvEvaluacionClienteinfo = (TextView) findViewById(R.id.txtvEvaluacionClienteinfo_InstructorMenuCliente);
+
         Typeface Regular = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
+        Typeface Light = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Light.ttf");
+
+
+        txtvChatinfo.setTypeface(Light);
+        txtvAsignarRutinainfo.setTypeface(Light);
+        txtvEditarRutinainfo.setTypeface(Light);
+        txtvEjercicioRealizadoinfo.setTypeface(Light);
+        txtvEvaluacionClienteinfo.setTypeface(Light);
+
         auth = FirebaseAuth.getInstance();
 
         txtvChat.setTypeface(Regular);

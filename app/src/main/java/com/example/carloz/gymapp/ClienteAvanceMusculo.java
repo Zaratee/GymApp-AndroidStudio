@@ -42,7 +42,7 @@ public class ClienteAvanceMusculo extends AppCompatActivity {
 
         registroCliente = getIntent().getStringExtra("REGISTRO");
 
-        Typeface Condensed = Typeface.createFromAsset(getAssets(),"fonts/RobotoCondensed-Light.ttf");
+        Typeface Condensed = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
 
         txtvBrazoyAnt.setTypeface(Condensed);
         txtvEspalda.setTypeface(Condensed);

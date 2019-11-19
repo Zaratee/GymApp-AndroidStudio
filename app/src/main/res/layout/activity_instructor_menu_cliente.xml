@@ -7,11 +7,15 @@
     tools:context=".InstructorMenuCliente"
     android:layout_centerInParent="true">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="top"
+        android:layout_gravity="center"
         android:layout_centerInParent="true">
         <LinearLayout
             android:layout_width="match_parent"
@@ -21,8 +25,8 @@
             android:clipToPadding="false">
             <android.support.v7.widget.CardView
                 android:id="@+id/btnChat_InstructorMenuCliente"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:selectableItemBackground">
@@ -37,17 +41,28 @@
                         android:background="@drawable/circulomorado"
                         android:src="@drawable/ic_chat_white_24dp"
                         android:padding="14dp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="10dp"/>
+
                     <TextView
                         android:id="@+id/txtvChat_InstructorMenuCliente"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Chat"/>
+                        android:text="Chat"
+                        android:layout_marginTop="5dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="10dp"/>
+
+                    <TextView
+                        android:id="@+id/txtvChatinfo_InstructorMenuCliente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Enviar mensajes directo al cliente"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
 
 
                 </LinearLayout>
@@ -67,8 +82,8 @@
             android:clipToPadding="false">
             <android.support.v7.widget.CardView
                 android:id="@+id/btnAsignarRutina_InstructorMenuCliente"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:selectableItemBackground">
@@ -83,18 +98,30 @@
                         android:background="@drawable/circuloorojo"
                         android:src="@drawable/ic_fitness_center_black_24dp"
                         android:padding="14dp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="10dp"/>
-
                     <TextView
                         android:id="@+id/txtvRutina_InstructorMenuCliente"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Asignar rutina"/>
+                        android:text="Asignar rutina"
+                        android:layout_marginTop="5dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="10dp"
+                        />
+                    <TextView
+                        android:id="@+id/txtvRutinainfo_InstructorMenuCliente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Asignar la rutina de la semana "
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
+
+
+
 
                 </LinearLayout>
 
@@ -102,8 +129,8 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/btnEditarRutina_InstructorMenuCliente"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:selectableItemBackground">
@@ -118,17 +145,27 @@
                         android:background="@drawable/circulorosa"
                         android:src="@drawable/ic_edit_black_24dp"
                         android:padding="14dp"/>
+
+                    <TextView
+                        android:id="@+id/txtvEditarRutina_InstructorMenuCliente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Editar rutina"
+                        android:layout_marginTop="6dp"/>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/lightgray"
                         android:layout_margin="10dp"/>
                     <TextView
-                        android:id="@+id/txtvEditarRutina_InstructorMenuCliente"
+                        android:id="@+id/txtvEditarRutinainfo_InstructorMenuCliente"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Editar rutina"/>
+                        android:gravity="center"
+                        android:text="Modificar la rutina de la semana"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
 
                 </LinearLayout>
 
@@ -145,8 +182,8 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/btnEjercicioRelaizado_InstructorMenuCliente"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:selectableItemBackground">
@@ -162,6 +199,15 @@
                         android:background="@drawable/circuloamarillo"
                         android:src="@drawable/ic_content_paste_black_24dp"
                         android:padding="14dp"/>
+
+                    <TextView
+                        android:id="@+id/txtvEjercicioRealizado_InstructorMenuCliente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Ejercicio realizado"
+                        android:layout_marginTop="6dp"/>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
@@ -169,11 +215,13 @@
                         android:layout_margin="10dp"/>
 
                     <TextView
-                        android:id="@+id/txtvEjercicioRealizado_InstructorMenuCliente"
+                        android:id="@+id/txtvEjercicioRealizadoinfo_InstructorMenuCliente"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Ejercicio realizado"/>
+                        android:gravity="center"
+                        android:text="Visualizar una el ejercicio realizado"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
 
 
                 </LinearLayout>
@@ -182,8 +230,8 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/btnEvaluacionCliente_InstructorMenuCliente"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+                android:layout_width="160dp"
+                android:layout_height="190dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:selectableItemBackground">
@@ -198,17 +246,27 @@
                         android:background="@drawable/circuloverde"
                         android:src="@drawable/ic_assignment_turned_in_black_24dp"
                         android:padding="14dp"/>
+
+                    <TextView
+                        android:id="@+id/txtvEvaluacionCliente_InstructorMenuCliente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Evaluación cliente"
+                        android:layout_marginTop="6dp"/>
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/lightgray"
                         android:layout_margin="10dp"/>
                     <TextView
-                        android:id="@+id/txtvEvaluacionCliente_InstructorMenuCliente"
+                        android:id="@+id/txtvEvaluacionClienteinfo_InstructorMenuCliente"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Evaluación cliente"/>
+                        android:gravity="center"
+                        android:text="Visualizar la evaluacion del cliente"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
 
 
 
@@ -222,6 +280,7 @@
 
 
     </LinearLayout>
+    </ScrollView>
 
 
 

@@ -58,18 +58,28 @@
                         android:background="@drawable/circuloverde"
                         android:src="@drawable/ic_person_black_24dp"
                         android:padding="14dp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="7dp"/>
+
                     <TextView
                         android:id="@+id/txtVCliente_AdminEliminarSelecUsuario"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Cliente"
-                        android:textSize="17dp"/>
+                        android:layout_marginTop="10dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="7dp"/>
+                    <TextView
+                        android:id="@+id/txtvU1info_AdminEliminarSelecUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Eliminar Cliente del sistema"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
 
 
 
@@ -95,18 +105,29 @@
                         android:background="@drawable/circulomorado"
                         android:src="@drawable/ic_fitness_center_black_24dp"
                         android:padding="14dp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="7dp"/>
+
                     <TextView
                         android:id="@+id/txtvInstructor_AdminEliminarSelecUsuario"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Instructor"
-                        android:textSize="17dp"/>
+                        android:layout_marginTop="10dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="7dp"/>
+
+                    <TextView
+                        android:id="@+id/txtvU2info_AdminEliminarSelecUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Eliminar Instructor del sistema"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
 
 
                 </LinearLayout>
@@ -140,18 +161,29 @@
                         android:background="@drawable/circuloorojo"
                         android:src="@drawable/ic_favorite_border_black_24dp"
                         android:padding="14dp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="7dp"/>
+
                     <TextView
                         android:id="@+id/txtvNutriologo_AdminEliminarSelecUsuario"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Nutriologo"
-                        android:textSize="17dp"/>
+                        android:layout_marginTop="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="7dp"/>
+
+                    <TextView
+                        android:id="@+id/txtvU3info_AdminEliminarSelecUsuario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Eliminar Nutriólogo del sistema"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
+
 
 
                 </LinearLayout>

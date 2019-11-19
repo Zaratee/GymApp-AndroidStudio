@@ -26,6 +26,14 @@
         android:layout_margin="10dp"
         android:layout_below="@+id/txtvTitulo_AdminModificarDatosCliente"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/View_AdminModificarDatosCliente"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        >
+
     <android.support.design.widget.TextInputLayout
         android:id="@+id/designNombre_AdminModificarDatosCliente"
         android:layout_width="260dp"
@@ -115,7 +123,7 @@
         android:textColor="@color/negro"
         android:layout_below="@+id/designTelefono_AdminModificarDatosCliente"
         android:layout_alignStart="@+id/designTelefono_AdminModificarDatosCliente"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="40dp" />
     <TextView
         android:id="@+id/txtvHorario_AdminModificarDatosCliente"
         android:layout_width="wrap_content"
@@ -136,6 +144,9 @@
         android:layout_below="@+id/txtvHorario_AdminModificarDatosCliente"
         android:layout_alignStart="@+id/txtvHorario_AdminModificarDatosCliente"
         android:layout_marginTop="10dp"
+        android:backgroundTint="@color/negro"
+        android:textColor="@color/negro"
+        android:buttonTint="@color/negro"
         />
 
     <com.mikhaellopez.circularimageview.CircularImageView
@@ -152,15 +163,29 @@
         android:layout_toRightOf="@+id/txtvNoActionHorario_AdminModificarDatosCliente"
         android:layout_marginLeft="60dp"/>
 
-    <Button
+        <Button
+            android:id="@+id/btnCambiarCodigo_AdminModificarDatosCliente"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Cambiar código"
+            android:textSize="16dp"
+            android:layout_alignBaseline="@+id/btnTomarFoto_AdminModificarDatosCliente"
+            android:layout_alignStart="@+id/chkboxCambiarHorario_AdminModificarNutriologo"
+            android:layout_marginLeft="-10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_box"
+            />
+
+
+        <Button
         android:id="@+id/btnTomarFoto_AdminModificarDatosCliente"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Tomar Foto"
+        android:text="Tomar \nFoto"
         android:layout_below="@+id/imgvUsuario_AdminModificarDatosCliente"
         android:layout_alignStart="@+id/imgvUsuario_AdminModificarDatosCliente"
         android:layout_marginLeft="-10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/btn_box"
         />
     <Button
@@ -170,20 +195,7 @@
         android:text="Cambiar nutriologo"
         android:layout_below="@+id/btnTomarFoto_AdminModificarDatosCliente"
         android:layout_alignStart="@+id/btnTomarFoto_AdminModificarDatosCliente"
-        android:layout_marginLeft="-10dp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/btn_box"
-        />
-    <Button
-        android:id="@+id/btnCambiarCodigo_AdminModificarDatosCliente"
-        android:layout_width="120dp"
-        android:layout_height="wrap_content"
-        android:text="Cambiar código"
-        android:textSize="16dp"
-        android:layout_alignBaseline="@+id/btnTomarFoto_AdminModificarDatosCliente"
-        android:layout_alignStart="@+id/chkboxCambiarHorario_AdminModificarNutriologo"
-        android:layout_marginLeft="-10dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/btn_box"
         />
 
@@ -198,6 +210,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/btn_box"
         />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btnModificarCliente_AdminModificarDatosCliente"
@@ -211,5 +224,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         />
+
 
 </RelativeLayout>

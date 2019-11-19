@@ -79,6 +79,8 @@ public class AgregarCliente extends AppCompatActivity {
         Typeface Regular = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
         Typeface Condensed = Typeface.createFromAsset(getAssets(),"fonts/RobotoCondensed-Light.ttf");
 
+        Toast.makeText(AgregarCliente.this,"Rellene  todos los campos",Toast.LENGTH_SHORT).show();
+
         txtvAgregar.setTypeface(Thin);
         txtvNAHorario.setTypeface(Regular);
         txtvNAAsignar.setTypeface(Regular);

@@ -13,8 +13,6 @@
         android:layout_centerInParent="true"
         android:visibility="invisible"/>
 
-
-
     <TextView
         android:id="@+id/txtvDia_InstructorAsignarSeleccionarMusculo"
         android:layout_width="wrap_content"
@@ -62,18 +60,29 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/txtvBrazo_ClientePerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Brazo y antebrazo"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/brazo"
+                        android:layout_gravity="center" />
+
+
 
 
 
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/txtvBrazo_ClientePerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Brazo y antebrazo"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="#16000000"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="@color/negro"/>
 
             </android.support.v7.widget.CardView>
 
@@ -91,16 +100,29 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/txtvHombros_ClientePerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Hombros"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/hombros"
+                        android:layout_gravity="center"
+                        />
+
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtvHombros_ClientePerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Hombros"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="#16000000"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="@color/negro"/>
+
 
             </android.support.v7.widget.CardView>
 
@@ -127,18 +149,30 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/txtvEspalda_ClientePerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Espalda"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fitsSystemWindows="true"
+                        android:src="@drawable/espalda"
+                        android:layout_gravity="center" />
+
+
 
 
 
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/txtvEspalda_ClientePerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Espalda"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="#16000000"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="@color/negro"/>
 
             </android.support.v7.widget.CardView>
 
@@ -156,18 +190,29 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/txtvPiernas_ClientePerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Piernas"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/pierna"
+                        android:layout_gravity="center" />
+
 
 
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtvPiernas_ClientePerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text=" Piernas"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="#16000000"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="@color/negro"/>
 
             </android.support.v7.widget.CardView>
 
@@ -192,16 +237,27 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/txtvGluteos_ClientePerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Glúteos"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/gluteos"
+                        android:layout_gravity="center" />
+
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtvGluteos_ClientePerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Glúteos"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="#16000000"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="@color/negro"/>
 
             </android.support.v7.widget.CardView>
 
@@ -219,18 +275,29 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/txtvCerrarSesion_ClientePerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Abdominales"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/abdominales"
+                        android:layout_gravity="center"/>
+
+
 
 
 
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/txtvCerrarSesion_ClientePerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Abdominales"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="#16000000"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="@color/negro"/>
 
             </android.support.v7.widget.CardView>
 
@@ -255,18 +322,30 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
-                    <TextView
-                        android:id="@+id/txtvActualizarContra_ClientePerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="Pectorales"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/pectorales"
+                        android:layout_gravity="center"/>
+
+
 
 
 
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtvActualizarContra_ClientePerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Pectorales"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:background="#16000000"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:textColor="@color/negro"/>
 
             </android.support.v7.widget.CardView>
 

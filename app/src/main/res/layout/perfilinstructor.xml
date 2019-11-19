@@ -126,6 +126,12 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/resetcontra"/>
+
+
                     <TextView
                         android:id="@+id/txtvActualizarContra_PerfilInstructor"
                         android:layout_width="wrap_content"
@@ -133,7 +139,8 @@
                         android:textStyle="bold"
                         android:text="Actualizar contraseña"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:textSize="12dp"
+                        android:layout_marginTop="10dp"/>
 
 
 
@@ -155,6 +162,12 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/ic_announcement_black_24dp"
+                        android:tint="@color/negro"/>
+
                     <TextView
                         android:id="@+id/txtvQuejas_PerfilInstructor"
                         android:layout_width="wrap_content"
@@ -162,7 +175,8 @@
                         android:textStyle="bold"
                         android:text="Quejas"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:textSize="12dp"
+                        android:layout_marginTop="10dp"/>
 
 
 
@@ -191,6 +205,10 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/logout"/>
 
                     <TextView
                         android:id="@+id/txtvCerrarSesion_PerfilInstructor"
@@ -199,7 +217,8 @@
                         android:textStyle="bold"
                         android:text="Cerrar Sesion"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:textSize="12dp"
+                        android:layout_marginTop="10dp"/>
 
                 </LinearLayout>
 

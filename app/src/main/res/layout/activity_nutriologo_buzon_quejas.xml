@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".NutriologoBuzonQuejas">
 
-
-
     <TextView
         android:id="@+id/txtvNoActionTitulo_NutriologoBuzonQuejas"
         android:layout_width="wrap_content"
@@ -38,19 +36,19 @@
         android:id="@+id/listvQuejas_NutriologoBuzonQuejas"
         android:layout_width="300dp"
         android:layout_height="350dp"
-        android:layout_below="@+id/view_NutriologoBuzonQuejas"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:background="@drawable/etxt_box"/>
+        android:background="@drawable/etxt_box"
+        />
 
     <Button
         android:id="@+id/btnCrearQueja_NutriologoBuzonQuejas"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="Crear Queja"
-        android:layout_below="@+id/listvQuejas_NutriologoBuzonQuejas"
-        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/btn_box" />
+        android:background="@drawable/btn_box"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"/>
 
 </RelativeLayout>

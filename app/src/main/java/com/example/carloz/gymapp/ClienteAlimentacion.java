@@ -1,6 +1,8 @@
 package com.example.carloz.gymapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -33,7 +35,9 @@ public class ClienteAlimentacion extends AppCompatActivity {
         btnAgregar  = (FloatingActionButton) findViewById(R.id.floatingbtnAgregar_ClienteAlimentacion);
         btnChat  = (FloatingActionButton) findViewById(R.id.floatingbtnChat_ClienteAlimentacion);
 
-        registronutri = getIntent().getStringExtra("REGISTRONUTRI");
+        SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
+
+        registronutri = preferences.getString("clienteRegNutri","nada");
 
         BottomNavigationView bottomNav = (BottomNavigationView) findViewById(R.id.menu_ClienteAlimentacion);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -52,29 +56,32 @@ public class ClienteAlimentacion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-                reference.orderByChild("username").equalTo(registronutri).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (registronutri.equals("0")){
+                    Toast.makeText(ClienteAlimentacion.this, "Nutriologo no asignado", Toast.LENGTH_SHORT).show();
+                }else {
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                    reference.orderByChild("username").equalTo(registronutri).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        for(DataSnapshot child : dataSnapshot.getChildren())
-                        {
-                            Intent intent = new Intent(ClienteAlimentacion.this,MessageActivity.class);
-                            intent.putExtra("userid",child.getKey());
-                            intent.putExtra("receptor",registronutri);
-                            startActivity(intent);
+                            for (DataSnapshot child : dataSnapshot.getChildren()) {
+                                Intent intent = new Intent(ClienteAlimentacion.this, MessageActivity.class);
+                                intent.putExtra("userid", child.getKey());
+                                intent.putExtra("receptor", registronutri);
+                                startActivity(intent);
 
+                            }
+
+                            // Toast.makeText(ClienteEjercicio.this, ""+dataSnapshot., Toast.LENGTH_SHORT).show();
+                            //HashMap<String, String> hashMap = new HashMap<String ,String>(dataSnapshot.getValue());
                         }
 
-                        // Toast.makeText(ClienteEjercicio.this, ""+dataSnapshot., Toast.LENGTH_SHORT).show();
-                        //HashMap<String, String> hashMap = new HashMap<String ,String>(dataSnapshot.getValue());
-                    }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
+                        }
+                    });
+                }
 
             }
         });

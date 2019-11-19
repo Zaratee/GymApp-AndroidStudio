@@ -191,7 +191,26 @@
                 android:background="@drawable/apptheme_textfield_activated_holo_light"
                 android:maxLength="2" />
         </android.support.design.widget.TextInputLayout>
-
+        <Button
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Asignar"
+            android:textAllCaps="true"
+            android:background="@drawable/btn_box"
+            android:textColor="#000"
+            android:textSize="17dp" />
+        <Button
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Asignar"
+            android:textAllCaps="true"
+            android:background="@drawable/btn_box"
+            android:textColor="#000"
+            android:textSize="17dp" />
     <Button
         android:id="@+id/btnAsignar_InstructorAsignarEjercicioInfo"
         android:layout_gravity="center"
@@ -203,19 +222,12 @@
         android:background="@drawable/btn_box"
         android:textColor="#000"
         android:textSize="17dp" />
-        <Button
-            android:visibility="invisible"
-            android:layout_gravity="center"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="Asignar"
-            android:textAllCaps="true"
-            android:background="@drawable/btn_box"
-            android:textColor="#000"
-            android:textSize="17dp" />
+
 
     </LinearLayout>
+
    </ScrollView>
+
 
 
 

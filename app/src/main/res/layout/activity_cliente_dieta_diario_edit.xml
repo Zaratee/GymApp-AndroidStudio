@@ -32,7 +32,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="20dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -120,7 +120,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="20dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -211,7 +211,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="20dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -301,6 +301,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:layout_marginTop="30dp"
         >
         <android.support.design.widget.TextInputLayout
             android:id="@+id/designCantidad_ClienteDietaDiarioEdit"
@@ -386,6 +387,11 @@
             android:text="PasaBocas" />
     </RadioGroup>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom">
     <Button
         android:id="@+id/btnEditar_ClienteDietaDiarioEdit"
         android:layout_width="200dp"
@@ -408,6 +414,8 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_box"
         android:textColor="#000"
-        android:textSize="17dp"/>
+        android:textSize="17dp"
+        android:layout_marginBottom="30dp"/>
+    </LinearLayout>
 
 </LinearLayout>

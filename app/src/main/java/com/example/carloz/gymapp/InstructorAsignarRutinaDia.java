@@ -69,7 +69,7 @@ public class InstructorAsignarRutinaDia extends AppCompatActivity {
                 String Titulo = "Lunes";
                 intent.putExtra("REGISTRO",registroCliente);
                 intent.putExtra("DIA",Titulo);
-                intent.putExtra("DIANUM","2");
+                intent.putExtra("DIANUM","1");
                 startActivity(intent);
             }
         });
@@ -83,7 +83,7 @@ public class InstructorAsignarRutinaDia extends AppCompatActivity {
                 String Titulo = "Martes";
                 intent.putExtra("REGISTRO",registroCliente);
                 intent.putExtra("DIA",Titulo);
-                intent.putExtra("DIANUM","3");
+                intent.putExtra("DIANUM","2");
                 startActivity(intent);
             }
         });
@@ -98,7 +98,7 @@ public class InstructorAsignarRutinaDia extends AppCompatActivity {
                 String Titulo = "Miercoles";
                 intent.putExtra("REGISTRO",registroCliente);
                 intent.putExtra("DIA",Titulo);
-                intent.putExtra("DIANUM","4");
+                intent.putExtra("DIANUM","3");
                 startActivity(intent);
             }
         });
@@ -113,7 +113,7 @@ public class InstructorAsignarRutinaDia extends AppCompatActivity {
                 String Titulo = "Jueves";
                 intent.putExtra("REGISTRO",registroCliente);
                 intent.putExtra("DIA",Titulo);
-                intent.putExtra("DIANUM","5");
+                intent.putExtra("DIANUM","4");
                 startActivity(intent);
             }
         });
@@ -129,7 +129,7 @@ public class InstructorAsignarRutinaDia extends AppCompatActivity {
                 String Titulo = "Viernes";
                 intent.putExtra("REGISTRO",registroCliente);
                 intent.putExtra("DIA",Titulo);
-                intent.putExtra("DIANUM","6");
+                intent.putExtra("DIANUM","5");
                 startActivity(intent);
             }
         });
@@ -144,7 +144,7 @@ public class InstructorAsignarRutinaDia extends AppCompatActivity {
                 String Titulo = "Sabado";
                 intent.putExtra("REGISTRO",registroCliente);
                 intent.putExtra("DIA",Titulo);
-                intent.putExtra("DIANUM","7");
+                intent.putExtra("DIANUM","6");
                 startActivity(intent);
             }
         });
@@ -159,7 +159,7 @@ public class InstructorAsignarRutinaDia extends AppCompatActivity {
                 String Titulo = "Domingo";
                 intent.putExtra("REGISTRO",registroCliente);
                 intent.putExtra("DIA",Titulo);
-                intent.putExtra("DIANUM","1");
+                intent.putExtra("DIANUM","7");
                 startActivity(intent);
             }
         });

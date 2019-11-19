@@ -270,6 +270,7 @@
             android:weightSum="2"
             android:layout_weight="1"
             android:gravity="center">
+
             <android.support.v7.widget.CardView
                 android:id="@+id/cardvProgreso_ClientePerfil"
                 android:layout_width="0dp"
@@ -283,6 +284,10 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/progreso"/>
 
                     <TextView
                         android:id="@+id/txtvProgreso_ClientePerfil"
@@ -290,8 +295,10 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Progreso"
+                        android:textColor="@color/negro"
+                        android:layout_marginTop="10dp"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        />
 
 
 
@@ -311,6 +318,10 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center">
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/candado"/>
 
                     <TextView
                         android:id="@+id/txtvCodigoo_ClientePerfil"
@@ -319,7 +330,9 @@
                         android:textStyle="bold"
                         android:text="Código"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:textColor="@color/negro"
+                        android:layout_marginTop="10dp"
+                        />
 
 
 
@@ -350,6 +363,11 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/resetcontra"/>
+
                     <TextView
                         android:id="@+id/txtvActualizarContra_ClientePerfil"
                         android:layout_width="wrap_content"
@@ -357,7 +375,9 @@
                         android:textStyle="bold"
                         android:text="Actualizar contraseña"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:textColor="@color/negro"
+                        android:layout_marginTop="10dp"
+                        />
 
 
 
@@ -379,6 +399,12 @@
                     android:orientation="vertical"
                     android:gravity="center">
 
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/logout" />
+
+
                     <TextView
                         android:id="@+id/txtvCerrarSesion_ClientePerfil"
                         android:layout_width="wrap_content"
@@ -386,7 +412,9 @@
                         android:textStyle="bold"
                         android:text="Cerrar Sesion"
                         android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:textColor="@color/negro"
+                        android:layout_marginTop="10dp"
+                        />
 
 
 

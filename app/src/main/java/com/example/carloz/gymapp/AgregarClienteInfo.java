@@ -52,7 +52,7 @@ import java.util.Map;
 
 public class AgregarClienteInfo extends AppCompatActivity {
 
-    TextView nANombre, nARegistro, nATelefono, nARFID, nATitulo, Nombre, Registroo, Telefono, RFID;
+    TextView nANombre, nARegistro, nATelefono, nARFID, nATitulo, Nombre, Registroo, Telefono, RFID,txtvContra;
     Button btnTomarFoto, btnAgregar;
     CircularImageView imgFoto;
     String stringTelefono, stringCuenta, stringFoto;
@@ -86,6 +86,8 @@ public class AgregarClienteInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_cliente_info);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        txtvContra = findViewById(R.id.txtvContra_AgregarClienteInfo);
 
         nATitulo = (TextView) findViewById(R.id.txtvTitulo_AgregarClienteInfo);
         nANombre = (TextView) findViewById(R.id.txtvNoActionNombre_AgregarClienteInfo);
@@ -129,17 +131,20 @@ public class AgregarClienteInfo extends AppCompatActivity {
         switch (stringCuenta){
             case "Cliente":
                 nATitulo.setText("Cliente Informacion");
+                txtvContra.setText("Gymlife123");
                 RFID.setVisibility(View.VISIBLE);
                 nARFID.setVisibility(View.VISIBLE);
                 conexionBDInfoCliente();
                 break;
             case "Instructor":
+                txtvContra.setText("Entrenador123");
                 nATitulo.setText("Entrenador Informacion");
                 RFID.setVisibility(View.INVISIBLE);
                 nARFID.setVisibility(View.INVISIBLE);
                 conexionBDInfoInstructor();
                 break;
             case "Nutriologo":
+                txtvContra.setText("Nutriologo123");
                 nATitulo.setText("Nutriologo Informacion");
                 RFID.setVisibility(View.INVISIBLE);
                 nARFID.setVisibility(View.INVISIBLE);

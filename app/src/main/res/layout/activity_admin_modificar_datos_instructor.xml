@@ -104,7 +104,7 @@
         android:textColor="@color/negro"
         android:layout_below="@+id/designTelefono_AdminModificarDatosInstructor"
         android:layout_alignStart="@+id/designTelefono_AdminModificarDatosInstructor"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="30dp" />
 
     <CheckBox
         android:id="@+id/chkboxCambiarHorario_AdminModificarNutriologo"
@@ -128,7 +128,8 @@
         android:src="@drawable/logonb"
         android:layout_below="@+id/designTelefono_AdminModificarDatosInstructor"
         android:layout_toRightOf="@+id/txtvHorario_AdminModificarDatosInstructor"
-        android:layout_marginLeft="60dp"/>
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"/>
 
     <Button
         android:id="@+id/btnTomarFoto_AdminModificarDatosInstructor"

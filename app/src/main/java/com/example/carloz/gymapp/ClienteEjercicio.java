@@ -1,6 +1,8 @@
 package com.example.carloz.gymapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.graphics.Typeface;
 import android.os.CountDownTimer;
@@ -100,7 +102,11 @@ public class ClienteEjercicio extends AppCompatActivity {
         btnParar.setVisibility(View.GONE);
 
         mUsers = new ArrayList<>();
-        registroInstructor = getIntent().getStringExtra("REGISTROINSTRU");
+
+        SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
+
+        registroInstructor = preferences.getString("clienteRegInstr","nada");
+        //registroInstructor = getIntent().getStringExtra("REGISTROINSTRU");
         rutina = getIntent().getStringExtra("IDEJER");
 
         //eºToast.makeText(this, "Rutina :"+ rutina+" "+Login.Registro, Toast.LENGTH_SHORT).show();
@@ -364,29 +370,35 @@ public class ClienteEjercicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-                reference.orderByChild("username").equalTo(registroInstructor).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (registroInstructor.equals("0")) {
+                    Toast.makeText(ClienteEjercicio.this, "Instructor no asignado", Toast.LENGTH_SHORT).show();
+                }else {
+                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
+                    reference.orderByChild("username").equalTo(registroInstructor).addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                        for(DataSnapshot child : dataSnapshot.getChildren())
-                        {
-                            Intent intent = new Intent(ClienteEjercicio.this,MessageActivity.class);
-                            intent.putExtra("userid",child.getKey());
-                            intent.putExtra("receptor",registroInstructor);
-                            startActivity(intent);
+                            for(DataSnapshot child : dataSnapshot.getChildren())
+                            {
+                                Intent intent = new Intent(ClienteEjercicio.this,MessageActivity.class);
+                                intent.putExtra("userid",child.getKey());
+                                intent.putExtra("receptor",registroInstructor);
+                                startActivity(intent);
 
+                            }
+
+                            // Toast.makeText(ClienteEjercicio.this, ""+dataSnapshot., Toast.LENGTH_SHORT).show();
+                            //HashMap<String, String> hashMap = new HashMap<String ,String>(dataSnapshot.getValue());
                         }
 
-                       // Toast.makeText(ClienteEjercicio.this, ""+dataSnapshot., Toast.LENGTH_SHORT).show();
-                        //HashMap<String, String> hashMap = new HashMap<String ,String>(dataSnapshot.getValue());
-                    }
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                        }
+                    });
+                }
 
-                    }
-                });
+
 
             }
         });

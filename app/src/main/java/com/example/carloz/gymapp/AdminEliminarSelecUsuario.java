@@ -13,7 +13,7 @@ public class AdminEliminarSelecUsuario extends AppCompatActivity implements View
 
     CardView cardvEliminarCliente, cardvEliminarInstructor, cardvEliminarNutriologo;
     String stringCuenta;
-    TextView txtvAgregar, txtvCliente, txtvNutriologo, txtvInstructor;
+    TextView txtvAgregar, txtvCliente, txtvNutriologo, txtvInstructor, txtvInfo1, txtvInfo2, txtvInfo3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +30,23 @@ public class AdminEliminarSelecUsuario extends AppCompatActivity implements View
         txtvNutriologo = (TextView) findViewById(R.id.txtvNutriologo_AdminEliminarSelecUsuario);
         txtvInstructor = (TextView) findViewById(R.id.txtvInstructor_AdminEliminarSelecUsuario);
 
+        txtvInfo1 = (TextView) findViewById(R.id.txtvU1info_AdminEliminarSelecUsuario);
+        txtvInfo2 = (TextView) findViewById(R.id.txtvU2info_AdminEliminarSelecUsuario);
+        txtvInfo3 = (TextView) findViewById(R.id.txtvU3info_AdminEliminarSelecUsuario);
+
         Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
         Typeface Regular = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Regular.ttf");
+        Typeface Light = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Light.ttf");
+
 
         txtvCliente.setTypeface(Regular);
         txtvNutriologo.setTypeface(Regular);
         txtvInstructor.setTypeface(Regular);
         txtvAgregar.setTypeface(Thin);
+
+        txtvInfo1.setTypeface(Light);
+        txtvInfo1.setTypeface(Light);
+        txtvInfo1.setTypeface(Light);
 
         cardvEliminarCliente.setOnClickListener(this);
         cardvEliminarInstructor.setOnClickListener(this);

@@ -103,7 +103,7 @@
         android:textColor="@color/negro"
         android:layout_below="@+id/designTelefono_AdminModificarDatosNutriologo"
         android:layout_alignStart="@+id/designTelefono_AdminModificarDatosNutriologo"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="30dp" />
 
     <CheckBox
         android:id="@+id/chkboxCambiarHorario_AdminModificarNutriologo2"

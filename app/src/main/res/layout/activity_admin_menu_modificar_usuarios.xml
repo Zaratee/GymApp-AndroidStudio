@@ -27,7 +27,6 @@
         android:layout_below="@+id/txtvTitulor_AdminMenuModificarUsuarios"/>
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -41,8 +40,9 @@
             android:orientation="horizontal"
             android:gravity="center"
             android:clipToPadding="false">
+
             <android.support.v7.widget.CardView
-                android:id="@+id/cardvAgregarCliente_AdminMenuModificarUsuarios"
+                android:id="@+id/cardvModificarCliente_AdminMenuModificarUsuarios"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
@@ -59,30 +59,41 @@
                         android:background="@drawable/circuloverde"
                         android:src="@drawable/ic_person_black_24dp"
                         android:padding="14dp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="7dp"/>
+
                     <TextView
                         android:id="@+id/txtVCliente_AdminMenuModificarUsuarios"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Cliente"
-                        android:textSize="17dp"/>
+                        android:layout_marginTop="10dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="7dp"/>
+                    <TextView
+                        android:id="@+id/txtvU1info_AdminMenuModificarUsuarios"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Modificar Cliente del sistema"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
 
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardvAgregarInstructor_AdminMenuModificarUsuarios"
+                android:id="@+id/cardvModificarInstructor_AdminMenuModificarUsuarios"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
                 android:clickable="true"
                 android:foreground="?android:selectableItemBackground">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -94,18 +105,29 @@
                         android:background="@drawable/circulomorado"
                         android:src="@drawable/ic_fitness_center_black_24dp"
                         android:padding="14dp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="7dp"/>
+
                     <TextView
                         android:id="@+id/txtvInstructor_AdminMenuModificarUsuarios"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Instructor"
-                        android:textSize="17dp"/>
+                        android:layout_marginTop="10dp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="7dp"/>
+
+                    <TextView
+                        android:id="@+id/txtvU2info_AdminMenuModificarUsuarios"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Modificar Instructor del sistema"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
 
 
                 </LinearLayout>
@@ -122,7 +144,7 @@
             android:clipToPadding="false">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardvAgregarNutriologo_AdminMenuModificarUsuarios"
+                android:id="@+id/cardvModificarNutriologo_AdminMenuModificarUsuarios"
                 android:layout_width="160dp"
                 android:layout_height="190dp"
                 android:layout_margin="10dp"
@@ -139,18 +161,29 @@
                         android:background="@drawable/circuloorojo"
                         android:src="@drawable/ic_favorite_border_black_24dp"
                         android:padding="14dp"/>
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@color/lightgray"
-                        android:layout_margin="7dp"/>
+
                     <TextView
                         android:id="@+id/txtvNutriologo_AdminMenuModificarUsuarios"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Nutriologo"
-                        android:textSize="17dp"/>
+                        android:layout_marginTop="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/lightgray"
+                        android:layout_margin="7dp"/>
+
+                    <TextView
+                        android:id="@+id/txtvU3info_AdminMenuModificarUsuarios"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Modificar Nutriólogo del sistema"
+                        android:padding="5dp"
+                        android:textColor="@color/lightgray"/>
+
 
 
                 </LinearLayout>
