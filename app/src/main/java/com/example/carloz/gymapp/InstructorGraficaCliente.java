@@ -19,7 +19,7 @@ public class InstructorGraficaCliente extends AppCompatActivity {
 
         registro = getIntent().getStringExtra("REGISTRO");
         ejercicio = getIntent().getStringExtra("ID");
-        Webv.loadUrl("http://thegymlife.online/php/cliente/graficas/Grafica_Peso.php?registro="+registro+"&ejercicio="+ejercicio);
+        Webv.loadUrl("http://thegymlife.online/php/cliente/graficas/Grafica_Repeticiones.php?registro="+registro+"&ejercicio="+ejercicio);
 
 
     }

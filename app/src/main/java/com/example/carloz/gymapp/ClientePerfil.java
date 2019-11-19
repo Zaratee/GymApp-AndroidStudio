@@ -266,9 +266,6 @@ public class ClientePerfil extends AppCompatActivity {
         Estatura.setText(bdEstatura);
         Grasa.setText(bdGrasaCorporal);
 
-
-
-
     }
 
     private void ClickbtnProgreso() {
