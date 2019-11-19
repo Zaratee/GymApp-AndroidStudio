@@ -75,6 +75,7 @@ public class InstructorAsignarEjercicioInfo extends AppCompatActivity {
                 String Repeticiones = etxtRepeticiones.getText().toString();
                 String Peso = etxtPeso.getText().toString();
                 String Series = etxtSeries.getText().toString();
+
                 if (Repeticiones.isEmpty() || Peso.isEmpty() || Series.isEmpty()){
                     Toast.makeText(InstructorAsignarEjercicioInfo.this, "Rellenar todos los campos", Toast.LENGTH_SHORT).show();
                     if (Repeticiones.isEmpty()) {

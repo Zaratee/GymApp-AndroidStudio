@@ -189,7 +189,7 @@
                 android:textColorHint="#000"
                 android:backgroundTint="#000"
                 android:background="@drawable/apptheme_textfield_activated_holo_light"
-                android:maxLength="2" />
+                android:maxLength="3" />
         </android.support.design.widget.TextInputLayout>
         <Button
             android:visibility="invisible"
