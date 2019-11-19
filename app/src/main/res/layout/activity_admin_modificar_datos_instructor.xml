@@ -135,7 +135,7 @@
         android:id="@+id/btnTomarFoto_AdminModificarDatosInstructor"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Tomar Foto"
+        android:text="Foto"
         android:layout_below="@+id/imgvUsuario_AdminModificarDatosInstructor"
         android:layout_alignStart="@+id/imgvUsuario_AdminModificarDatosInstructor"
         android:layout_marginLeft="-10dp"

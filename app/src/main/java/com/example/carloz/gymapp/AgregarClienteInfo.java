@@ -251,7 +251,7 @@ public class AgregarClienteInfo extends AppCompatActivity {
 
 
     private void mostrarDialogOpciones() {
-        final CharSequence[] opciones = {"Tomar Foto", "Elegir de Galeria","Cancelar"};
+        final CharSequence[] opciones = {"Elegir de Galeria","Cancelar"};
         final AlertDialog.Builder builder = new AlertDialog.Builder(AgregarClienteInfo.this);
             builder.setTitle("Elige una opcion");
             builder.setItems(opciones, new DialogInterface.OnClickListener() {

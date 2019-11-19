@@ -294,7 +294,7 @@ public class AdminModificarDatosInstructor extends AppCompatActivity {
                         //Descartar el diálogo de progreso
                         loading.dismiss();
                         //Mostrando el mensaje de la respuesta
-                        Toast.makeText(AdminModificarDatosInstructor.this, s , Toast.LENGTH_LONG).show();
+                        //Toast.makeText(AdminModificarDatosInstructor.this, s , Toast.LENGTH_LONG).show();
                     }
                 },
                 new Response.ErrorListener() {
@@ -366,7 +366,7 @@ public class AdminModificarDatosInstructor extends AppCompatActivity {
         }
     }
     private void mostrarDialogOpciones() {
-        final CharSequence[] opciones = {"Tomar Foto", "Elegir de Galeria","Cancelar"};
+        final CharSequence[] opciones = {"Elegir de Galeria","Cancelar"};
         final AlertDialog.Builder builder = new AlertDialog.Builder(AdminModificarDatosInstructor.this);
         builder.setTitle("Elige una opcion");
         builder.setItems(opciones, new DialogInterface.OnClickListener() {

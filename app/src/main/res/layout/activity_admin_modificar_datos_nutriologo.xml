@@ -134,7 +134,7 @@
         android:id="@+id/btnTomarFoto_AdminModificarDatosNutriologo"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Tomar Foto"
+        android:text="Foto"
         android:layout_below="@+id/imgvUsuario_AdminModificarDatosNutriologo"
         android:layout_alignStart="@+id/imgvUsuario_AdminModificarDatosNutriologo"
         android:layout_marginLeft="-10dp"

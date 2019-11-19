@@ -181,7 +181,7 @@
         android:id="@+id/btnTomarFoto_AdminModificarDatosCliente"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Tomar \nFoto"
+        android:text="Foto"
         android:layout_below="@+id/imgvUsuario_AdminModificarDatosCliente"
         android:layout_alignStart="@+id/imgvUsuario_AdminModificarDatosCliente"
         android:layout_marginLeft="-10dp"

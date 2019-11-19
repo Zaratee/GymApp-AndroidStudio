@@ -44,12 +44,6 @@ public class AdaptadorAlimentoAsignado extends RecyclerView.Adapter<AdaptadorAli
         viewHolderAlimento.Cantidad.setText(listaClientes.get(i).getCantidad()+" ");
         viewHolderAlimento.CantidadTipo.setText(listaClientes.get(i).getCantidadTipo());
 
-        viewHolderAlimento.linearLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(contexto, ""+listaClientes.get(j).getHora(), Toast.LENGTH_SHORT).show();
-            }
-        });
         //String opcion = contexto.getClass().getSimpleName();
 
 
