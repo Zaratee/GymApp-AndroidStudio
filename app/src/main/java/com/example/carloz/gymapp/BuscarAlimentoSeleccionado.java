@@ -26,7 +26,7 @@ import org.json.JSONObject;
 
 public class BuscarAlimentoSeleccionado extends AppCompatActivity {
 
-    TextView txtvMarca, txtvCarboH, txtvProte, txtvCalorias, txtvGrasas, txtvTipo, txtvNombre, txtvMedida;
+    TextView txtvMarca, txtvCarboH, txtvProte, txtvCalorias, txtvGrasas, txtvTipo, txtvNombre, txtvMedida, txtvPorcion;
     String stringAlimento, stringTiempo, user;
     EditText etxtCantidad;
     Button btnAgregar;
@@ -47,13 +47,14 @@ public class BuscarAlimentoSeleccionado extends AppCompatActivity {
         btnAgregar = findViewById(R.id.btnAgregar_BuscarAlimentoSeleccionado);
         etxtCantidad = findViewById(R.id.etxtCantidad_BuscarAlimentoSeleccionado);
         txtvMedida = findViewById(R.id.txtvMedida_BuscarAlimentoSeleccionado);
+        txtvPorcion = findViewById(R.id.porcion_BuscarAlimentoSeleccionado);
+
         recibirDatos();
         Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
         txtvNombre.setTypeface(Thin);
         SharedPreferences preferences = getSharedPreferences("Cuemta",Context.MODE_PRIVATE);
         user = preferences.getString("NutritClientReg","nada");
 
-        //Toast.makeText(this,"dia: "+stringTiempo,Toast.LENGTH_SHORT).show();
         //Toast.makeText(this, "id alimento: "+stringAlimento, Toast.LENGTH_SHORT).show();
         //Toast.makeText(this, "regNutr: "+Login.Registro, Toast.LENGTH_SHORT).show();
         //Toast.makeText(this, "regClien: "+user, Toast.LENGTH_SHORT).show();
@@ -145,6 +146,8 @@ public class BuscarAlimentoSeleccionado extends AppCompatActivity {
                                     String Tipo = response.getString("Alimento_Tipo");
                                     String Calorias = response.getString("Alimento_Calorias");
                                     String Medida = response.getString("Alimento_Medida");
+                                    String Porcion = response.getString("Alimento_Cantidad");
+
                                     switch(valor) {
                                         case "OK":
                                             txtvNombre.setText(nombre);
@@ -155,6 +158,8 @@ public class BuscarAlimentoSeleccionado extends AppCompatActivity {
                                             txtvMarca.setText(Marca);
                                             txtvTipo.setText(Tipo);
                                             txtvMedida.setText(Medida);
+                                            txtvPorcion.setText(Porcion);
+
 
 
                                             break;

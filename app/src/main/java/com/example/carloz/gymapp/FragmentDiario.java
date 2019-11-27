@@ -40,7 +40,9 @@ public class FragmentDiario extends Fragment {
     RecyclerView listDesayuno, listAlmuerzo,listCena,listPasabocas;
     ArrayList<ItemAlimentoAsignado> listaPasabocas, listaDes, listaCena, listaAlmuerzo;
     String Nombre,Marca,Cantidad,Tiempo,CantidadTipo, bandera;
-    TextView txtvCalorias, txtvProte, txtvCarboh, txtvGrasas;
+    TextView txtvCalorias, txtvProte, txtvCarboh, txtvGrasas, txtvCalTotalDesayuno, txtvCalTotalAlmuerzo, txtvCalTotalCena, txtvCalTotalPasabocas;
+
+    int TCalDesayuno, TCalAlmuerzo, TCalCena, TCalPasaBocas;
 
 
     @Nullable
@@ -65,6 +67,11 @@ public class FragmentDiario extends Fragment {
         txtvProte = (TextView) v.findViewById(R.id.txtvProt_FragmentDiario);
         txtvCalorias = (TextView) v.findViewById(R.id.txtvCalorias_FragmentDiario);
 
+        txtvCalTotalDesayuno = (TextView) v.findViewById(R.id.txtvTotalCaloriasDesayuno_FragmentDiario);
+        txtvCalTotalAlmuerzo = (TextView) v.findViewById(R.id.txtvTotalCaloriasALmuerzo_FragmentDiario);
+        txtvCalTotalCena = (TextView) v.findViewById(R.id.txtvTotalCaloriasCena_FragmentDiario);
+        txtvCalTotalPasabocas = (TextView) v.findViewById(R.id.txtvTotalCaloriasPasabocas_FragmentDiario);
+
         listaAlmuerzo = new ArrayList<>();
         listaPasabocas = new ArrayList<>();
         listaCena = new ArrayList<>();
@@ -86,6 +93,7 @@ public class FragmentDiario extends Fragment {
         conexionBDInfoCena();
         conexionBDInfoPasabocas();
         conexionBDvalores();
+        conexionBDInfoTotalCal();
         
         btnEdiatDiario.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +104,214 @@ public class FragmentDiario extends Fragment {
 
         return v;
     }
+
+    private void conexionBDInfoTotalCal() {
+        //Desayuno
+        {
+            String url = "http://thegymlife.online/php/cliente/Cliente_Visualizar_Alimentos_Diarios.php?registro="+Login.Registro+"&tipo=0";
+
+            url = url.replaceAll(" ", "%20");
+
+            JsonObjectRequest peticion = new JsonObjectRequest
+                    (
+                            Request.Method.GET,
+                            url,
+                            null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        //String valor = response.getString("Estado");
+                                        JSONArray jsonArray = response.getJSONArray("Alimentos");
+                                        TCalDesayuno = 0;
+                                        for (int i =0; i<jsonArray.length();i++){
+                                            JSONObject clientes = jsonArray.getJSONObject(i);
+                                            int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                            int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));
+
+                                            TCalDesayuno = (cant*aliCal)+TCalDesayuno;
+
+                                        }
+                                        if (jsonArray.length() ==0){
+                                            txtvCalTotalDesayuno.setText("0");
+                                        }else {
+                                            txtvCalTotalDesayuno.setText(""+TCalDesayuno);
+                                        }
+
+
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                            , new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error)
+                        {
+                            Toast.makeText(getContext(),"Error php",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            RequestQueue x = Volley.newRequestQueue(getContext());
+            x.add(peticion);
+        }
+
+        //Almuerzo
+        {
+            String url = "http://thegymlife.online/php/cliente/Cliente_Visualizar_Alimentos_Diarios.php?registro="+Login.Registro+"&tipo=1";
+            url = url.replaceAll(" ", "%20");
+
+            JsonObjectRequest peticion = new JsonObjectRequest
+                    (
+                            Request.Method.GET,
+                            url,
+                            null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        //String valor = response.getString("Estado");
+                                        JSONArray jsonArray = response.getJSONArray("Alimentos");
+                                        TCalAlmuerzo = 0;
+                                        for (int i =0; i<jsonArray.length();i++){
+                                            JSONObject clientes = jsonArray.getJSONObject(i);
+                                            int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                            int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));
+
+                                            TCalAlmuerzo = (cant*aliCal)+TCalAlmuerzo;
+
+                                        }
+
+                                        if (jsonArray.length() ==0){
+                                            txtvCalTotalAlmuerzo.setText("0");
+                                        }else {
+                                            txtvCalTotalAlmuerzo.setText(""+TCalAlmuerzo);
+                                        }
+
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                            , new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error)
+                        {
+                            Toast.makeText(getContext(),"Error php",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            RequestQueue x = Volley.newRequestQueue(getContext());
+            x.add(peticion);
+
+        }
+
+        //Cena
+        {
+            String url = "http://thegymlife.online/php/cliente/Cliente_Visualizar_Alimentos_Diarios.php?registro="+Login.Registro+"&tipo=2";
+            url = url.replaceAll(" ", "%20");
+
+            JsonObjectRequest peticion = new JsonObjectRequest
+                    (
+                            Request.Method.GET,
+                            url,
+                            null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        //String valor = response.getString("Estado");
+                                        JSONArray jsonArray = response.getJSONArray("Alimentos");
+                                        TCalCena = 0;
+                                        for (int i =0; i<jsonArray.length();i++){
+                                            JSONObject clientes = jsonArray.getJSONObject(i);
+                                            int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                            int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));
+
+                                            TCalCena = (cant*aliCal)+TCalCena;
+
+                                        }
+
+                                        if (jsonArray.length() ==0){
+                                            txtvCalTotalCena.setText("0");
+                                        }else {
+                                            txtvCalTotalCena.setText(""+TCalCena);
+                                        }
+
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                            , new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error)
+                        {
+                            Toast.makeText(getContext(),"Error php",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            RequestQueue x = Volley.newRequestQueue(getContext());
+            x.add(peticion);
+
+        }
+
+        //Pasabocas
+        {
+            String url = "http://thegymlife.online/php/cliente/Cliente_Visualizar_Alimentos_Diarios.php?registro="+Login.Registro+"&tipo=3";
+            url = url.replaceAll(" ", "%20");
+
+            JsonObjectRequest peticion = new JsonObjectRequest
+                    (
+                            Request.Method.GET,
+                            url,
+                            null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        //String valor = response.getString("Estado");
+                                        JSONArray jsonArray = response.getJSONArray("Alimentos");
+                                        TCalPasaBocas = 0;
+                                        for (int i =0; i<jsonArray.length();i++){
+                                            JSONObject clientes = jsonArray.getJSONObject(i);
+                                            int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                            int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));
+
+                                            TCalPasaBocas = (cant*aliCal)+TCalPasaBocas;
+
+                                        }
+
+                                        if (jsonArray.length() ==0){
+                                            txtvCalTotalPasabocas.setText("0");
+                                        }else {
+                                            txtvCalTotalPasabocas.setText(""+TCalPasaBocas);
+                                        }
+
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                            , new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error)
+                        {
+                            Toast.makeText(getContext(),"Error php",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            RequestQueue x = Volley.newRequestQueue(getContext());
+            x.add(peticion);
+
+        }
+
+    }
+
     private void conexionBDvalores() {
         String url = "http://thegymlife.online/php/cliente/Cliente_Visualizar_Caluclo_Calorias_Diario.php?registro="+Login.Registro;
         url = url.replaceAll(" ", "%20");
@@ -162,8 +378,10 @@ public class FragmentDiario extends Fragment {
                                         Cantidad =clientes.getString("Cantidad");
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
+                                        int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaPasabocas.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"3"));
+                                        listaPasabocas.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"3",""+cant*aliCal));
                                     }
 
                                     listPasabocas.setAdapter(adapter);
@@ -212,8 +430,10 @@ public class FragmentDiario extends Fragment {
                                         Cantidad =clientes.getString("Cantidad");
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
+                                        int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaCena.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"2"));
+                                        listaCena.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"2",""+cant*aliCal));
                                     }
 
                                     listCena.setAdapter(adapter);
@@ -261,8 +481,10 @@ public class FragmentDiario extends Fragment {
                                         Cantidad =clientes.getString("Cantidad");
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
+                                        int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaAlmuerzo.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"1"));
+                                        listaAlmuerzo.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"1",""+cant*aliCal));
                                     }
 
                                     listAlmuerzo.setAdapter(adapter);
@@ -310,8 +532,10 @@ public class FragmentDiario extends Fragment {
                                         Cantidad =clientes.getString("Cantidad");
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
+                                        int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaDes.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"0"));
+                                        listaDes.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"0",""+cant*aliCal));
                                     }
 
                                     listDesayuno.setAdapter(adapter);
@@ -391,7 +615,6 @@ public class FragmentDiario extends Fragment {
                 Intent intent = new Intent(getActivity(),ClienteSolicitudAlimento.class);
                 startActivity(intent);
             }
-
             @Override
             public void updateDrawState(TextPaint ds) {
                 ds.setColor(Color.BLUE);

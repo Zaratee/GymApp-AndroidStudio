@@ -131,6 +131,18 @@
                 android:textColor="#fff"
                 android:layout_marginTop="30dp"
                 android:gravity="center"/>
+            <TextView
+                android:id="@+id/txtvTotalCaloriasDesayuno_FragmentDiario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/layoutValores_FragmentDiario"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="33dp"
+                android:gravity="center"/>
 
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -172,6 +184,19 @@
                 android:layout_below="@+id/imgvDesayuno_FragmentDiario"
                 android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDiario"
                 android:textSize="27dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/txtvTotalCaloriasALmuerzo_FragmentDiario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/imgvDesayuno_FragmentDiario"
+                android:textSize="22dp"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
                 android:textColor="#fff"
                 android:layout_marginLeft="10dp"
                 android:gravity="center"/>
@@ -217,6 +242,18 @@
                 android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDiario"
                 android:textSize="27dp"
                 android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/txtvTotalCaloriasCena_FragmentDiario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/imgvAlmuerzo_FragmentDiario"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/listvCena_FragmentDiario"
@@ -266,6 +303,18 @@
                 android:textSize="27dp"
                 android:textColor="#fff"
                 android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/txtvTotalCaloriasPasabocas_FragmentDiario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/imgvCena_FragmentDiario"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/listvPasabocas_FragmentDiario"

@@ -86,8 +86,8 @@ public class NutriologoEditarDieta extends AppCompatActivity {
                                         ID =clientes.getString("id_Alimento");
                                         CantidadAsignada = clientes.getString("Cantidad");
                                         Lista = clientes.getString("id_Lista");
-
-                                        listaClientes.add(new ItemAlimentoEditar(Nombre,TipoAlimento, Marca, Tiempo, Cantidad,CantidadTipo,ID,CantidadAsignada,Lista));
+                                        int cant = Integer.parseInt(Cantidad)*Integer.parseInt(CantidadAsignada);
+                                        listaClientes.add(new ItemAlimentoEditar(Nombre,TipoAlimento, Marca, Tiempo, Cantidad,CantidadTipo,ID,""+cant,Lista));
                                     }
 
                                     recyclerClientes.setAdapter(adapter);
@@ -116,7 +116,7 @@ public class NutriologoEditarDieta extends AppCompatActivity {
 
         intent.putExtra("BANDERA","1");
         intent.putExtra("REGISTRO",regCliente);
-        Toast.makeText(this, ""+regCliente, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+regCliente, Toast.LENGTH_SHORT).show();
         startActivity(intent);
     }
 }

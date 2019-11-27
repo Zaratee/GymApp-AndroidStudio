@@ -34,12 +34,16 @@
 
                     <TextView
                         android:id="@+id/txtvLunes_InstructorEditarDia"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Lunes"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#16000000"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/negro"/>
 
 
 
@@ -63,12 +67,16 @@
 
                     <TextView
                         android:id="@+id/txtvMartes_InstructorEditarDia"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Martes"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#16000000"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/negro"/>
 
                 </LinearLayout>
 
@@ -99,12 +107,16 @@
 
                     <TextView
                         android:id="@+id/txtvMiercoles_InstructorEditarDia"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Miercoles"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:text="Miércoles"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#16000000"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/negro"/>
 
 
 
@@ -128,12 +140,16 @@
 
                     <TextView
                         android:id="@+id/txtvJueves_InstructorEditarDia"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Jueves"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#16000000"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/negro"/>
 
 
 
@@ -164,12 +180,16 @@
 
                     <TextView
                         android:id="@+id/txtvViernes_InstructorEditarDia"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Viernes"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#16000000"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/negro"/>
 
                 </LinearLayout>
 
@@ -191,12 +211,16 @@
 
                     <TextView
                         android:id="@+id/txtvSabado_InstructorEditarDia"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="Sabado"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:text="Sábado"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#16000000"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/negro"/>
 
 
 
@@ -227,12 +251,16 @@
 
                     <TextView
                         android:id="@+id/txtvDomingo_InstructorEditarDia"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Domingo"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#16000000"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/negro"/>
 
 
 

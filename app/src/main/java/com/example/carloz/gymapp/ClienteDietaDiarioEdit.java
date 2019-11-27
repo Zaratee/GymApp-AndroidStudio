@@ -2,6 +2,7 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,7 @@ import org.json.JSONObject;
 
 public class ClienteDietaDiarioEdit extends AppCompatActivity {
 
-    TextView txtvMarca, txtvCarboH, txtvProte, txtvCalorias, txtvGrasas, txtvTipo, txtvNombre, txtvMedida;
+    TextView txtvMarca, txtvCarboH, txtvProte, txtvCalorias, txtvGrasas, txtvTipo, txtvNombre, txtvMedida, txtvPorcion;
     String stringCantidad, stringTiempo, stringID, stringLista,stringTipo;
     EditText etxtCantidad;
     RadioButton rdbtnDesayuno, rdbtnAlmuerzo, rdbtnCena, rdbtnPasaBocas;
@@ -46,14 +47,19 @@ public class ClienteDietaDiarioEdit extends AppCompatActivity {
         txtvMedida = findViewById(R.id.txtvMedida_ClienteDietaDiarioEdit);
         btnEliminar = findViewById(R.id.btnEliminar_ClienteDietaDiarioEdit);
 
+        txtvPorcion = findViewById(R.id.porcion_ClienteDietaDiarioEdit);
+
         rdbtnDesayuno = findViewById(R.id.radiobtnDesayuno_ClienteDietaDiarioEdit);
         rdbtnAlmuerzo = findViewById(R.id.radiobtnAlmuerzo_ClienteDietaDiarioEdit);
         rdbtnCena = findViewById(R.id.radiobtnCena_ClienteDietaDiarioEdit);
         rdbtnPasaBocas = findViewById(R.id.radiobtnPasabocas_ClienteDietaDiarioEdit);
 
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtvNombre.setTypeface(Thin);
+
         recibirDatos();
         BDinfoAlimento();
-        Toast.makeText(this, ""+stringLista, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+stringLista, Toast.LENGTH_SHORT).show();
 
 
         btnEliminar.setOnClickListener(new View.OnClickListener() {
@@ -231,6 +237,8 @@ public class ClienteDietaDiarioEdit extends AppCompatActivity {
                                     String Tipo = response.getString("Alimento_Tipo");
                                     String Calorias = response.getString("Alimento_Calorias");
                                     String Medida = response.getString("Alimento_Medida");
+                                    String Porcion = response.getString("Alimento_Cantidad");
+
                                     switch(valor) {
                                         case "OK":
                                             txtvNombre.setText(nombre);
@@ -241,6 +249,7 @@ public class ClienteDietaDiarioEdit extends AppCompatActivity {
                                             txtvMarca.setText(Marca);
                                             txtvTipo.setText(Tipo);
                                             txtvMedida.setText(Medida);
+                                            txtvPorcion.setText(Porcion);
                                             break;
                                         case "Error":
                                             Toast.makeText(ClienteDietaDiarioEdit.this,"Fallo de conexión",Toast.LENGTH_SHORT).show();

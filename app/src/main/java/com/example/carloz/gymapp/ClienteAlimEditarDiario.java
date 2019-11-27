@@ -2,10 +2,12 @@ package com.example.carloz.gymapp;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -27,12 +29,18 @@ public class ClienteAlimEditarDiario extends AppCompatActivity {
 
     ArrayList<ItemAlimentoEditar> listaClientes;
     RecyclerView recyclerClientes;
+    TextView txtVTitulo;
     String regCliente, Nombre,TipoAlimento, Marca, Tiempo, Cantidad,CantidadTipo,ID, CantidadAsignada, Lista;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_alim_editar_diario);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        txtVTitulo = findViewById(R.id.txtvNoActionTitulo_ClienteAlimEditarDiario);
+
+        Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
+        txtVTitulo.setTypeface(Thin);
 
         listaClientes = new ArrayList<>();
         recyclerClientes = (RecyclerView) findViewById(R.id.listvEditarDieta_ClienteAlimEditarDiario);
@@ -70,8 +78,8 @@ public class ClienteAlimEditarDiario extends AppCompatActivity {
                                         ID =clientes.getString("id_Alimento");
                                         CantidadAsignada = clientes.getString("Cantidad");
                                         Lista = clientes.getString("id_Lista");
-
-                                        listaClientes.add(new ItemAlimentoEditar(Nombre,TipoAlimento, Marca, Tiempo, Cantidad,CantidadTipo,ID,CantidadAsignada,Lista));
+                                        int cant = Integer.parseInt(Cantidad)*Integer.parseInt(CantidadAsignada);
+                                        listaClientes.add(new ItemAlimentoEditar(Nombre,TipoAlimento, Marca, Tiempo, Cantidad,CantidadTipo,ID,""+cant,Lista));
                                     }
 
                                     recyclerClientes.setAdapter(adapter);

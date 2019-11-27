@@ -42,7 +42,8 @@ public class AdaptadorAlimentoAsignado extends RecyclerView.Adapter<AdaptadorAli
         viewHolderAlimento.marca.setText(listaClientes.get(i).getMarca());
         viewHolderAlimento.TipoAlimento.setText(listaClientes.get(i).getTiempo());
         viewHolderAlimento.Cantidad.setText(listaClientes.get(i).getCantidad()+" ");
-        viewHolderAlimento.CantidadTipo.setText(listaClientes.get(i).getCantidadTipo());
+        viewHolderAlimento.CantidadTipo.setText(listaClientes.get(i).getCantidadTipo()+" ");
+        viewHolderAlimento.TotalCal.setText(listaClientes.get(i).getTotalCalorias());
 
         //String opcion = contexto.getClass().getSimpleName();
 
@@ -56,7 +57,7 @@ public class AdaptadorAlimentoAsignado extends RecyclerView.Adapter<AdaptadorAli
 
     public class ViewHolderAlimentos extends RecyclerView.ViewHolder {
 
-        TextView nombre,marca,TipoAlimento,Cantidad, CantidadTipo;
+        TextView nombre,marca,TipoAlimento,Cantidad, CantidadTipo,TotalCal;
         LinearLayout linearLayout;
 
         public ViewHolderAlimentos(@NonNull View itemView) {
@@ -67,6 +68,8 @@ public class AdaptadorAlimentoAsignado extends RecyclerView.Adapter<AdaptadorAli
             TipoAlimento = (TextView) itemView.findViewById(R.id.txtvTipo_listaAlimentoAsignado);
             Cantidad = (TextView) itemView.findViewById(R.id.txtvCantidad_listaAlimentoAsignado);
             CantidadTipo = (TextView) itemView.findViewById(R.id.txtvTipoCantidad_listaAlimentoAsignado);
+            TotalCal = (TextView) itemView.findViewById(R.id.txtvTotalCal_listaAlimentoAsignado);
+
 
         }
     }

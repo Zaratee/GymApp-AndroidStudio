@@ -218,10 +218,30 @@ public class NutriologoSolicitudAlimentoSolicitud extends AppCompatActivity {
                                             etxtTipoDeAlimento.setText(bdTipo);
                                             etxtCantidadAlimento.setText(bdCantidad);
                                             etxtMedidaTipo.setText(bdCantidadMedida);
-                                            etxtCantidadDeGrasas.setText(bdGrasas);
-                                            etxtCantidadCarboh.setText(bdCarboh);
-                                            etxtCantidadProteinas.setText(bdProteinas);
-                                            etxtCantidadCalorias.setText(bdCalorias);
+                                            if (bdGrasas.equals("0")){
+                                                etxtCantidadDeGrasas.setText("");
+                                            }else {
+                                                etxtCantidadDeGrasas.setText(bdGrasas);
+                                            }
+
+                                            if (bdCarboh.equals("0")){
+                                                etxtCantidadCarboh.setText("");
+                                            }else {
+                                                etxtCantidadCarboh.setText(bdCarboh);
+                                            }
+
+                                            if (bdProteinas.equals("0")){
+                                                etxtCantidadProteinas.setText("");
+                                            }else {
+                                                etxtCantidadProteinas.setText(bdProteinas);
+                                            }
+
+                                            if (bdCalorias.equals("0")){
+                                                etxtCantidadCalorias.setText("");
+                                            }else {
+                                                etxtCantidadCalorias.setText(bdCalorias);
+                                            }
+
 
                                             break;
                                         case "Error":

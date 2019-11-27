@@ -1,15 +1,24 @@
 package com.example.carloz.gymapp.items;
 
 public class ItemAlimentoAsignado {
-    String Nombre,Marca,Cantidad,Tiempo,CantidadTipo,Hora;
+    String Nombre,Marca,Cantidad,Tiempo,CantidadTipo,Hora,TotalCalorias;
 
-    public ItemAlimentoAsignado(String nombre, String marca, String cantidad, String tiempo, String cantidadTipo, String hora) {
+    public ItemAlimentoAsignado(String nombre, String marca, String cantidad, String tiempo, String cantidadTipo, String hora, String totalCalorias) {
         Nombre = nombre;
         Marca = marca;
         Cantidad = cantidad;
         Tiempo = tiempo;
         CantidadTipo = cantidadTipo;
         Hora = hora;
+        TotalCalorias = totalCalorias;
+    }
+
+    public String getTotalCalorias() {
+        return TotalCalorias;
+    }
+
+    public void setTotalCalorias(String totalCalorias) {
+        TotalCalorias = totalCalorias;
     }
 
     public String getHora() {

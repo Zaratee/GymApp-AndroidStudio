@@ -37,17 +37,15 @@
                         android:layout_height="wrap_content"
                         android:text="Nombre:"
                         android:textStyle="bold"
-                        android:typeface="serif"
                         android:textColor="#000"/>
 
                     <TextView
                         android:id="@+id/txtvNombre_InstructorRealizInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nombre del ejercicio"
+                        android:text=""
                         android:textSize="25dp"
                         android:layout_marginLeft="5dp"
-                        android:textStyle="italic"
                         android:textColor="#000"/>
                 </LinearLayout>
 
@@ -61,7 +59,6 @@
                         android:layout_height="wrap_content"
                         android:text="Fecha:"
                         android:textStyle="bold"
-                        android:typeface="serif"
                         android:textColor="#000"/>
 
                     <TextView
@@ -73,7 +70,6 @@
                         android:layout_alignBaseline="@+id/txtvNoActionFecha_InstructorRealizInfo"
                         android:textSize="18dp"
                         android:layout_marginLeft="5dp"
-                        android:textStyle="italic"
                         android:textColor="#000"/>
 
                     <LinearLayout
@@ -88,8 +84,7 @@
                             android:layout_height="wrap_content"
                             android:text="Dia:"
                             android:textColor="#000"
-                            android:textStyle="bold"
-                            android:typeface="serif" />
+                            android:textStyle="bold"/>
 
                         <TextView
                             android:id="@+id/txtvDia_InstructorRealizInfo"
@@ -100,8 +95,7 @@
                             android:layout_toRightOf="@+id/txtvNoActionFecha_InstructorRealizInfo"
                             android:text=""
                             android:textColor="#000"
-                            android:textSize="25dp"
-                            android:textStyle="italic" />
+                            android:textSize="25dp" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -110,7 +104,6 @@
                     android:layout_height="wrap_content"
                     android:text="Asignado por instructor"
                     android:textStyle="bold"
-                    android:typeface="serif"
                     android:textColor="#000"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"/>
@@ -124,7 +117,6 @@
                         android:layout_height="wrap_content"
                         android:text="Series:"
                         android:textStyle="bold"
-                        android:typeface="serif"
                         android:textColor="#000"/>
 
                     <TextView
@@ -134,7 +126,6 @@
                         android:text=""
                         android:textSize="25dp"
                         android:layout_marginLeft="5dp"
-                        android:textStyle="italic"
                         android:textColor="#000"/>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -145,7 +136,6 @@
                             android:layout_height="wrap_content"
                             android:text="Repeticiones:"
                             android:textStyle="bold"
-                            android:typeface="serif"
                             android:textColor="#000"/>
 
                         <TextView
@@ -155,7 +145,6 @@
                             android:text=""
                             android:textSize="25dp"
                             android:layout_marginLeft="5dp"
-                            android:textStyle="italic"
                             android:textColor="#000"/>
                     </LinearLayout>
 
@@ -166,7 +155,6 @@
                     android:layout_height="wrap_content"
                     android:text="Realizado"
                     android:textStyle="bold"
-                    android:typeface="serif"
                     android:textColor="#000"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"/>
@@ -179,7 +167,6 @@
                         android:layout_height="wrap_content"
                         android:text="Series:"
                         android:textStyle="bold"
-                        android:typeface="serif"
                         android:textColor="#000"/>
 
                     <TextView
@@ -189,7 +176,6 @@
                         android:text=""
                         android:textSize="25dp"
                         android:layout_marginLeft="5dp"
-                        android:textStyle="italic"
                         android:textColor="#000"/>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -200,7 +186,6 @@
                             android:layout_height="wrap_content"
                             android:text="Repeticiones:"
                             android:textStyle="bold"
-                            android:typeface="serif"
                             android:textColor="#000"/>
 
                         <TextView
@@ -210,7 +195,6 @@
                             android:text=""
                             android:textSize="25dp"
                             android:layout_marginLeft="5dp"
-                            android:textStyle="italic"
                             android:textColor="#000"/>
                     </LinearLayout>
 
@@ -225,7 +209,6 @@
                         android:layout_height="wrap_content"
                         android:text="Peso real:"
                         android:textStyle="bold"
-                        android:typeface="serif"
                         android:textColor="#000"/>
 
                     <TextView
@@ -235,7 +218,6 @@
                         android:text=""
                         android:textSize="25dp"
                         android:layout_marginLeft="5dp"
-                        android:textStyle="italic"
                         android:textColor="#000"/>
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -246,7 +228,6 @@
                             android:layout_height="wrap_content"
                             android:text="Peso asignado:"
                             android:textStyle="bold"
-                            android:typeface="serif"
                             android:textColor="#000"/>
 
                         <TextView
@@ -255,7 +236,6 @@
                             android:layout_height="wrap_content"
                             android:text=""
                             android:textSize="25dp"
-                            android:textStyle="italic"
                             android:textColor="#000"/>
                     </LinearLayout>
 
@@ -268,7 +248,6 @@
                     android:layout_height="wrap_content"
                     android:text="Etapa:"
                     android:textStyle="bold"
-                    android:typeface="serif"
                     android:layout_marginTop="10dp"
                     android:textColor="#000"/>
 
@@ -279,14 +258,12 @@
                     android:text=""
                     android:textSize="20dp"
                     android:layout_marginLeft="5dp"
-                    android:textStyle="italic"
                     android:textColor="#000"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Dificultad:"
                     android:textStyle="bold"
-                    android:typeface="serif"
                     android:layout_marginTop="10dp"
                     android:textColor="#000"/>
 
@@ -297,7 +274,6 @@
                     android:text=""
                     android:textSize="20dp"
                     android:layout_marginLeft="5dp"
-                    android:textStyle="italic"
                     android:textColor="#000"/>
 
             </LinearLayout>

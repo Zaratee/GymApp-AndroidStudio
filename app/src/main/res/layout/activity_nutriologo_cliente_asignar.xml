@@ -141,6 +141,17 @@
                 android:textColor="#fff"
                 android:layout_marginTop="30dp"
                 android:gravity="center"/>
+            <TextView
+                android:id="@+id/txtvTotalCaloriasDesayuno_NutriologoClienteAsignar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/layoutValores_NutriologoClienteAsignar"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_marginTop="33dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"/>
 
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -186,6 +197,18 @@
                 android:layout_marginLeft="10dp"
                 android:gravity="center"/>
 
+            <TextView
+                android:id="@+id/txtvTotalCaloriasALmuerzo_NutriologoClienteAsignar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/imgvDesayuno_NutriologoClienteAsignar"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="3dp"/>
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/listvAlmuerzo_NutriologoClienteAsignar"
                 android:layout_width="match_parent"
@@ -227,6 +250,18 @@
                 android:layout_toRightOf="@+id/btnAgregarDesayuno_NutriologoClienteAsignar"
                 android:textSize="27dp"
                 android:textColor="#fff" />
+
+            <TextView
+                android:id="@+id/txtvTotalCaloriasCena_NutriologoClienteAsignar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/imgvAlmuerzo_NutriologoClienteAsignar"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_marginTop="3dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/listvCena_NutriologoClienteAsignar"
@@ -275,6 +310,19 @@
                 android:textSize="27dp"
                 android:textColor="#fff"
                 android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/txtvTotalCaloriasPasabocas_NutriologoClienteAsignar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/imgvCena_NutriologoClienteAsignar"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="3dp"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/listvPasabocas_NutriologoClienteAsignar"

@@ -111,15 +111,27 @@
                 android:background="#000"/>
             <TextView
                 android:id="@+id/txtvNoActionDesayuno_FragmentDieta"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Desayuno"
                 android:layout_below="@+id/layoutValores_FragmentDieta"
-                android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDieta"
                 android:textSize="27dp"
                 android:textColor="#fff"
                 android:layout_marginTop="30dp"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:layout_centerHorizontal="true"/>
+            <TextView
+                android:id="@+id/txtvCalTotalDesayuno_FragmentDieta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/layoutValores_FragmentDieta"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_marginTop="33dp"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"/>
 
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
@@ -146,15 +158,28 @@
 
             <TextView
                 android:id="@+id/txtvNoActionALmuerzo_FragmentDieta"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Almuerzo"
                 android:layout_below="@+id/imgvDesayuno_FragmentDieta"
-                android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDieta"
                 android:textSize="27dp"
                 android:textColor="#fff"
-                android:layout_marginLeft="10dp"
+                android:layout_centerHorizontal="true"
                 android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/txtvCalTotalALmuerzo_FragmentDieta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/imgvDesayuno_FragmentDieta"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_marginTop="3dp"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/listvAlmuerzo_FragmentDieta"
@@ -186,9 +211,21 @@
                 android:gravity="center"
                 android:text="Cena"
                 android:layout_below="@+id/imgvAlmuerzo_FragmentDieta"
-                android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDieta"
                 android:textSize="27dp"
                 android:textColor="#fff" />
+            <TextView
+                android:id="@+id/txtvCalTotalnCena_FragmentDieta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="3dp"
+                android:text="0"
+                android:layout_below="@+id/imgvAlmuerzo_FragmentDieta"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"/>
+
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/listvCena_FragmentDieta"
@@ -226,10 +263,23 @@
                 android:text="Pasabocas/otros"
                 android:gravity="center"
                 android:layout_below="@+id/imgvCena_FragmentDieta"
-                android:layout_toRightOf="@+id/btnAgregarDesayuno_FragmentDieta"
                 android:textSize="27dp"
                 android:textColor="#fff"
                 android:layout_marginLeft="10dp"/>
+
+            <TextView
+                android:id="@+id/txtvCalTotalPasabocas_FragmentDieta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:layout_below="@+id/imgvCena_FragmentDieta"
+                android:textSize="22dp"
+                android:textColor="#fff"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp"/>
+
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/listvPasabocas_FragmentDieta"

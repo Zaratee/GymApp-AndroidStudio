@@ -29,12 +29,16 @@
 
                     <TextView
                         android:id="@+id/txtvGraficaRealizado_InstructorEditarDia"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
                         android:text="Gráfica por ejercicio"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#16000000"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/negro"/>
 
 
 
@@ -64,12 +68,16 @@
 
                     <TextView
                         android:id="@+id/txtvListRealiz_InstructorEditarDia"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:text="Lista realizado"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="12dp"/>
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:background="#16000000"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:textColor="@color/negro"/>
 
                 </LinearLayout>
 

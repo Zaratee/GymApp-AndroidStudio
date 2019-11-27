@@ -163,9 +163,6 @@ public class ClienteEjercicio extends AppCompatActivity {
                 txtvSeriesReal.setText(""+serie);
                 serie ++;
                 comparacion();
-
-
-
             }
         });
         

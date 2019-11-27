@@ -46,7 +46,7 @@ public class AdaptadorBuscarAlimento extends RecyclerView.Adapter<AdaptadorBusca
     public void onBindViewHolder(@NonNull final AdaptadorBuscarAlimento.ViewHolderAlimentos viewHolderAlimento, int i) {
         final int j = i;
         viewHolderAlimento.nombre.setText(listaClientes.get(i).getNombre());
-        viewHolderAlimento.cantidad.setText(listaClientes.get(i).getCantidad());
+        viewHolderAlimento.cantidad.setText(listaClientes.get(i).getCantidad()+" ");
         viewHolderAlimento.marca.setText(listaClientes.get(i).getMarca());
 
 
@@ -66,7 +66,7 @@ public class AdaptadorBuscarAlimento extends RecyclerView.Adapter<AdaptadorBusca
                         Intent intent2 = new Intent(contexto,ClienteBuscarAlimSelec.class);
                         intent2.putExtra("Alimento",listaClientes.get(j).getId());
                         intent2.putExtra("Tipo",listaClientes.get(j).getTiempo());
-                        Toast.makeText(contexto, ""+listaClientes.get(j).getId(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(contexto, ""+listaClientes.get(j).getId(), Toast.LENGTH_SHORT).show();
                         contexto.startActivity(intent2);
                         break;
 

@@ -46,7 +46,9 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
     RecyclerView listDesayuno, listAlmuerzo,listCena,listPasabocas;
     ArrayList<ItemAlimentoAsignado> listaPasabocas, listaDes, listaCena, listaAlmuerzo;
     String Nombre,Marca,Cantidad,Tiempo,CantidadTipo, bandera;
-    TextView txtvCalorias, txtvProte, txtvCarboh, txtvGrasas;
+    TextView txtvCalorias, txtvProte, txtvCarboh, txtvGrasas,txtvCalTotalDesayuno, txtvCalTotalAlmuerzo, txtvCalTotalCena, txtvCalTotalPasabocas;
+    int TCalDesayuno, TCalAlmuerzo, TCalCena, TCalPasaBocas;
+
     public static String registroCliente="0000";
     FirebaseAuth auth;
 
@@ -63,6 +65,11 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
         btnMasCena = (Button) findViewById(R.id.btnAgregarCena_NutriologoClienteAsignar);
         btnMasPasaBocas = (Button) findViewById(R.id.btnAgregarPasabocas_NutriologoClienteAsignar);
         btnEditar = (Button) findViewById(R.id.btnEditarDieta_NutriologoClienteAsignar);
+
+        txtvCalTotalDesayuno = (TextView) findViewById(R.id.txtvTotalCaloriasDesayuno_NutriologoClienteAsignar);
+        txtvCalTotalAlmuerzo = (TextView) findViewById(R.id.txtvTotalCaloriasALmuerzo_NutriologoClienteAsignar);
+        txtvCalTotalCena = (TextView) findViewById(R.id.txtvTotalCaloriasCena_NutriologoClienteAsignar);
+        txtvCalTotalPasabocas = (TextView) findViewById(R.id.txtvTotalCaloriasPasabocas_NutriologoClienteAsignar);
 
         listDesayuno = (RecyclerView) findViewById(R.id.listvDesayuno_NutriologoClienteAsignar);
         listAlmuerzo = (RecyclerView) findViewById(R.id.listvAlmuerzo_NutriologoClienteAsignar);
@@ -129,6 +136,7 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
         conexionBDvalores();
         clickbtnChat();
 
+        conexionBDInfoTotalCal();
 
         btnEditar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,6 +146,214 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
             }
         });
     }
+    private void conexionBDInfoTotalCal() {
+        //Desayuno
+        {
+            String url = "http://thegymlife.online/php/nutriologo/Nutriologo_Visualizar_Lista_Alimentos_Cliente_Tipo.php?registro="+registroCliente+"&tipo=0";
+
+            url = url.replaceAll(" ", "%20");
+
+            JsonObjectRequest peticion = new JsonObjectRequest
+                    (
+                            Request.Method.GET,
+                            url,
+                            null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        //String valor = response.getString("Estado");
+                                        JSONArray jsonArray = response.getJSONArray("Alimentos");
+                                        TCalDesayuno = 0;
+                                        for (int i =0; i<jsonArray.length();i++){
+                                            JSONObject clientes = jsonArray.getJSONObject(i);
+                                            int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                            int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));
+
+                                            TCalDesayuno = (cant*aliCal)+TCalDesayuno;
+
+                                        }
+                                        if (jsonArray.length() ==0){
+                                            txtvCalTotalDesayuno.setText("0");
+                                        }else {
+                                            txtvCalTotalDesayuno.setText(""+TCalDesayuno);
+                                        }
+
+
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                            , new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error)
+                        {
+                            Toast.makeText(NutriologoClienteAsignar.this,"Error php",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            RequestQueue x = Volley.newRequestQueue(NutriologoClienteAsignar.this);
+            x.add(peticion);
+        }
+
+        //Almuerzo
+        {
+            String url = "http://thegymlife.online/php/nutriologo/Nutriologo_Visualizar_Lista_Alimentos_Cliente_Tipo.php?registro="+registroCliente+"&tipo=1";
+
+            url = url.replaceAll(" ", "%20");
+
+            JsonObjectRequest peticion = new JsonObjectRequest
+                    (
+                            Request.Method.GET,
+                            url,
+                            null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        //String valor = response.getString("Estado");
+                                        JSONArray jsonArray = response.getJSONArray("Alimentos");
+                                        TCalAlmuerzo = 0;
+                                        for (int i =0; i<jsonArray.length();i++){
+                                            JSONObject clientes = jsonArray.getJSONObject(i);
+                                            int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                            int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));
+
+                                            TCalAlmuerzo = (cant*aliCal)+TCalAlmuerzo;
+
+                                        }
+
+                                        if (jsonArray.length() ==0){
+                                            txtvCalTotalAlmuerzo.setText("0");
+                                        }else {
+                                            txtvCalTotalAlmuerzo.setText(""+TCalAlmuerzo);
+                                        }
+
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                            , new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error)
+                        {
+                            Toast.makeText(NutriologoClienteAsignar.this,"Error php",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            RequestQueue x = Volley.newRequestQueue(NutriologoClienteAsignar.this);
+            x.add(peticion);
+
+        }
+
+        //Cena
+        {
+            String url = "http://thegymlife.online/php/nutriologo/Nutriologo_Visualizar_Lista_Alimentos_Cliente_Tipo.php?registro="+registroCliente+"&tipo=2";
+            url = url.replaceAll(" ", "%20");
+
+            JsonObjectRequest peticion = new JsonObjectRequest
+                    (
+                            Request.Method.GET,
+                            url,
+                            null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        //String valor = response.getString("Estado");
+                                        JSONArray jsonArray = response.getJSONArray("Alimentos");
+                                        TCalCena = 0;
+                                        for (int i =0; i<jsonArray.length();i++){
+                                            JSONObject clientes = jsonArray.getJSONObject(i);
+                                            int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                            int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));
+
+                                            TCalCena = (cant*aliCal)+TCalCena;
+
+                                        }
+
+                                        if (jsonArray.length() ==0){
+                                            txtvCalTotalCena.setText("0");
+                                        }else {
+                                            txtvCalTotalCena.setText(""+TCalCena);
+                                        }
+
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                            , new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error)
+                        {
+                            Toast.makeText(NutriologoClienteAsignar.this,"Error php",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            RequestQueue x = Volley.newRequestQueue(NutriologoClienteAsignar.this);
+            x.add(peticion);
+
+        }
+
+        //Pasabocas
+        {
+            String url = "http://thegymlife.online/php/nutriologo/Nutriologo_Visualizar_Lista_Alimentos_Cliente_Tipo.php?registro="+registroCliente+"&tipo=3";
+            url = url.replaceAll(" ", "%20");
+
+            JsonObjectRequest peticion = new JsonObjectRequest
+                    (
+                            Request.Method.GET,
+                            url,
+                            null,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject response) {
+                                    try {
+                                        //String valor = response.getString("Estado");
+                                        JSONArray jsonArray = response.getJSONArray("Alimentos");
+                                        TCalPasaBocas = 0;
+                                        for (int i =0; i<jsonArray.length();i++){
+                                            JSONObject clientes = jsonArray.getJSONObject(i);
+                                            int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                            int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));
+
+                                            TCalPasaBocas = (cant*aliCal)+TCalPasaBocas;
+
+                                        }
+
+                                        if (jsonArray.length() ==0){
+                                            txtvCalTotalPasabocas.setText("0");
+                                        }else {
+                                            txtvCalTotalPasabocas.setText(""+TCalPasaBocas);
+                                        }
+
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    }
+                                }
+                            }
+                            , new Response.ErrorListener()
+                    {
+                        @Override
+                        public void onErrorResponse(VolleyError error)
+                        {
+                            Toast.makeText(NutriologoClienteAsignar.this,"Error php",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+            RequestQueue x = Volley.newRequestQueue(NutriologoClienteAsignar.this);
+            x.add(peticion);
+
+        }
+
+    }
+
 
     private void clickbtnChat() {
         btnChat.setOnClickListener(new View.OnClickListener() {
@@ -244,8 +460,11 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
                                         Cantidad =clientes.getString("Cantidad");
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
+                                        int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaPasabocas.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"3"));
+
+                                        listaPasabocas.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"3",""+cant*aliCal));
                                     }
 
                                     listPasabocas.setAdapter(adapter);
@@ -293,8 +512,11 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
                                         Cantidad =clientes.getString("Cantidad");
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
+                                        int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaCena.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"2"));
+
+                                        listaCena.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"2",""+cant*aliCal));
                                     }
 
                                     listCena.setAdapter(adapter);
@@ -342,8 +564,10 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
                                         Cantidad =clientes.getString("Cantidad");
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
+                                        int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaAlmuerzo.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"1"));
+                                        listaAlmuerzo.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"1",""+cant*aliCal));
                                     }
 
                                     listAlmuerzo.setAdapter(adapter);
@@ -391,8 +615,10 @@ public class NutriologoClienteAsignar extends AppCompatActivity {
                                         Cantidad =clientes.getString("Cantidad");
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
+                                        int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaDes.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"0"));
+                                        listaDes.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"0",""+cant*aliCal));
                                     }
 
                                     listDesayuno.setAdapter(adapter);

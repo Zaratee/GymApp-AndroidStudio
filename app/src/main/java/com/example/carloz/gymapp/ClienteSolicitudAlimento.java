@@ -103,7 +103,7 @@ public class ClienteSolicitudAlimento extends AppCompatActivity {
             etxtMarca.setError("Rellenar Marca");
         }
         if (TipoAlimento.isEmpty()){
-            etxtTipoAlimento.setError("Rellenar Marca");
+            etxtTipoAlimento.setError("Rellenar T. Alimento");
 
         }
         if (Cantidad.isEmpty()){

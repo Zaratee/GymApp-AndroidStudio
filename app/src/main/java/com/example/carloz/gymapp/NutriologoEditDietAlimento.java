@@ -24,7 +24,7 @@ import org.json.JSONObject;
 
 public class NutriologoEditDietAlimento extends AppCompatActivity {
     
-    TextView txtvMarca, txtvCarboH, txtvProte, txtvCalorias, txtvGrasas, txtvTipo, txtvNombre, txtvMedida;
+    TextView txtvMarca, txtvCarboH, txtvProte, txtvCalorias, txtvGrasas, txtvTipo, txtvNombre, txtvMedida, txtvPorcion;
     String stringCantidad, stringTiempo, stringID, stringLista,stringTipo;
     EditText etxtCantidad;
     RadioButton rdbtnDesayuno, rdbtnAlmuerzo, rdbtnCena, rdbtnPasaBocas;
@@ -46,6 +46,7 @@ public class NutriologoEditDietAlimento extends AppCompatActivity {
         etxtCantidad = findViewById(R.id.etxtCantidad_NutriologoEditDietAlimento);
         txtvMedida = findViewById(R.id.txtvMedida_NutriologoEditDietAlimento);
         btnEliminar = findViewById(R.id.btnEliminar_NutriologoEditDietAlimento);
+        txtvPorcion = findViewById(R.id.porcion_NutriologoEditDietAlimento);
 
         Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
         txtvNombre.setTypeface(Thin);
@@ -234,6 +235,7 @@ public class NutriologoEditDietAlimento extends AppCompatActivity {
                                     String Tipo = response.getString("Alimento_Tipo");
                                     String Calorias = response.getString("Alimento_Calorias");
                                     String Medida = response.getString("Alimento_Medida");
+                                    String Porcion = response.getString("Alimento_Cantidad");
                                     switch(valor) {
                                         case "OK":
                                             txtvNombre.setText(nombre);
@@ -244,6 +246,7 @@ public class NutriologoEditDietAlimento extends AppCompatActivity {
                                             txtvMarca.setText(Marca);
                                             txtvTipo.setText(Tipo);
                                             txtvMedida.setText(Medida);
+                                            txtvPorcion.setText(Porcion);
                                             break;
                                         case "Error":
                                             Toast.makeText(NutriologoEditDietAlimento.this,"Fallo de conexión",Toast.LENGTH_SHORT).show();

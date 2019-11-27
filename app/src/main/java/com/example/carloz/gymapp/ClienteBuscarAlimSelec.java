@@ -26,7 +26,7 @@ import org.json.JSONObject;
 public class ClienteBuscarAlimSelec extends AppCompatActivity {
 
 
-    TextView txtvMarca, txtvCarboH, txtvProte, txtvCalorias, txtvGrasas, txtvTipo, txtvNombre, txtvMedida;
+    TextView txtvMarca, txtvCarboH, txtvProte, txtvCalorias, txtvGrasas, txtvTipo, txtvNombre, txtvMedida, txtvPorcion;
     String stringAlimento, stringTiempo, user;
     EditText etxtCantidad;
     Button btnAgregar;
@@ -36,7 +36,7 @@ public class ClienteBuscarAlimSelec extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cliente_buscar_alim_selec);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        
+
         txtvMarca = findViewById(R.id.txtvMarca_ClienteBuscarAlimSelec);
         txtvCarboH = findViewById(R.id.txtvCarbh_CantidadAlimentoSeleccionado);
         txtvProte = findViewById(R.id.txtvProteinas_CantidadAlimentoSeleccionado);
@@ -47,10 +47,11 @@ public class ClienteBuscarAlimSelec extends AppCompatActivity {
         btnAgregar = findViewById(R.id.btnAgregar_ClienteBuscarAlimSelec);
         etxtCantidad = findViewById(R.id.etxtCantidad_ClienteBuscarAlimSelec);
         txtvMedida = findViewById(R.id.txtvMedida_ClienteBuscarAlimSelec);
+        txtvPorcion = findViewById(R.id.porcion_ClienteBuscarAlimSelec);
 
         Typeface Thin = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Thin.ttf");
         txtvNombre.setTypeface(Thin);
-        Toast.makeText(this, "aqui", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "aqui", Toast.LENGTH_SHORT).show();
         recibirDatos();
 
         BDinfoAlimento();
@@ -140,6 +141,7 @@ public class ClienteBuscarAlimSelec extends AppCompatActivity {
                                     String Tipo = response.getString("Alimento_Tipo");
                                     String Calorias = response.getString("Alimento_Calorias");
                                     String Medida = response.getString("Alimento_Medida");
+                                    String Cantidad = response.getString("Alimento_Cantidad");
                                     switch(valor) {
                                         case "OK":
                                             txtvNombre.setText(nombre);
@@ -150,6 +152,7 @@ public class ClienteBuscarAlimSelec extends AppCompatActivity {
                                             txtvMarca.setText(Marca);
                                             txtvTipo.setText(Tipo);
                                             txtvMedida.setText(Medida);
+                                            txtvPorcion.setText(Cantidad);
 
 
                                             break;

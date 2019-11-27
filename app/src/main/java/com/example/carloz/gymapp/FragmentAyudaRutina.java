@@ -118,6 +118,7 @@ public class FragmentAyudaRutina extends Fragment {
                                         listaClientes.add(new ItemEjercicioClienteAyuda(Nombre, Peso, Repeticiones, Series, Estado, Area, ID, instructor));
                                     }
 
+                                    adapter.contexto = getActivity();
                                     recyclerClientes.setAdapter(adapter);
 
                                 } catch (JSONException e) {
