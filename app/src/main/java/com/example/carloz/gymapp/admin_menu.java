@@ -126,7 +126,7 @@ case R.id.cardvAgregar_admin_menu :
             }else {
                 if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)){
                     Toast.makeText(admin_menu.this, "Se necesita dar permiso a la " +
-                            "camara para escanear QR", Toast.LENGTH_SHORT).show();
+                            "camara para agregar Usuarios", Toast.LENGTH_SHORT).show();
                 }
                 requestPermissions(new String[]{Manifest.permission.CAMERA},REQUEST_CAMERA);
             }
