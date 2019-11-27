@@ -141,7 +141,7 @@ public class NutriologoEditDietAlimento extends AppCompatActivity {
         stringID = (String) bundle.get("ID");
         stringCantidad =(String) bundle.get("CANTIDAD");
         stringLista = (String) bundle.get("LISTA");
-        etxtCantidad.setText(stringCantidad);
+        //etxtCantidad.setText(stringCantidad);
         if (stringTiempo.equals("0")){
             rdbtnDesayuno.setChecked(true);
             rdbtnAlmuerzo.setChecked(false);

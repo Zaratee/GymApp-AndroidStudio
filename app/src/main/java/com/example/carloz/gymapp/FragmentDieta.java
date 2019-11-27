@@ -350,9 +350,10 @@ public class FragmentDieta extends Fragment {
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
                                         int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int cantAli = Integer.parseInt(clientes.getString("Alimento_Cantidad"));
                                         int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaPasabocas.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"3",""+cant*aliCal));
+                                        listaPasabocas.add(new ItemAlimentoAsignado(Nombre,Marca,""+cant*cantAli,Tiempo,CantidadTipo,"3",""+cant*aliCal));
                                     }
 
                                     listPasabocas.setAdapter(adapter);
@@ -400,9 +401,10 @@ public class FragmentDieta extends Fragment {
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
                                         int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int cantAli = Integer.parseInt(clientes.getString("Alimento_Cantidad"));
                                         int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaCena.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"2",""+cant*aliCal));
+                                        listaCena.add(new ItemAlimentoAsignado(Nombre,Marca,""+cant*cantAli,Tiempo,CantidadTipo,"2",""+cant*aliCal));
                                     }
 
                                     listCena.setAdapter(adapter);
@@ -451,9 +453,10 @@ public class FragmentDieta extends Fragment {
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
                                         int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int cantAli = Integer.parseInt(clientes.getString("Alimento_Cantidad"));
                                         int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));//""+cant*aliCal
 
-                                        listaAlmuerzo.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"1",""+cant*aliCal));
+                                        listaAlmuerzo.add(new ItemAlimentoAsignado(Nombre,Marca,""+cant*cantAli,Tiempo,CantidadTipo,"1",""+cant*aliCal));
                                     }
 
                                     listAlmuerzo.setAdapter(adapter);
@@ -502,10 +505,11 @@ public class FragmentDieta extends Fragment {
                                         Tiempo =clientes.getString("Alimento_Tipo");
                                         CantidadTipo =clientes.getString("Alimento_Medida");
                                         int cant = Integer.parseInt(clientes.getString("Cantidad"));
+                                        int cantAli = Integer.parseInt(clientes.getString("Alimento_Cantidad"));
                                         int aliCal = Integer.parseInt(clientes.getString("Alimento_Calorias"));
 
 
-                                        listaDes.add(new ItemAlimentoAsignado(Nombre,Marca,Cantidad,Tiempo,CantidadTipo,"0",""+cant*aliCal));
+                                        listaDes.add(new ItemAlimentoAsignado(Nombre,Marca,""+cant*cantAli,Tiempo,CantidadTipo,"0",""+cant*aliCal));
                                     }
 
                                     listDesayuno.setAdapter(adapter);
