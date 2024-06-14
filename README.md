@@ -30,3 +30,8 @@ datos para ya tener el registro en sus próximas asignaciones de Dietas
 # Admin
 Encargado de crear mas administradores, nutriologos, instructores y clientes, los cuales puede crear, editar y eliminar. También se involucra en asignar el 
 RFID a los Clientes
+
+# Información Extra
+Escuela CETI Colomos <br>
+Compañero de equipo: Kevin Guillermo Carrillo González
+
